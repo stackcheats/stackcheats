@@ -1,0 +1,3 @@
+[submodule "stackcheats"]
+	path = stackcheats
+	url = git@github.com:athiththan11/stackcheats.git
