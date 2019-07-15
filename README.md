@@ -3,7 +3,7 @@
 <br>
 
 <p align="center">
-  <img src="stackcheats/assets/stackcheats-markdown.png">
+  <img src="static/stackcheats-markdown.png">
 </p>
 
 <p align="center">
