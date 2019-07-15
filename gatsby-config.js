@@ -83,8 +83,8 @@ module.exports = {
 				start_url: `/`,
 				background_color: `#ffffff`,
 				theme_color: `#663399`,
-				display: `minimal-ui`
-				// icon: `content/assets/gatsby-icon.png`
+				display: `minimal-ui`,
+				icon: `stackcheats/assets/stackcheats-icon.png`
 			}
 		},
 		`gatsby-plugin-offline`,
