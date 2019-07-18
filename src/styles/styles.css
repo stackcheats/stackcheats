@@ -17,6 +17,14 @@
 	margin-top: 0 !important;
 }
 
+.stackcheat-container h1.stackcheat--title {
+	font-size: 2.75rem !important;
+}
+
+.stackcheat-container h4.stackcheat--sub-title {
+	font-size: 1.75rem !important;
+}
+
 .stackcheat-tags .badge {
 	margin-right: 0.5em;
 }
@@ -59,16 +67,18 @@
 	font-style: italic;
 }
 
-.three--dots {
+hr.three--dots {
 	border-top: none !important;
 
 	border-width: initial;
 	border-style: none;
 	border-color: initial;
 	border-image: initial;
+
+	background: unset !important;
 }
 
-.three--dots::before {
+hr.three--dots::before {
 	content: '...';
 	letter-spacing: 0.6em;
 	text-indent: 0.6em;
