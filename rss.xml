@@ -1,5 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[stackcheats]]></title><description><![CDATA[stackcheats: where cheats get stacked]]></description><link>https://stackcheats.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 15 Jul 2019 12:38:31 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[stacksheets Sheets of stories, blogs and cheats used by stackcheats]]></description><link>https://stackcheats.github.io/README/</link><guid isPermaLink="false">https://stackcheats.github.io/README/</guid><content:encoded>&lt;h1&gt;stacksheets&lt;/h1&gt;
-&lt;p&gt;Sheets of stories, blogs and cheats used by stackcheats&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Custom Event Handlers for Password Validation]]></title><description><![CDATA[A Story Guide Stackcheats is a cheat-blog platform where developers and technical writers can create & write tech-cheats by owning user…]]></description><link>https://stackcheats.github.io/Custom-Event-Handlers-for-Password-Validation/</link><guid isPermaLink="false">https://stackcheats.github.io/Custom-Event-Handlers-for-Password-Validation/</guid><pubDate>Wed, 19 Jun 2019 22:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;A Story Guide&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[stackcheats]]></title><description><![CDATA[stackcheats: where cheats get stacked]]></description><link>https://stackcheats.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 18 Jul 2019 04:19:46 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><link>https://stackcheats.github.io/README/</link><guid isPermaLink="false">https://stackcheats.github.io/README/</guid><content:encoded>&lt;br&gt;
+&lt;br&gt;
+&lt;p align=&quot;center&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block;  max-width: 156px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 63.46153846153847%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADUUlEQVQ4y02Tb0yVZRTAX0Cdfa/NWstkdSGBe8HMFZExVvODEbckGzhzNJpmTS4U/xaQCjKpkBxNuKSQM1nTZYhKfhDoj64NP5T8cUvuvcBlAl0E5F6Q7n3f9/x6wMR7tmfn7Oyc3znP2Tka880agTptUST0hyYzpVH0a5Ha/xKEVeKvyxTfrusyYV+Q6eJa/r1k0cKEf95awVxTBHDfIcqQaUdUeJAEOy1MF1Qyke5i9mXwxYE3FmY3IGOpIfHtaMP/1dsqd9Uy2B0RuQR7IKWwMjh7NANf9jnG0gz8G2FsPfc8cXpw2GqYXpswmqAzuh5mrAqegoy/MShTeeWYvdFLEMeFqshD46xgviKPO5sHmX0ephK5NxRPwJ0QCritpnqibJnzJMjCkBV9xCriteqmN15nIgECqvCdVJjM+Xm5u77xa1+2DzTxV7/dMEYsOiPRMu+JZ9adJH63TcGsiwXwu63cdSdKwGNTI7AIt9eZTCTN4Xv9qjm5t1A7O0RWZofceuYUwcdb0K2nhdyLV+V8T4FMuTYJ3qcJDVkUyMZdVxKLRRhZhzlsYeBmhlT9doLd3WPBhkGylzpr80hCbhf7M9vNKdv3sPYk5mNN8IQTXm29TU1nEwMDb2IoAN61TLteoO16ATsu/i4x3xnmRhWbf54b3ZOBTcvf7b8p22ubZOaDGthSK2ai05DoFoM1x+HRRohpNtlz4QpV3d+ScmaU6AZIrkFyK5GSg7qUVZvBOqf09vwpqZq7U6LPlVN/5F2Mz7JEL8wX88MyyKwWSa43JfaEzpMtsEZ1Evs1kn4A+bjEoKDYkLxSCeXvReqKJXjpRym8MSertb4z5JzMYLgxEb5Ra1atdEU6odI9YjqKRHYdgK01IjkVClKkS36Jae77REKfvgeHX4OGF+HUVob7GmX7w02HiGvHsJ/O5uyxZBacau61z8HBzRhlO1XXDmRfsRiOj0Qvt0P9KwqUjPHDNjp+qeIdlb96kXM0hQitp5HI8AtxdfNsWx6fH9/C384NKjkGDil9OA2c6mCa0xhu380XvT8RF57XVRXGcXeidRQR9b720Kmqrvz1CNtad8plZypzrXaudO0nS/kfeRDzkopvdxB16/L9a6t8SrT/AKQmdzMpvdtvAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;stackcheats icon&quot; title src=&quot;/static/stackcheats-icon-64845f5f929b706c2e78958cef2bb53f-0dd2c.png&quot; srcset=&quot;/static/stackcheats-icon-64845f5f929b706c2e78958cef2bb53f-5a842.png 148w,
+/static/stackcheats-icon-64845f5f929b706c2e78958cef2bb53f-0dd2c.png 156w&quot; sizes=&quot;(max-width: 156px) 100vw, 156px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+    &lt;strong&gt;&lt;a href=&quot;https://stackcheats.github.io&quot;&gt;stackcheats.github.io&lt;/a&gt;&lt;/strong&gt;
+&lt;/p&gt;
+&lt;br&gt;
+&lt;h1 align=&apos;center&apos;&gt;stacksheets&lt;/h1&gt;
+&lt;p align=&apos;center&apos;&gt;a collection stories, blogs &amp; cheats used by stackcheats&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;</content:encoded></item><item><title><![CDATA[Custom Event Handlers for Password Validation]]></title><description><![CDATA[A Story Guide Stackcheats is a cheat-blog platform where developers and technical writers can create & write tech-cheats by owning user…]]></description><link>https://stackcheats.github.io/Custom-Event-Handlers-for-Password-Validation/</link><guid isPermaLink="false">https://stackcheats.github.io/Custom-Event-Handlers-for-Password-Validation/</guid><pubDate>Sat, 15 Jun 2019 09:30:03 GMT</pubDate><content:encoded>&lt;h2&gt;A Story Guide&lt;/h2&gt;
 &lt;p&gt;Stackcheats is a cheat-blog platform where developers and technical writers can create &amp;#x26; write tech-cheats by owning user accounts. More importantly, Stackcheats has been using the WSO2 Identity Server as its identity and access management tool to manage user registrations and management tasks.&lt;/p&gt;
 &lt;p&gt;A tech-developer named “Athiththan” have been requested to develop a custom component to validate the password against a list of defective passwords when users trying to update (renew).&lt;/p&gt;
 &lt;h2&gt;Development&lt;/h2&gt;
@@ -497,9 +515,4 @@ We can use the following custom maven archetype to generate boilerplate to exten
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;sh wso2server.sh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Test&lt;/h3&gt;
 &lt;p&gt;After server startup, navigate to &lt;code class=&quot;language-text&quot;&gt;https://&amp;lt;IP_ADDRESS&amp;gt;:9443/dashboard&lt;/code&gt; and log in using &lt;code class=&quot;language-text&quot;&gt;admin&lt;/code&gt; as both username and password. Click on the &lt;em&gt;“View Details”&lt;/em&gt; button on the &lt;em&gt;“Change Password”&lt;/em&gt; section and type your current password and enter the new password as one of the defective passwords and try on.&lt;/p&gt;
-&lt;p class=&quot;quote text-secondary&quot;&gt;
-    Prepare your extraordinary core (- brain) to process different events exceptionally without exceptions
-    &lt;br/&gt;
-    — Athiththan
-&lt;/p&gt;
 &lt;hr class=&quot;three--dots&quot;/&gt;</content:encoded></item></channel></rss>
