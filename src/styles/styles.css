@@ -18,11 +18,11 @@
 }
 
 .stackcheat-container h1.stackcheat--title {
-	font-size: 2.75rem !important;
+	font-size: 2.75em !important;
 }
 
 .stackcheat-container h4.stackcheat--sub-title {
-	font-size: 1.75rem !important;
+	font-size: 1.75em !important;
 }
 
 .stackcheat-tags .badge {
@@ -36,19 +36,19 @@
 .stackcheat-container > .stackcheat-body h2,
 .stackcheat-container > .stackcheat-body h3,
 .stackcheat-container > .stackcheat-body h4 {
-	margin-top: 1.32em;
+	margin-top: 2em;
 }
 
 .stackcheat-container > .stackcheat-body h1 {
-	font-size: 1.75rem;
+	font-size: 1.75em;
 }
 
 .stackcheat-container > .stackcheat-body h2 {
-	font-size: 1.5rem;
+	font-size: 1.5em;
 }
 
 .stackcheat-container > .stackcheat-body h3 {
-	font-size: 1.25rem;
+	font-size: 1.25em;
 }
 
 .stackcheat-container > .stackcheat-body .quote {
@@ -62,9 +62,17 @@
 }
 
 .stackcheat-container > .stackcheat-body blockquote {
-	margin-top: 2em;
-	margin-bottom: 2em;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 	font-style: italic;
+	font-size: inherit;
+}
+
+.stackcheat-container > .stackcheat-body h2 ~ p, 
+.stackcheat-container > .stackcheat-body h3 ~ p,
+.stackcheat-container > .stackcheat-body h4 ~ p,
+.stackcheat-container > .stackcheat-body h5 ~ p {
+	margin-top: 1.75rem;
 }
 
 hr.three--dots {
@@ -100,4 +108,27 @@ hr.three--dots::before {
 
 .gist-data td {
 	border-bottom: none !important;
+}
+
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+	border: 0px !important;
+	background-color: rgba(0,0,0,0.02) !important;
+}
+
+pre[class*="language-"] {
+	padding: 2em !important;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+a.ul-disabled:hover {
+	text-decoration: none !important;
+}
+
+.img-square-wrapper > img {
+	max-width: unset !important;
 }
