@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[stackcheats]]></title><description><![CDATA[stackcheats: where cheats get stacked]]></description><link>https://stackcheats.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 19 Jul 2019 18:43:28 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><link>https://stackcheats.github.io/README/</link><guid isPermaLink="false">https://stackcheats.github.io/README/</guid><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[stackcheats]]></title><description><![CDATA[stackcheats: where cheats get stacked]]></description><link>https://stackcheats.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 20 Jul 2019 14:53:58 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><link>https://stackcheats.github.io/README/</link><guid isPermaLink="false">https://stackcheats.github.io/README/</guid><content:encoded>&lt;br&gt;
 &lt;br&gt;
 &lt;p align=&quot;center&quot;&gt;
   
@@ -394,7 +394,7 @@
 &lt;a class=&quot;ul-disabled&quot; href=&quot;https://github.com/athiththan11/Revamp-Mediator&quot;&gt;
     &lt;div class=&quot;card&quot;&gt;
         &lt;div class=&quot;card-horizontal&quot;&gt;
-            &lt;div class=&quot;card-body py-4 px-5&quot;&gt;
+            &lt;div class=&quot;card-body py-2 px-5&quot;&gt;
                 &lt;h4 class=&quot;card-title mt-4&quot;&gt;Revamp Mediator&lt;/h4&gt;
                 &lt;p&gt;A custom mediation logic to convert payload attribute values using WSO2 Class Mediator extension&lt;/p&gt;
                 &lt;footer class=&quot;blockquote-footer&quot;&gt;
