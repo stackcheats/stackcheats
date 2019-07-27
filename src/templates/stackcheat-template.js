@@ -35,6 +35,18 @@ class StackCheatTemplate extends React.Component {
 						tags={post.frontmatter.tags}
 					/>
 
+					{/* <div className="row mt-4">
+						<div className="col">
+							<p className="mb-0">
+								<img
+									src="https://avatars3.githubusercontent.com/u/29927177?s=460&v=4"
+									alt="Avatar"
+									className="avatar mb-0"
+								/>
+							</p>
+						</div>
+					</div> */}
+
 					{/* intro block */}
 					<div className="row stackcheat-body pt-4">
 						<div
@@ -65,6 +77,7 @@ export const pageQuery = graphql`
 				title
 				intro
 				tags
+				author
 			}
 		}
 	}

@@ -2,6 +2,15 @@
 
 /* ================================================================================= */
 
+.avatar {
+	vertical-align: middle;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+/* ================================================================================= */
+
 .stackcheat-container {
 	max-width: 740px !important;
 	padding-left: 20px;
@@ -51,6 +60,11 @@
 	font-size: 1.25em;
 }
 
+.stackcheat-container > .stackcheat-body h4,
+.stackcheat-container > .stackcheat-body h5 {
+	font-size: 1em;
+}
+
 .stackcheat-container > .stackcheat-body .quote {
 	font-size: 30px;
 	line-height: 40px;
@@ -68,7 +82,7 @@
 	font-size: inherit;
 }
 
-.stackcheat-container > .stackcheat-body h2 ~ p, 
+.stackcheat-container > .stackcheat-body h2 ~ p,
 .stackcheat-container > .stackcheat-body h3 ~ p,
 .stackcheat-container > .stackcheat-body h4 ~ p,
 .stackcheat-container > .stackcheat-body h5 ~ p {
@@ -110,19 +124,19 @@ hr.three--dots::before {
 	border-bottom: none !important;
 }
 
-
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
 	border: 0px !important;
-	background-color: rgba(0,0,0,0.02) !important;
+	background-color: rgba(0, 0, 0, 0.02) !important;
 }
 
-pre[class*="language-"] {
+pre[class*='language-'] {
 	padding: 2em !important;
 }
 
 .card-horizontal {
-    display: flex;
-    flex: 1 1 auto;
+	display: flex;
+	flex: 1 1 auto;
 }
 
 a.ul-disabled:hover {
@@ -131,4 +145,12 @@ a.ul-disabled:hover {
 
 .img-square-wrapper > img {
 	max-width: unset !important;
+}
+
+pre::-webkit-scrollbar {
+	height: 0.25em;
+}
+
+pre::-webkit-scrollbar-thumb {
+	background-color: #d4d1d1;
 }
