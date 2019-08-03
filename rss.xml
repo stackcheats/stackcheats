@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[stackcheats]]></title><description><![CDATA[stackcheats: where cheats get stacked]]></description><link>https://stackcheats.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 28 Jul 2019 04:02:06 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><link>https://stackcheats.github.io/README/</link><guid isPermaLink="false">https://stackcheats.github.io/README/</guid><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[stackcheats]]></title><description><![CDATA[stackcheats: where cheats get stacked]]></description><link>https://stackcheats.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 03 Aug 2019 04:57:31 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><link>https://stackcheats.github.io/README/</link><guid isPermaLink="false">https://stackcheats.github.io/README/</guid><content:encoded>&lt;br&gt;
 &lt;br&gt;
 &lt;p align=&quot;center&quot;&gt;
   
@@ -17,7 +17,292 @@
 &lt;h1 align=&apos;center&apos;&gt;stacksheets&lt;/h1&gt;
 &lt;p align=&apos;center&apos;&gt;a collection of stories, blogs &amp; cheats used by stackcheats&lt;/p&gt;
 &lt;br&gt;
-&lt;br&gt;</content:encoded></item><item><title><![CDATA[SAML SSO with Passport]]></title><description><![CDATA[This post narrates on how-to enable and register a service provider for SAML SSO using WSO2 Identity Server and to develop a simple Express…]]></description><link>https://stackcheats.github.io/SAML-SSO-with-Passport/</link><guid isPermaLink="false">https://stackcheats.github.io/SAML-SSO-with-Passport/</guid><pubDate>Sat, 20 Jul 2019 09:30:03 GMT</pubDate><content:encoded>&lt;p&gt;This post narrates on how-to enable and register a service provider for SAML SSO using WSO2 Identity Server and to develop a simple Express-based web application with Passport-SAML component to support and authenticate the users via SAML SSO.&lt;/p&gt;
+&lt;br&gt;</content:encoded></item><item><title><![CDATA[Replace H2 with Postgres]]></title><description><![CDATA[Docker: Postgres Pull Prerequisites: Docker installed in your environment. You can follow the  Docker  docs to get it done. Follow the given…]]></description><link>https://stackcheats.github.io/Replace-H2-with-Postgres/</link><guid isPermaLink="false">https://stackcheats.github.io/Replace-H2-with-Postgres/</guid><pubDate>Sat, 03 Aug 2019 10:18:00 GMT</pubDate><content:encoded>&lt;h2&gt;Docker: Postgres&lt;/h2&gt;
+&lt;h3&gt;Pull&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Prerequisites: Docker installed in your environment. You can follow the &lt;a href=&quot;https://www.docker.com/get-started&quot;&gt;Docker&lt;/a&gt; docs to get it done.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Follow the given steps to set up Postgres using Docker in your dev environments. For this demo, we will be using &lt;strong&gt;Postgres - 9.6.14&lt;/strong&gt; and &lt;strong&gt;WSO2 Identity Server 5.7&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Start the Docker service and execute the following command to pull the Postgres (9.6.14) image from &lt;a href=&quot;https://hub.docker.com/_/postgres&quot;&gt;DockerHub&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;docker pull postgres:9.6.14&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Run&lt;/h3&gt;
+&lt;p&gt;After a successful pull, execute the below command to create and run a docker container for our pulled Postgres image. Replace the &lt;code class=&quot;language-text&quot;&gt;&amp;lt;CONTAINER_NAME&amp;gt;&lt;/code&gt; tag with your preferred name or use &lt;code class=&quot;language-text&quot;&gt;postgres-9.6.14&lt;/code&gt; as the default value.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can change the Postgres password by changing the &lt;code class=&quot;language-text&quot;&gt;POSTGRES_PASSWORD&lt;/code&gt; value from &lt;code class=&quot;language-text&quot;&gt;hydrogen&lt;/code&gt; to any preferred secured password&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;docker run --name &amp;lt;CONTAINER_NAME || postgres-9.6.14&amp;gt; -e POSTGRES_PASSWORD=hydrogen -p 5432:5432 -d -v $HOME/docker/volumes/postgres:/var/lib/postgresql postgres:9.6.14&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Basic commands to &lt;code class=&quot;language-text&quot;&gt;start&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;stop&lt;/code&gt; a Docker container&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;docker start &amp;lt;CONTAINER_NAME&amp;gt;&lt;/code&gt; to start a container&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;docker stop &amp;lt;CONTAINER_NAME&amp;gt;&lt;/code&gt; to stop a running container&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;PSQL Terminal&lt;/h3&gt;
+&lt;p&gt;Use the following command to hop into the PSQL terminal session.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;docker exec -ti &amp;lt;CONTAINER_NAME || postgres-9.6.14&amp;gt; psql -h localhost -U postgres&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Configurations&lt;/h2&gt;
+&lt;h3&gt;Postgres&lt;/h3&gt;
+&lt;p&gt;To replace the default packaged H2 database with Postgres, initially, we have to create the databases and tables in Postgres. Find and execute the following PostgreSQL scripts to create and set up all necessary tables and indexes.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can use either any database tools like DBeaver (Jump to &lt;a href=&quot;#dbeaver&quot;&gt;DBeaver&lt;/a&gt;) or you can straightaway execute them using PSQL terminal (Jump to &lt;a href=&quot;#psql&quot;&gt;PSQL&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;IS&amp;gt;/dbscripts/postgresql.sql&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;IS&amp;gt;/dbscripts/identity/postgresql.sql&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;IS&amp;gt;/dbscripts/identity/uma/postgresql.sql&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;IS&amp;gt;/dbscripts/identity/stored-procedures/postgre/postgresql.sql&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;IS&amp;gt;/dbscripts/consent/postgresql.sql&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Start the Postgres container (if not started before) using the following command&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;docker start postgres-9.6.14&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;PSQL&lt;/h4&gt;
+&lt;p&gt;Execute the following command to enter the PSQL terminal session and run the create query to create a database named &lt;code class=&quot;language-text&quot;&gt;wso2postgres&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;docker exec -ti postgres-9.6.14 psql -h localhost -U postgres&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;database&lt;/span&gt; wso2postgres&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After successful creation, try to connect to the &lt;code class=&quot;language-text&quot;&gt;wso2postgres&lt;/code&gt; database using the following command&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;psql&quot;&gt;&lt;pre class=&quot;language-psql&quot;&gt;&lt;code class=&quot;language-psql&quot;&gt;\c wso2postgres;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Next, quite the terminal session using &lt;code class=&quot;language-text&quot;&gt;\q&lt;/code&gt; command and copy the &lt;code class=&quot;language-text&quot;&gt;dbscripts&lt;/code&gt; folder from the &lt;code class=&quot;language-text&quot;&gt;&amp;lt;IS_HOME&amp;gt;&lt;/code&gt; path to our &lt;code class=&quot;language-text&quot;&gt;postgres-9.6.14&lt;/code&gt; container volume to execute all related scripts using the Docker PSQL terminal.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;docker cp &amp;lt;IS_HOME&amp;gt;/dbscripts postgres-9.6.14:/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and run the following commands one by one to execute the scripts&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;docker exec -ti postgres-9.6.14 psql -h localhost -U postgres -d wso2postgres -f /dbscripts/postgresql.sql
+-----
+docker exec -ti postgres-9.6.14 psql -h localhost -U postgres -d wso2postgres -f /dbscripts/identity/postgresql.sql
+-----
+docker exec -ti postgres-9.6.14 psql -h localhost -U postgres -d wso2postgres -f /dbscripts/identity/uma/postgresql.sql
+-----
+docker exec -ti postgres-9.6.14 psql -h localhost -U postgres -d wso2postgres -f /dbscripts/identity/stored-procedures/postgre/postgresql.sql
+-----
+docker exec -ti postgres-9.6.14 psql -h localhost -U postgres -d wso2postgres -f /dbscripts/consent/postgresql.sql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After a successful connection, execute the above-mentioned SQL scripts to create related tables and indexes. But, before executing them, we have to copy the &lt;code class=&quot;language-text&quot;&gt;dbscripts&lt;/code&gt; folder to the related container volume to execute the script using PSQL terminal. Execute the following command to copy the &lt;code class=&quot;language-text&quot;&gt;dbscripts&lt;/code&gt; folder from the &lt;code class=&quot;language-text&quot;&gt;&amp;lt;IS_HOME&amp;gt;&lt;/code&gt; path to our &lt;code class=&quot;language-text&quot;&gt;postgres-9.6.14&lt;/code&gt; container volume.&lt;/p&gt;
+&lt;h4&gt;DBeaver&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Prerequisites: DBeaver installed in your environment. You can follow the &lt;a href=&quot;https://dbeaver.io&quot;&gt;DBeaver&lt;/a&gt; site.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Open DBeaver and create a new database connection. Select &lt;code class=&quot;language-text&quot;&gt;PostgreSQL&lt;/code&gt; from the list and click &lt;code class=&quot;language-text&quot;&gt;Next&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/select-database-73b1ea6935a3636ffae7824e88ee80db-07eac.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 108.5139318885449%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAABYlAAAWJQFJUiTwAAADXklEQVQ4y7VUy44TRxT1L+U7WEbKfwSJdZSwYBGxQSQoyjYsEGIUkCBhQFkETcDYZobxjB/j7rY9Hne7n+73s9yHe8vTM0AUBIuUdFTtctWpe8+5t1rL/hF64y5G2glURcVsNsPpYiFnxmAwwNHRkcTh4SE0TcN8Pr/4nzGdzqBqM0zUGVqL01NMlAm06RTD4RCmaSLPcwghsNlsUFWCUF2gWW/A/+eFQJJVcPwcrfV6jdVqBXNlwrZtScgzH9we5rmSYIKyLFEUxQV5g4r30p6WQ4eTJEEYhvB9H0EQIKbfQRQhjEL6TlFUG+SlQBQnaAaT8rk8z+DROVV34DoOWoPRGIqqgokty4JNi0WaQsQxUBU4sTa4ce8lbj7oYOYDT58+wXfXv4eu65I4TXMiL1HXtbykdaycot3p4YyMyLIMCZFtSEMQMZIIAxu4+stzfPvzE6ge8OPuT/jqhys4Nk4kobqwEMaZ/ObUW6PRCN1uV97oui7xUISkk0HRijLHwVLg17/OcGd3ir5RY+5qeKMfIhMUWV5gRo4HJBcP1lUSttttWRKOY0tCUbEBNQQhLgE7FDCdFElRg4zEq5FxoWfj+gcR9no9dDodGIaBtechzkokoY0qXcuNkWMhXm01u/ZMx9e3HqPKU6mb5QYoxeY8wnNCJtvf36co+zAo9TBKoJ/NUSS+FHyiKFgst4QvJjbeasb2IjKOM4ri6DJC7gQmZOzt7WG5XCJLI9IlIi1rWYdxSmaRYRwRaoGUyoXT5AaIopicfs8UbqXxeCwxHA6w1C0S24DS/wax392m8ttdiD/+lN8bZw7x6C4tUoeUFdaGQmW2vDSFu8Qj3djhrcvcJcA/f99G/+Ch3Jg82EG6+wwUH8qVgvT5DpVWJUvMtU3KKDiPkAjZCNaB243RlI7tUNpBgoR0Mqg9Dbo0CgOsTAuG48KjNY/2mtwMtivlkCl/TCjLhkOUo8aXjP8k5AdA0tGtn4tPErK4/wvhl45/EW5nhwT3sfYDes4C+Zx9Lvht/YDQIvgevY++KRF41rmL26ftU2ge5xa/MlyHfND3HBwoHnbaIe6/DLF3vEboe9Q9uryUS+p9kmaN5wYyQia0LFsS9jUPjzoBfn8d4NXQQ8CE+iVho3Uj0ceE7wBTiXoEQ5pkAAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Select Database&quot;
+        title=&quot;&quot;
+        src=&quot;/static/select-database-73b1ea6935a3636ffae7824e88ee80db-fb8a0.png&quot;
+        srcset=&quot;/static/select-database-73b1ea6935a3636ffae7824e88ee80db-1a291.png 148w,
+/static/select-database-73b1ea6935a3636ffae7824e88ee80db-2bc4a.png 295w,
+/static/select-database-73b1ea6935a3636ffae7824e88ee80db-fb8a0.png 590w,
+/static/select-database-73b1ea6935a3636ffae7824e88ee80db-526de.png 885w,
+/static/select-database-73b1ea6935a3636ffae7824e88ee80db-fa2eb.png 1180w,
+/static/select-database-73b1ea6935a3636ffae7824e88ee80db-07eac.png 1292w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Enter &lt;code class=&quot;language-text&quot;&gt;wso2postgres&lt;/code&gt; for the &lt;code class=&quot;language-text&quot;&gt;Database&lt;/code&gt; field and use &lt;code class=&quot;language-text&quot;&gt;hydrogen&lt;/code&gt; as &lt;code class=&quot;language-text&quot;&gt;Password&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Please change and use related values for the &lt;code class=&quot;language-text&quot;&gt;Host&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Port&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Database&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;User&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;Password&lt;/code&gt; fields if those are different from mentioned default values.&lt;/p&gt;
+&lt;p&gt;If you have not installed any PostgreSQL driver for DBeaver, it will prompt you to follow a couple of instructions to install necessary drivers to work with Postgres databases and connections&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/postgres-connection-configurations-5eaa50cea597e8b2140287888eca5101-07eac.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 108.5139318885449%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAABYlAAAWJQFJUiTwAAADK0lEQVQ4y5VUy27TQBT1GrFjxTexQGLHJ7GshFjxBwhVQHmsikAVadXQlxPbiR3n5cSPxHac1K36SA/3jDuSqUolLB3NXM/MmXvPvXONidlC02nC6XXQ83oYDocYj8cYjUYYDAawLAutVkvh5OQEvu/L2hCO5+PL7xY+NU1sNVv4uG+K3YYxnUzQ6QhZrwfXdTGfz3F+fo6yLLFer3F1dS24Uri8vMSFjPw23QSPN77jyesfeLSxreZP3/yAkeU5wjBEFEVIhSyOI4VZkgA317dYC8WNIrpeV/O9qMCzLRvPPzt48bWj8PKbIx5Op8qr2WyGMEoEMyFP0B8neLtd4NVWiZ2TGH2/B9vx4PeHmIQxInFinsSYxTEScSahIzIa1MvzXLTtLg6sERw/RJCsMIqW6IxPYY1K+JMlhmGOwTSXcSHrJdruRCTqYiCaT0Q28hAGk3B4eCiit+G4A7QsF8MgQl6cYVGcolieyrxEJnaFEvOF2HmBZZHLngKFYLVaIRGZDGbTNE3YtiWJ8RAEY5yVpwrlLc5qoH19UWIcpjBtD263I0ntqsSyAgyWBkvCcRz0+32lJ29cLBb/RBDlsHoxDs0ubKutSqvdbqtKURp2u7Jg20oDHiApkabpX+C/PEvx05zD80eIw4noNwUTS1BLRXh0dITj42NVh/TU8zzlPm+sw78dhwNfRdOTPf4t1H/Jh9KQJLu7u2g0GtjZ2cHBwYHymLrcB8ep0Ok46mz1r5JMEarb5AZ6pl+M9vJ/oDzU9VNHEAQK9609BJ4x6gQEPX4IdYL6Pz2qsmHKdVdh+PXNd4l0aNyn54TOtHopde1ok0BvrKN6pp4qM4L7tX5sLoSh+x6hQ2Y9sQPVwdt5gGtaXxLRU56lreqwHjI3sAR4mAWeZRlyaW8a2tbFXw+d3qqQeSs36pfAka0sZluSx07cnWu7antzJDOOKaJYmgPDIYHuidxYtwl9mZ5rJGLn2QxnRaJQZHHVYBkCR5IxJE3IQ/ReN2HOqVPV/wIsFymOvQzvGgXe7y3ljaeVhyTUnvLQQ4Q6QWwKi3yOlp9hc6/Ah/0lflkp/gB1okJw3Z55VQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Postgres Connection Configurations&quot;
+        title=&quot;&quot;
+        src=&quot;/static/postgres-connection-configurations-5eaa50cea597e8b2140287888eca5101-fb8a0.png&quot;
+        srcset=&quot;/static/postgres-connection-configurations-5eaa50cea597e8b2140287888eca5101-1a291.png 148w,
+/static/postgres-connection-configurations-5eaa50cea597e8b2140287888eca5101-2bc4a.png 295w,
+/static/postgres-connection-configurations-5eaa50cea597e8b2140287888eca5101-fb8a0.png 590w,
+/static/postgres-connection-configurations-5eaa50cea597e8b2140287888eca5101-526de.png 885w,
+/static/postgres-connection-configurations-5eaa50cea597e8b2140287888eca5101-fa2eb.png 1180w,
+/static/postgres-connection-configurations-5eaa50cea597e8b2140287888eca5101-07eac.png 1292w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Click on &lt;code class=&quot;language-text&quot;&gt;Test Connection&lt;/code&gt; to test the database connection and if successful then click on &lt;code class=&quot;language-text&quot;&gt;Finish&lt;/code&gt; to finish the connection configuration process. The created connection will be listed under the &lt;code class=&quot;language-text&quot;&gt;Database Navigator&lt;/code&gt; panel (on the left-side navigation panel). Navigate to &lt;code class=&quot;language-text&quot;&gt;File&lt;/code&gt; -&gt; &lt;code class=&quot;language-text&quot;&gt;Open File ...&lt;/code&gt; and select and open the above-listed PostgreSQL scripts in the DBeaver.&lt;/p&gt;
+&lt;p&gt;Select the database connection and the Postgres schema if not selected by default and click &lt;code class=&quot;language-text&quot;&gt;Execute SQL Script&lt;/code&gt; to execute the script. Do this for all above-mentioned &lt;a href=&quot;#postgres&quot;&gt;PostgreSQL scripts&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/execute-postgres-scripts-767c077aa62351e23da977cb81d0685e-75ec9.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 48.1%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABX0lEQVQoz52SXXOaQBSG+f8/pxe9azrNZEzBBD9CTI0FxQhUQWFBBXeFpwsXmXbamE535tnzXux5z7s7a7jzOX4QMbu/YznUDDQjm8VwwGp03+F7Lv4qIIoifqw3mvWbGIHnEy6WhP4Lq1VIEAbkxZ5iXyLyI6JoKTsyrd/DKOMtyWLOnWliWhY3N894zwlN3fA/y2g3pXsnts3s6Yle7ztjc0J1rGgt66amaZp/xliPRqydB3bTKdHCoyh2SFn9Mbk93E7oyiXD2HHw+30GX28ZDqZMnSWFfoZ4U5CXOaLKOJwOr6ad8XtXPlQVPfOWq882Hz984+HaIXE9pJLIs0Sd1W8pXhO/ZVgejzz2LSbjMZY549GaEL5EnE6nvzZdSmmUScw+SUg3G3a6ilyQi1TrmO12S5ZlCCE60jRFSXk54fL6C+7VJ1z9ZWyN57pkuvGsFEojtYH6RTd1fdHwJzOT/Cwb82dLAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Execute Postgres Script&quot;
+        title=&quot;&quot;
+        src=&quot;/static/execute-postgres-scripts-767c077aa62351e23da977cb81d0685e-fb8a0.png&quot;
+        srcset=&quot;/static/execute-postgres-scripts-767c077aa62351e23da977cb81d0685e-1a291.png 148w,
+/static/execute-postgres-scripts-767c077aa62351e23da977cb81d0685e-2bc4a.png 295w,
+/static/execute-postgres-scripts-767c077aa62351e23da977cb81d0685e-fb8a0.png 590w,
+/static/execute-postgres-scripts-767c077aa62351e23da977cb81d0685e-526de.png 885w,
+/static/execute-postgres-scripts-767c077aa62351e23da977cb81d0685e-fa2eb.png 1180w,
+/static/execute-postgres-scripts-767c077aa62351e23da977cb81d0685e-08f6a.png 1770w,
+/static/execute-postgres-scripts-767c077aa62351e23da977cb81d0685e-75ec9.png 2000w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h3&gt;WSO2 Identity Server&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Below described steps and guides are based on fresh-pack installation. If you have any pre-stored data inside the H2 database, then you have to migrate them to the new data-source which is not covered in this topic.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;After setting up the databases, now we have to install the Postgres JDBC connector (driver) for our WSO2 Identity Server. Download the Postgres driver from &lt;a href=&quot;https://jdbc.postgresql.org/download.html&quot;&gt;here&lt;/a&gt;, copy and place the &lt;code class=&quot;language-text&quot;&gt;jar&lt;/code&gt; file inside the &lt;code class=&quot;language-text&quot;&gt;&amp;lt;IS&amp;gt;/repository/components/lib&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;Next, we have to configure our database connection settings in the Identity Server to connect to our Postgres source. Make changes to the following XML files to swap the connection from default H2 database to our Postgres database.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#master-datasource&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;IS&amp;gt;/repository/conf/datasources/master-datasources.xml&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#identity&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;IS&amp;gt;/repository/conf/identity/identity.xml&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#registry&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;IS&amp;gt;/repository/conf/registry.xml&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Moreover, We will also be swapping the user store from the default LDAP server to the JDBC store&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#user-management&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;IS&amp;gt;/repository/conf/user-mgt.xml&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Replace and change the &lt;code class=&quot;language-text&quot;&gt;host&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;port&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;username&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;password&lt;/code&gt; segments with respective values if different.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;Master DataSource&lt;/h4&gt;
+&lt;p&gt;Add the following data source configuration below the default H2 configuration.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;xml&quot;&gt;&lt;pre class=&quot;language-xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- master-datasources.xml --&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;datasource&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;WSO2_CARBON_POSTGRES_DB&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;description&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;The datasource used for registry and user manager&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;description&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;jndiConfig&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;jdbc/WSO2CarbonPostgresDB&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;jndiConfig&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;definition&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;RDBMS&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;configuration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;jdbc:postgresql://localhost:5432/wso2postgres&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;username&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;postgres&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;username&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;password&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;hydrogen&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;password&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;driverClassName&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;org.postgresql.Driver&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;driverClassName&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;maxActive&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;80&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;maxActive&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;maxWait&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;60000&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;maxWait&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;minIdle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;5&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;minIdle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;testOnBorrow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;true&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;testOnBorrow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;validationQuery&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;SELECT 1; COMMIT&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;validationQuery&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;defaultAutoCommit&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;true&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;defaultAutoCommit&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;validationInterval&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;30000&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;validationInterval&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;configuration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;definition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;datasource&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;Identity&lt;/h4&gt;
+&lt;p&gt;Change the data-source in &lt;code class=&quot;language-text&quot;&gt;repository/conf/identity/identity.xml&lt;/code&gt; with the Postgres JNDI configuration name.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;xml&quot;&gt;&lt;pre class=&quot;language-xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- identity.xml --&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;JDBCPersistenceManager&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;DataSource&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- Include a data source name (jndiConfigName) from the set of data
+                sources defined in master-datasources.xml --&gt;&lt;/span&gt;
+            &lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- &amp;lt;Name&gt;jdbc/WSO2CarbonDB&amp;lt;/Name&gt; --&gt;&lt;/span&gt;
+
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;jdbc/WSO2CarbonPostgresDB&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;Name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;DataSource&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+        ...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;Registry&lt;/h4&gt;
+&lt;p&gt;The following changes are made to mount the registries with our newly created Postgres data-source.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Don’t change the default &lt;code class=&quot;language-text&quot;&gt;wso2registry&lt;/code&gt; configurations unless if you want to. Add new registry mounting configurations below the default configurations.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;xml&quot;&gt;&lt;pre class=&quot;language-xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- registry.xml --&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;dbConfig&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;wso2registry&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;dataSource&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;jdbc/WSO2CarbonDB&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;dataSource&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;dbConfig&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;dbConfig&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;govregistry&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;dataSource&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;jdbc/WSO2CarbonPostgresDB&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;dataSource&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;dbConfig&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;remoteInstance&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;https://localhost:9443/registry&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;gov&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;cacheId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;postgres@jdbc:postgresql://localhost:5432/wso2postgres&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;cacheId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;dbConfig&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;govregistry&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;dbConfig&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;readOnly&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;false&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;readOnly&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;enableCache&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;true&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;enableCache&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;registryRoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;/&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;registryRoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;remoteInstance&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;mount&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/_system/governance&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;overwrite&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;true&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;instanceId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;gov&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;instanceId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;targetPath&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;/_system/governance&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;targetPath&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;mount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;mount&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/_system/config&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;overwrite&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;true&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;instanceId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;gov&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;instanceId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;targetPath&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;/_system/config&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;targetPath&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;mount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;User Management&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Below described steps are to change the default LDAP user-store to JDBC user-store. You can skip the following changes if you want to keep the default LDAP user-store as out-of-the-box.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Comment the existing &lt;code class=&quot;language-text&quot;&gt;WSO2CarbonDB&lt;/code&gt; data source property tag and place the &lt;code class=&quot;language-text&quot;&gt;WSO2CarbonPostgresDB&lt;/code&gt; property tag inside the &lt;code class=&quot;language-text&quot;&gt;&amp;lt;Configuration&amp;gt;&lt;/code&gt; element as described below&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;xml&quot;&gt;&lt;pre class=&quot;language-xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Configuration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    ...
+    &lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- &amp;lt;Property name=&quot;dataSource&quot;&gt;jdbc/WSO2CarbonDB&amp;lt;/Property&gt; --&gt;&lt;/span&gt;
+
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Property&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;dataSource&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;jdbc/WSO2CarbonPostgresDB&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;Property&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;Configuration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Further, comment the LDAP user store manager configurations and uncomment the JDBC user store manager. This will route our default LDAP user store with JDBC user store.&lt;/p&gt;
+&lt;h2&gt;Run &amp;#x26; Test&lt;/h2&gt;
+&lt;p&gt;Start the WSO2 Identity Server by navigating to the &lt;code class=&quot;language-text&quot;&gt;&amp;lt;IS&amp;gt;/bin&lt;/code&gt; folder and execute the following command based on your environment&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;# linux env
+./wso2server.sh
+
+# windows env
+./wso2server.bat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The server will start and configure the platform to work with new configurations. After a successful startup, bring up your favorite browser and navigate to &lt;code class=&quot;language-text&quot;&gt;https://localhost:9443/carbon&lt;/code&gt; and enter &lt;code class=&quot;language-text&quot;&gt;admin&lt;/code&gt; as both username and password.&lt;/p&gt;
+&lt;hr class=&quot;three--dots&quot;/&gt;</content:encoded></item><item><title><![CDATA[SAML SSO with Passport]]></title><description><![CDATA[This post narrates on how-to enable and register a service provider for SAML SSO using WSO2 Identity Server and to develop a simple Express…]]></description><link>https://stackcheats.github.io/SAML-SSO-with-Passport/</link><guid isPermaLink="false">https://stackcheats.github.io/SAML-SSO-with-Passport/</guid><pubDate>Sat, 20 Jul 2019 09:30:03 GMT</pubDate><content:encoded>&lt;p&gt;This post narrates on how-to enable and register a service provider for SAML SSO using WSO2 Identity Server and to develop a simple Express-based web application with Passport-SAML component to support and authenticate the users via SAML SSO.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Security Assertion Markup Language (SAML) is an XML-based framework for authentication and authorization between a Service Provider and an Identity Provider. SAML is a standard Single-Sign-On (SSO) format. Authentication information is exchanged through digitally signed XML documents.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://auth0.com/blog/how-saml-authentication-works&quot;&gt;For more on SAML&lt;/a&gt;&lt;/p&gt;
