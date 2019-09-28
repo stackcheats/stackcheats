@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[stackcheats]]></title><description><![CDATA[stackcheats: where cheats get stacked]]></description><link>https://stackcheats.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 28 Sep 2019 09:53:13 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><link>https://stackcheats.github.io/README/</link><guid isPermaLink="false">https://stackcheats.github.io/README/</guid><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[stackcheats]]></title><description><![CDATA[stackcheats: where cheats get stacked]]></description><link>https://stackcheats.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 28 Sep 2019 10:04:58 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><link>https://stackcheats.github.io/README/</link><guid isPermaLink="false">https://stackcheats.github.io/README/</guid><content:encoded>&lt;br&gt;
 &lt;br&gt;
 &lt;p align=&quot;center&quot;&gt;
   
@@ -17,7 +17,795 @@
 &lt;h1 align=&apos;center&apos;&gt;stacksheets&lt;/h1&gt;
 &lt;p align=&apos;center&apos;&gt;a collection of stories, blogs &amp; cheats used by stackcheats&lt;/p&gt;
 &lt;br&gt;
-&lt;br&gt;</content:encoded></item><item><title><![CDATA[Configure LDAP as a Secondary User Store]]></title><description><![CDATA[This post illustrates how to add an LDAP user-store as a secondary user-store in WSO2 API Manager (in almost every WSO2 Product). For demo…]]></description><link>https://stackcheats.github.io/Configure-LDAP-as-a-Secondary-User-Store/</link><guid isPermaLink="false">https://stackcheats.github.io/Configure-LDAP-as-a-Secondary-User-Store/</guid><pubDate>Sun, 08 Sep 2019 16:25:00 GMT</pubDate><content:encoded>&lt;p&gt;This post illustrates how to add an LDAP user-store as a secondary user-store in WSO2 API Manager (in almost every WSO2 Product).&lt;/p&gt;
+&lt;br&gt;</content:encoded></item><item><title><![CDATA[Expose SOAP as REST API]]></title><description><![CDATA[Intro In this medium, we will be looking on how to expose a legacy web-service / SOAP service as REST APIs using both WSO2 API Manager (2.…]]></description><link>https://stackcheats.github.io/Expose-SOAP-as-REST-API/</link><guid isPermaLink="false">https://stackcheats.github.io/Expose-SOAP-as-REST-API/</guid><pubDate>Sat, 28 Sep 2019 14:35:00 GMT</pubDate><content:encoded>&lt;h2&gt;Intro&lt;/h2&gt;
+&lt;p&gt;In this medium, we will be looking on how to expose a legacy web-service / SOAP service as REST APIs using both WSO2 API Manager (2.6.0) and Enterprise Integrator (6.5.0).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Why EI &amp;#x26; API Manager? Can’t we do it using either one of them?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Of course we can. It is possible to expose a SOAP service as REST APIs using either API Manager or Enterprise Integrator. But, if you have added additional mediations and performing heavy-duty mediations in API sequences, then using both the API Manager and Enterprise Integrator is a best solution. Which is because, EI is scoped and capable to perform heavy-mediations as well as the API Manager is scoped to perform only API management processes.&lt;/p&gt;
+&lt;p&gt;This post illustrates how to add an LDAP user-store as a secondary user-store in WSO2 API Manager (in almost every WSO2 Product).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For demo purposes, I have implemented a mock &lt;a href=&quot;https://github.com/athiththan11/RepoDeWS&quot;&gt;Developer Management Web Service&lt;/a&gt; using Spring Boot and will be using that to configure our EI and API Manager instances.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Let’s dive into the demo …&lt;/strong&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;a class=&quot;ul-disabled&quot; href=&quot;https://github.com/athiththan11/RepoDeWS&quot;&gt;
+    &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;card-horizontal&quot;&gt;
+            &lt;div class=&quot;card-body py-4 px-5&quot;&gt;
+                &lt;h4 class=&quot;card-title mt-4&quot;&gt;RepoDeWS&lt;/h4&gt;
+                &lt;p&gt;A Simple Spring Boot (SOAP) Web Service&lt;/p&gt;
+                &lt;footer class=&quot;blockquote-footer&quot;&gt;
+                    &lt;small class=&quot;text-muted&quot;&gt;
+                        athiththan11
+                    &lt;/small&gt;
+                &lt;/footer&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;img-square-wrapper&quot;&gt;
+                &lt;img class=&quot;rounded mb-0&quot; width=&quot;220.172&quot; src=&quot;https://avatars3.githubusercontent.com/u/29927177?s=460&amp;amp;v=4&quot; alt&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/a&gt;
+&lt;h2&gt;Legacy Service&lt;/h2&gt;
+&lt;h3&gt;Entities &amp;#x26; Services&lt;/h3&gt;
+&lt;p&gt;The Developer Management Web Service contains the following entities and services …&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Developer
+    - Add Developer
+    - Get Developer
+    - Delete Developer
+
+Repo
+    - Add Repo
+    - Get Repo&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Build &amp;#x26; Run&lt;/h3&gt;
+&lt;p&gt;Clone or download the project from GitHub, and execute the following command from the root folder to start the web-service server&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;mvn spring-boot:run&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you don’t have maven installed, then use the following to start the server&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;./mvnw spring-boot:run&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After a successful startup, navigate to &lt;a href=&quot;https://localhost:8443/ws/developers.wsdl&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://localhost:8443/ws/developers.wsdl&lt;/code&gt;&lt;/a&gt; to access the WSDL definitions of our Developer Management service.&lt;/p&gt;
+&lt;h2&gt;WSO2 Enterprise Integrator&lt;/h2&gt;
+&lt;p&gt;We will be starting from &lt;strong&gt;WSO2 Enterprise Integrator&lt;/strong&gt; instance to expose the provided legacy service as REST service.&lt;/p&gt;
+&lt;h3&gt;Truststore &amp;#x26; Certificate&lt;/h3&gt;
+&lt;p&gt;Beforehand, we want to export the self-signed certificate of our Developer Management service to our EI instance for a hassle-free SSL connectivity and HTTPS communication.&lt;/p&gt;
+&lt;p&gt;Follow the given steps to export and import certificates of our legacy service to the EI’s trust-store.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Export or download the self-signed certificate of our legacy service from the browser.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Follow this &lt;a href=&quot;https://www.shellhacks.com/get-ssl-certificate-from-server-site-url-export-download/&quot;&gt;https://www.shellhacks.com/get-ssl-certificate-from-server-site-url-export-download/&lt;/a&gt; to export and download the self-signed certificate from the browser&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Execute the following command to import the certificate to our EI instance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Navigate to &lt;code class=&quot;language-text&quot;&gt;&amp;lt;EI&amp;gt;/repository/resources/security&lt;/code&gt; folder and execute the following command. Enter &lt;code class=&quot;language-text&quot;&gt;wso2carbon&lt;/code&gt; as the password if it prompts&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;keytool -importcert -file &amp;lt;path to crt&amp;gt; -keystore client-truststore.jks -alias hydrogen.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Carbon Artifact&lt;/h3&gt;
+&lt;p&gt;Start the EI instance by navigating to the &lt;code class=&quot;language-text&quot;&gt;/bin&lt;/code&gt; folder and execute the following command based on your environment …&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;# linux env
+sh integrator.sh
+
+# windows env
+integrator.bat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Fire up your favorite browser and route to &lt;a href=&quot;https://localhost:9443/carbon&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://localhost:9443/carbon&lt;/code&gt;&lt;/a&gt; and log in using the following credentials&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;username: &lt;code class=&quot;language-text&quot;&gt;admin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;password: &lt;code class=&quot;language-text&quot;&gt;admin&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I have implemented and provided a carbon archive with configurations related to SOAP to REST services, endpoints, and sequences. You can use the following artifact and deploy it our EI instance without any configurations hassle.&lt;/p&gt;
+&lt;a class=&quot;ul-disabled&quot; href=&quot;https://drive.google.com/open?id=1PHMufZ1K4cBT_hry76fC2GgGyiDDT_N7&amp;source=post_page-----838ec110392d----------------------&quot;&gt;
+    &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;card-horizontal&quot;&gt;
+            &lt;div class=&quot;card-body py-4 px-5&quot;&gt;
+                &lt;h4 class=&quot;card-title mt-4&quot;&gt;DevManagementServiceAPI_1.0-0.car&lt;/h4&gt;
+                &lt;p&gt;Carbon Artifact of Developer Management Service API&lt;/p&gt;
+                &lt;footer class=&quot;blockquote-footer&quot;&gt;
+                    &lt;small class=&quot;text-muted&quot;&gt;
+                        athiththan11
+                    &lt;/small&gt;
+                &lt;/footer&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/a&gt;
+&lt;p&gt;
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 12.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAIAAAAcOLh5AAAACXBIWXMAAAsSAAALEgHS3X78AAAAfElEQVQI12WLyQ6CMBQA+f8/dOkKBaRLWrq8PqooxosJkznMZToiOBXmcp+UCik0q8sa0u1KKZFxhbPBZ856wYdRLd0R+uH17LwtvznGxJlkRBjtatkg4785Qi8VJWIal26wOsUdyzuHPbqXmQFxA4BaKyI+T7TWsH45+gOmVakddUWddgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WSO2 EI: Add Carbon Application&quot;
+        title=&quot;&quot;
+        src=&quot;/static/add_carbon_application-14d96c239daec68693c5b96f81737ae5-fb8a0.png&quot;
+        srcset=&quot;/static/add_carbon_application-14d96c239daec68693c5b96f81737ae5-1a291.png 148w,
+/static/add_carbon_application-14d96c239daec68693c5b96f81737ae5-2bc4a.png 295w,
+/static/add_carbon_application-14d96c239daec68693c5b96f81737ae5-fb8a0.png 590w,
+/static/add_carbon_application-14d96c239daec68693c5b96f81737ae5-526de.png 885w,
+/static/add_carbon_application-14d96c239daec68693c5b96f81737ae5-fa2eb.png 1180w,
+/static/add_carbon_application-14d96c239daec68693c5b96f81737ae5-417af.png 1600w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  &lt;/p&gt;
+&lt;p&gt;Select &lt;code class=&quot;language-text&quot;&gt;Add&lt;/code&gt; under &lt;code class=&quot;language-text&quot;&gt;Carbon Applications&lt;/code&gt; section and upload and deploy the above-provided carbon archive.&lt;/p&gt;
+&lt;p&gt;Below given is the source code of Developer Management Service API Carbon artifact&lt;/p&gt;
+&lt;a class=&quot;ul-disabled&quot; href=&quot;https://drive.google.com/open?id=1CcEBGEEWCN8z8Dpnk6t56b8KNRW9HBQi&amp;source=post_page-----838ec110392d----------------------&quot;&gt;
+    &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;card-horizontal&quot;&gt;
+            &lt;div class=&quot;card-body py-4 px-5&quot;&gt;
+                &lt;h4 class=&quot;card-title mt-4&quot;&gt;DevManagementServiceAPI.zip&lt;/h4&gt;
+                &lt;p&gt;Source code of Developer Management Service API&lt;/p&gt;
+                &lt;footer class=&quot;blockquote-footer&quot;&gt;
+                    &lt;small class=&quot;text-muted&quot;&gt;
+                        athiththan11
+                    &lt;/small&gt;
+                &lt;/footer&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/a&gt;
+&lt;h3&gt;Run &amp;#x26; Test&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Before testing, make sure to verify whether the EI instance is running and deploy the provided Carbon archive&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Test the exposed REST API service using the below cURL commands. Given below are a couple of cURL commands to test the exposed REST APIs.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given below is a .http file, can be used with VS Code with REST Client Extension&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;div id=&quot;gist98054147&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-wso2-trilogy-ei-curl-http&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-http &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;@hostname = https://localhost:&lt;span class=&quot;pl-c1&quot;&gt;8243&lt;/span&gt;/dev-management&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;@username = athiththan&lt;span class=&quot;pl-c1&quot;&gt;11&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;### Get Developer&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;# @name getDeveloper&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;curl -k -X GET {&lt;span class=&quot;pl-ii&quot;&gt;{hostname&lt;/span&gt;}}/devs/{&lt;span class=&quot;pl-ii&quot;&gt;{username&lt;/span&gt;}} \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Content-Type: application/json&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;### Get Repos of a Developer&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;# @name getRepos&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;curl -k -X GET {&lt;span class=&quot;pl-ii&quot;&gt;{hostname&lt;/span&gt;}}/devs/{&lt;span class=&quot;pl-ii&quot;&gt;{username&lt;/span&gt;}}/repos \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Content-Type: application/json&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;### Delete a Developer&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;# @name deleteDeveloper&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;curl -k -X DELETE {&lt;span class=&quot;pl-ii&quot;&gt;{hostname&lt;/span&gt;}}/devs/{&lt;span class=&quot;pl-ii&quot;&gt;{username&lt;/span&gt;}} \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L17&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;17&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Content-Type: application/json&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L18&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;18&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC18&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L19&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;19&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC19&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;### Create a Developer&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L20&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;20&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC20&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;# @name addDeveloper&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L21&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;21&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC21&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;curl -k -X POST {&lt;span class=&quot;pl-ii&quot;&gt;{hostname&lt;/span&gt;}}/devs \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L22&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;22&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC22&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -d &amp;#39;{ &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;username&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;athiththan11&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;name&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Athiththan&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;email&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;athiththan11@test.com&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; }&amp;#39; \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L23&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;23&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC23&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Content-Type: application/json&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L24&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;24&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L25&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;25&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC25&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;### Create a Repo&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L26&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;26&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC26&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;# @name addRepo&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L27&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;27&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC27&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;curl -k -X POST {&lt;span class=&quot;pl-ii&quot;&gt;{hostname&lt;/span&gt;}}/repos \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L28&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;28&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC28&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -d &amp;#39;{ &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;name&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;repodews&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;username&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;athiththan11&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;forks&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-c1&quot;&gt;0&lt;/span&gt; }&amp;#39; \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-L29&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;29&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-ei-curl-http-LC29&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Content-Type: application/json&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/athiththan11/96ef52ab35dea69562119183cd2d3bda/raw/3be9d5a2e31c97ffc99dcd58ba51dcc42d268599/wso2-trilogy-ei-curl.http&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/athiththan11/96ef52ab35dea69562119183cd2d3bda#file-wso2-trilogy-ei-curl-http&quot;&gt;wso2-trilogy-ei-curl.http&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h2&gt;WSO2 API Manager&lt;/h2&gt;
+&lt;p&gt;Thereafter, we’ll configure a WSO2 API Manager instance to manage the API lifecycle, traffic, subscriptions, and analytics of our exposed REST service.&lt;/p&gt;
+&lt;h3&gt;Port Offset&lt;/h3&gt;
+&lt;p&gt;In advance, we need to configure a port off-set for our API Manager instance, this done because both our EI and API Manager instances will be running on a single machine.&lt;/p&gt;
+&lt;p&gt;Navigate to &lt;code class=&quot;language-text&quot;&gt;&amp;lt;APIM&amp;gt;/repository/conf/carbon.xml&lt;/code&gt; and change the &lt;code class=&quot;language-text&quot;&gt;&amp;lt;Offset&amp;gt;&lt;/code&gt; value from &lt;code class=&quot;language-text&quot;&gt;0&lt;/code&gt; to &lt;code class=&quot;language-text&quot;&gt;1&lt;/code&gt;. And, start the API Manager instance by navigating to &lt;code class=&quot;language-text&quot;&gt;&amp;lt;APIM&amp;gt;/bin&lt;/code&gt; folder and execute the following command based on your environment …&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;# linux env
+sh wso2server.sh
+
+# windows env
+wso2server.bat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Design &amp;#x26; Publish REST API&lt;/h3&gt;
+&lt;p&gt;After a successful startup, route to &lt;a href=&quot;https://localhost:9444/publisher&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://localhost:9444/publisher&lt;/code&gt;&lt;/a&gt; and login using admin as both the username and password.&lt;/p&gt;
+&lt;p&gt;Given below is a complete Swagger definition for our Developer Management REST API.&lt;/p&gt;
+&lt;a class=&quot;ul-disabled&quot; href=&quot;https://drive.google.com/open?id=1wpuTovkYs90j7OxU6vbXFQc_lUsVVyet&amp;source=post_page-----838ec110392d----------------------&quot;&gt;
+    &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;card-horizontal&quot;&gt;
+            &lt;div class=&quot;card-body py-4 px-5&quot;&gt;
+                &lt;h4 class=&quot;card-title mt-4&quot;&gt;DeveloperManagementServiceSwagger.json&lt;/h4&gt;
+                &lt;p&gt;Swagger Definition of Developer Management REST API&lt;/p&gt;
+                &lt;footer class=&quot;blockquote-footer&quot;&gt;
+                    &lt;small class=&quot;text-muted&quot;&gt;
+                        athiththan11
+                    &lt;/small&gt;
+                &lt;/footer&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/a&gt;
+&lt;p&gt;Click on &lt;code class=&quot;language-text&quot;&gt;Add New API&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsSAAALEgHS3X78AAAAsklEQVQY02Mwt7Q2MLNW1TGWUVARl5KTkFEUllQQlsKCRKQV+cVk9EyslTT0NPVN1XSNGXRt/ZSMXUQ1rMKTcldt2LVw9a7pK3fjQjNW7Zm8dPuU5TsmL9s+ZdkOBmUFOXUVJSF+no721v/////58/s/0YBBSUlZVVVNWFikrr7h44/fj5+/fPXm3bdv3wminz9/ATUrqaqqCgsL1zc0nLr+aPOBs0cv3Pz79+8/QgBoMwBGlL3Qhz4QfAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WSO2 APIM: Add New API&quot;
+        title=&quot;&quot;
+        src=&quot;/static/add_new_api-0238ac0f846a8bc3b6be3d1183c690c4-fb8a0.png&quot;
+        srcset=&quot;/static/add_new_api-0238ac0f846a8bc3b6be3d1183c690c4-1a291.png 148w,
+/static/add_new_api-0238ac0f846a8bc3b6be3d1183c690c4-2bc4a.png 295w,
+/static/add_new_api-0238ac0f846a8bc3b6be3d1183c690c4-fb8a0.png 590w,
+/static/add_new_api-0238ac0f846a8bc3b6be3d1183c690c4-526de.png 885w,
+/static/add_new_api-0238ac0f846a8bc3b6be3d1183c690c4-fa2eb.png 1180w,
+/static/add_new_api-0238ac0f846a8bc3b6be3d1183c690c4-08f6a.png 1770w,
+/static/add_new_api-0238ac0f846a8bc3b6be3d1183c690c4-4b053.png 3360w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  &lt;/p&gt;
+&lt;p&gt;Then select &lt;code class=&quot;language-text&quot;&gt;I Have an Existing API&lt;/code&gt; and upload the provided swagger file.&lt;/p&gt;
+&lt;p&gt;
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 47.82608695652174%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAABC0lEQVQoz5XQ3UrDMBQH8LyVCt57q4KX3qt4tdfyEcbu9EJZS81sO6HQL51Nm9ak69K0palnKww/Krofh0MICfzPQUfno8Oz6/2Ty73ji53q4PQKRfSdpIykXNRq10JZSlfFsqll16nuOzVcCqqFAzIesWXZs9mT67q+70N3vbUgDN5+QQhJaSKlRE1VylIwxoQQVVXBVbVR13UzpG1bxvMptgsh0M34/tlbQER43P1FqfVoGcsnd1O+LNDk9gGbc9/zIE8cxxCp770kSbKv0izjjJViBSnQ3DYt0zQMw3EcfyP4JAzDxRB4BGMiTdN0XYeOMYZlvf7wMiToP0dRtE1LKYXN5f/AOYfYH5yoCZj7De6zAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WSO2 APIM: Swagger Upload&quot;
+        title=&quot;&quot;
+        src=&quot;/static/swagger_upload-a6bbdc2aa9199fee6c0f214fe7190d37-fb8a0.png&quot;
+        srcset=&quot;/static/swagger_upload-a6bbdc2aa9199fee6c0f214fe7190d37-1a291.png 148w,
+/static/swagger_upload-a6bbdc2aa9199fee6c0f214fe7190d37-2bc4a.png 295w,
+/static/swagger_upload-a6bbdc2aa9199fee6c0f214fe7190d37-fb8a0.png 590w,
+/static/swagger_upload-a6bbdc2aa9199fee6c0f214fe7190d37-526de.png 885w,
+/static/swagger_upload-a6bbdc2aa9199fee6c0f214fe7190d37-fa2eb.png 1180w,
+/static/swagger_upload-a6bbdc2aa9199fee6c0f214fe7190d37-08f6a.png 1770w,
+/static/swagger_upload-a6bbdc2aa9199fee6c0f214fe7190d37-c3c95.png 2760w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  &lt;/p&gt;
+&lt;p&gt;Add the context as &lt;code class=&quot;language-text&quot;&gt;/dev-management&lt;/code&gt; and click &lt;code class=&quot;language-text&quot;&gt;Next: Implement&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 51.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAABRUlEQVQoz5VRTU+DQBDlf3sy8Qf4B7x49WaaJo2mHKqHRtuLlyYmpdACBZV2YT9mYHdxgAapnnx52R1m5jFvwBFFwQ4ZAtb/h3O3+Li492+e4+vH3eVoczX2t5miAuMqSo/aECyRAkp+MfF5KIy1DY1xnt42t5Plw3I9WXijF2/86r0HUZymfhh7QRjGSbj/4drfesEu2qfbeJ8dmVPrsq4UiLwUOeYZUbCD4hwERymAgpYlNIjjKE0TBCgRq6pyrLXkh0spC15kmcwLDcog2BItYnM2AVitqS0IgtVqZdoVSOjQhYgsz6VSuqpoFTqJVDxjXZNmPp9Pp1PO+bmYMSEVQGOmbNF8qAGojWzPZjPXdZMkOYm7ArY7KAVkH+gCoMde2b2o/0N9/iTWWtNYQjdz2DEUmxZdPBQbktHAv4Z7279AyW8luz2Ynmw+9AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WSO2 APIM: Context Configuration&quot;
+        title=&quot;&quot;
+        src=&quot;/static/context_configuration-23294b6960cacdb9196bd3be676e3610-fb8a0.png&quot;
+        srcset=&quot;/static/context_configuration-23294b6960cacdb9196bd3be676e3610-1a291.png 148w,
+/static/context_configuration-23294b6960cacdb9196bd3be676e3610-2bc4a.png 295w,
+/static/context_configuration-23294b6960cacdb9196bd3be676e3610-fb8a0.png 590w,
+/static/context_configuration-23294b6960cacdb9196bd3be676e3610-526de.png 885w,
+/static/context_configuration-23294b6960cacdb9196bd3be676e3610-fa2eb.png 1180w,
+/static/context_configuration-23294b6960cacdb9196bd3be676e3610-08f6a.png 1770w,
+/static/context_configuration-23294b6960cacdb9196bd3be676e3610-cbbd9.png 2700w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  &lt;/p&gt;
+&lt;p&gt;Add &lt;a href=&quot;https://localhost:8243/dev-management&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://localhost:8243/dev-management&lt;/code&gt;&lt;/a&gt; as the &lt;code class=&quot;language-text&quot;&gt;Production Endpoint&lt;/code&gt; and click &lt;code class=&quot;language-text&quot;&gt;Next: Manage&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 47.25925925925926%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsSAAALEgHS3X78AAABU0lEQVQoz4WQy0tCQRTG73/cMog2FRU9XBQu2vRC00pEISwMXLgwgjYhZUEa+RZHnPuYmTOPe2cau60C8/Ax55s55zfDGYdzoCTwfdcujBJKCWcEiE98z3OxYEEowcwJJ5W7XVrd2z+6WkucLK8frGwmtwv1rXL/sNI9qw13y52dcmej1G4MiO2euHSCSaTNTJF2SvfVRPI4k79LXd+cZgrn2eJl5TlbfS8+tkpPn/mHplWu9vHS6o8RaveG7e5wMBr3BqMpdh2jo5mMVoIrKZSSzMeSekZxrbgJwYTcaGmrHEAKIQW3dualcPRPhGEoLacUcMGAg5D20PwbtuzYFEURxLdKqe0msn8kGGFWlDDOrIevVtPHOG7+hbV2/rwghCAB8bE7RniCMEKYMYlxcJFON98aC2AA4XqBBCaBxjJ2GoDXen2KUMzMh4UkIKJFA8fwN44f9XXQH2LQAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WSO2 APIM: Production Endpoint&quot;
+        title=&quot;&quot;
+        src=&quot;/static/production_endpoint-4ca76d5806bff72cdc29f15088f0cfa2-fb8a0.png&quot;
+        srcset=&quot;/static/production_endpoint-4ca76d5806bff72cdc29f15088f0cfa2-1a291.png 148w,
+/static/production_endpoint-4ca76d5806bff72cdc29f15088f0cfa2-2bc4a.png 295w,
+/static/production_endpoint-4ca76d5806bff72cdc29f15088f0cfa2-fb8a0.png 590w,
+/static/production_endpoint-4ca76d5806bff72cdc29f15088f0cfa2-526de.png 885w,
+/static/production_endpoint-4ca76d5806bff72cdc29f15088f0cfa2-fa2eb.png 1180w,
+/static/production_endpoint-4ca76d5806bff72cdc29f15088f0cfa2-08f6a.png 1770w,
+/static/production_endpoint-4ca76d5806bff72cdc29f15088f0cfa2-cbbd9.png 2700w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  &lt;/p&gt;
+&lt;p&gt;Select all applicable throttling tiers and click &lt;code class=&quot;language-text&quot;&gt;Save &amp;amp; Publish&lt;/code&gt; to publish the Developer Management REST API to the Store portal.&lt;/p&gt;
+&lt;p&gt;
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 34.074074074074076%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsSAAALEgHS3X78AAAAqElEQVQY042QQQ7CIBBFuf9JtHoWFyR2YyqaGBGLJSUIoTDgBKI7275MhmSY//OBtG3LGOOc37EK/MvjP0KIEALRWiulsI+jNsa+C2EFKSWScwYAFEzTdLkJ8ezRwBiD13kJUo8IgP1wPJ3ZVQ2DlNJau0ocYyxBovMBUqoTKHYLYozunMPYuE8p3WybZrfvuu5nkYrdXOy6gU/teylfA9rVX/Hez0T4ABLElGsvwBqQAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WSO2 APIM: Throttling Configurations&quot;
+        title=&quot;&quot;
+        src=&quot;/static/throttling_configurations-2fb672b4f696a97f2b5e22b03f167d5f-fb8a0.png&quot;
+        srcset=&quot;/static/throttling_configurations-2fb672b4f696a97f2b5e22b03f167d5f-1a291.png 148w,
+/static/throttling_configurations-2fb672b4f696a97f2b5e22b03f167d5f-2bc4a.png 295w,
+/static/throttling_configurations-2fb672b4f696a97f2b5e22b03f167d5f-fb8a0.png 590w,
+/static/throttling_configurations-2fb672b4f696a97f2b5e22b03f167d5f-526de.png 885w,
+/static/throttling_configurations-2fb672b4f696a97f2b5e22b03f167d5f-fa2eb.png 1180w,
+/static/throttling_configurations-2fb672b4f696a97f2b5e22b03f167d5f-08f6a.png 1770w,
+/static/throttling_configurations-2fb672b4f696a97f2b5e22b03f167d5f-cbbd9.png 2700w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  &lt;/p&gt;
+&lt;h3&gt;Subscribe API&lt;/h3&gt;
+&lt;p&gt;After publishing the REST API from the Publisher portal, navigate to the Store portal by &lt;a href=&quot;https://localhost:9444/store&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://localhost:9444/store&lt;/code&gt;&lt;/a&gt; and log in as &lt;code class=&quot;language-text&quot;&gt;admin&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Select our published API and subscribe to the &lt;code class=&quot;language-text&quot;&gt;DefaultApplication&lt;/code&gt; with &lt;code class=&quot;language-text&quot;&gt;Unlimited Tier&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can create a new application by navigating to the Application section in the Store portal and subscribe to that API with applicable Tier&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 30%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAIAAABM9SnKAAAACXBIWXMAAAsSAAALEgHS3X78AAAA9ElEQVQY02XQy0rEMBQG4LyvDPgQ+gAj+AQDIrhRwYUoghcQV+pGZiO9BDJp2tyTNm1j6zEwMIPfJic/+UMIIpwVNS2bqsBllmVFUZBE7FCJ+AeR21d8focv7jkm1ns45CysPoTQJc45SikXom1bvwNyhI9W+PA0XyxdRuZ51kp5347jGGOcpgmSvu+tVkPo4j64HZXHq/xgmS9OfL5JZYmZY7KDOXX/yu9f3x/rPMafXZCj+uWTXD2V148NJsZZKYSUSmljE3iblPLy4e3s5llrDVu7ZYxBwzTZIVRGVozRDWWM1TXjnDdbMIfWDZ3n++DDfgEfP0obqmzrEgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WSO2 APIM: Store Overview&quot;
+        title=&quot;&quot;
+        src=&quot;/static/store_overview-a7758572a1c6895374a2f479ef54a9de-fb8a0.png&quot;
+        srcset=&quot;/static/store_overview-a7758572a1c6895374a2f479ef54a9de-1a291.png 148w,
+/static/store_overview-a7758572a1c6895374a2f479ef54a9de-2bc4a.png 295w,
+/static/store_overview-a7758572a1c6895374a2f479ef54a9de-fb8a0.png 590w,
+/static/store_overview-a7758572a1c6895374a2f479ef54a9de-526de.png 885w,
+/static/store_overview-a7758572a1c6895374a2f479ef54a9de-fa2eb.png 1180w,
+/static/store_overview-a7758572a1c6895374a2f479ef54a9de-08f6a.png 1770w,
+/static/store_overview-a7758572a1c6895374a2f479ef54a9de-39a5a.png 2800w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  &lt;/p&gt;
+&lt;p&gt;Select &lt;code class=&quot;language-text&quot;&gt;View Subscriptions&lt;/code&gt; from the alert box and then navigate to the &lt;code class=&quot;language-text&quot;&gt;Production Keys&lt;/code&gt; tab and select &lt;code class=&quot;language-text&quot;&gt;Generate Keys&lt;/code&gt; to generate new consumer keys for our &lt;code class=&quot;language-text&quot;&gt;DefaultApplication&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 51.25000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAABOElEQVQoz22QvU6EQBDHeTs7O2NifATb662sfAwfwMRL7K0stDCemGhM5OAO5GPYT9gFd9cBDpVwv0w2k5n9z5d3sTg7OD28ul76Ab9fhY9vqR/y11D4az63l4A9fQC+q0+K5l2eL46PTm6XN5yCoECKNI2jLNkUWQx5Mrcy/xocRnJvnUASb9MszygjXDDOCaVCiLpW+2yHUoox7jFa0h5ZSQy2bWvMN2KMsdYM2NGzI845KaUHACVAAWW4SaXgSjdpQbXqqlRVpbXGSAYMI1jR/aMTlz0oRo1StbGOSYWNMI36rqd1otLOWTflT0wJ0aru2mjdNo3uaUbnNzIMPBFD2a2NN4uiLec4Oc6ouitIWU0x/URTMQBu+/we3D34agQPjr/rKXs6I4SQ4cRDou1pRtB3M1D8A3YTNIXM0HI7AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WSO2 APIM: Store Default Application Productions Keys&quot;
+        title=&quot;&quot;
+        src=&quot;/static/store_default_application-b1be21dbbc58cb3e8d5a363825c337d0-fb8a0.png&quot;
+        srcset=&quot;/static/store_default_application-b1be21dbbc58cb3e8d5a363825c337d0-1a291.png 148w,
+/static/store_default_application-b1be21dbbc58cb3e8d5a363825c337d0-2bc4a.png 295w,
+/static/store_default_application-b1be21dbbc58cb3e8d5a363825c337d0-fb8a0.png 590w,
+/static/store_default_application-b1be21dbbc58cb3e8d5a363825c337d0-526de.png 885w,
+/static/store_default_application-b1be21dbbc58cb3e8d5a363825c337d0-fa2eb.png 1180w,
+/static/store_default_application-b1be21dbbc58cb3e8d5a363825c337d0-08f6a.png 1770w,
+/static/store_default_application-b1be21dbbc58cb3e8d5a363825c337d0-4b053.png 3360w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  &lt;/p&gt;
+&lt;p&gt;After a successful generation, copy the &lt;code class=&quot;language-text&quot;&gt;Access Token&lt;/code&gt; value to invoke our defined REST APIs.&lt;/p&gt;
+&lt;h3&gt;Run &amp;#x26; Test&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Before testing, make sure to verify whether the APIM instance is running and have successfully published the REST API and subscribed&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Test the exposed REST APIs using the below cURL commands. Given below are a couple of cURL commands to test the exposed REST APIs. We can also test the REST APIs using the integrated Swagger tool in the Store portal.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can replace the &lt;code class=&quot;language-text&quot;&gt;consumer-key&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;consumer-secret&lt;/code&gt; fields with the generated values or you can replace the &lt;code class=&quot;language-text&quot;&gt;{{access-token}}&lt;/code&gt; with the copied &lt;code class=&quot;language-text&quot;&gt;Access Token&lt;/code&gt; value and execute the cURL commands&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;div id=&quot;gist98504417&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-wso2-trilogy-apim-curl-http&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-http &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;@consumer-key = &amp;lt;Replace with Consumer Key&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;@consumer-secret = &amp;lt;Replace with Consumer Secret&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;@api-hostname = https://&lt;span class=&quot;pl-c1&quot;&gt;10.100&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;5.220&lt;/span&gt;:&lt;span class=&quot;pl-c1&quot;&gt;8244&lt;/span&gt;/dev-management/v&lt;span class=&quot;pl-c1&quot;&gt;1.0&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;0&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;# Username &amp;amp; Password&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;@api-username = admin&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;@api-password = admin&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;@username = athiththan&lt;span class=&quot;pl-c1&quot;&gt;11&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;### Token Endpoint&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;# @name tokenEndpoint&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;curl -k -d &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;grant_type=password&amp;amp;username={{api-username}}&amp;amp;password={{api-password}}&amp;amp;scope=default&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;	    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Authorization: Basic &amp;lt;Replace with Base64Encode(ClientID:ClientSecret)&amp;gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;	      https://localhost:&lt;span class=&quot;pl-c1&quot;&gt;8244&lt;/span&gt;/token&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L17&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;17&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;@access-token = {&lt;span class=&quot;pl-ii&quot;&gt;{tokenEndpoint.response.body.access_token&lt;/span&gt;}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L18&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;18&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC18&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;@authorization = Bearer {&lt;span class=&quot;pl-ii&quot;&gt;{access-token&lt;/span&gt;}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L19&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;19&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC19&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L20&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;20&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC20&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;### Get Developer&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L21&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;21&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC21&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;# @name getDeveloperAPI&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L22&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;22&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC22&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;curl -k -X GET {&lt;span class=&quot;pl-ii&quot;&gt;{api-hostname&lt;/span&gt;}}/devs/{&lt;span class=&quot;pl-ii&quot;&gt;{username&lt;/span&gt;}} \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L23&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;23&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC23&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;accept: application/json&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L24&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;24&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Authorization: {{authorization}}&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L25&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;25&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC25&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L26&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;26&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC26&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;### Get Repos of a Developer&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L27&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;27&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC27&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;# @name getReposAPI&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L28&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;28&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC28&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;curl -k -X GET {&lt;span class=&quot;pl-ii&quot;&gt;{api-hostname&lt;/span&gt;}}/devs/{&lt;span class=&quot;pl-ii&quot;&gt;{username&lt;/span&gt;}}/repos \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L29&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;29&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC29&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;accept: application/json&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L30&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;30&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC30&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Authorization: {{authorization}}&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L31&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;31&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC31&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L32&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;32&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC32&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;### Delete a Developer&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L33&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;33&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC33&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;# @name deleteDeveloperAPI&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L34&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;34&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC34&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;curl -k -X DELETE {&lt;span class=&quot;pl-ii&quot;&gt;{api-hostname&lt;/span&gt;}}/devs/{&lt;span class=&quot;pl-ii&quot;&gt;{username&lt;/span&gt;}} \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L35&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;35&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC35&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;accept: application/json&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L36&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;36&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC36&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Authorization: {{authorization}}&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L37&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;37&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC37&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L38&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;38&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC38&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;### Create a Developer&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L39&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;39&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC39&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;# @name addDeveloperAPI&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L40&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;40&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC40&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;curl -k -X POST {&lt;span class=&quot;pl-ii&quot;&gt;{api-hostname&lt;/span&gt;}}/devs \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L41&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;41&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC41&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -d &amp;#39;{ &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;username&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;athiththan11&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;name&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Athiththan&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;email&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;athiththan11@test.com&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; }&amp;#39; \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L42&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;42&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC42&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Content-Type: application/json&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L43&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;43&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC43&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;accept: application/json&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L44&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;44&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC44&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Authorization: {{authorization}}&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L45&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;45&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC45&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L46&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;46&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC46&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;### Create a Repo&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L47&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;47&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC47&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;# @name addRepoAPI&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L48&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;48&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC48&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;curl -k -X POST {&lt;span class=&quot;pl-ii&quot;&gt;{api-hostname&lt;/span&gt;}}/repos \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L49&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;49&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC49&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -d &amp;#39;{ &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;name&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;repodews&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;username&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;athiththan11&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;forks&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-c1&quot;&gt;0&lt;/span&gt; }&amp;#39; \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L50&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;50&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC50&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Content-Type: application/json&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L51&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;51&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC51&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;accept: application/json&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; \&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-L52&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;52&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-wso2-trilogy-apim-curl-http-LC52&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    -H &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Authorization: {{authorization}}&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/athiththan11/5d67ee4f67f298c48066556ae7a94a97/raw/5d44b758154b6b8c4ef2f842ac58ba06b8e787f2/wso2-trilogy-apim-curl.http&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/athiththan11/5d67ee4f67f298c48066556ae7a94a97#file-wso2-trilogy-apim-curl-http&quot;&gt;wso2-trilogy-apim-curl.http&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h2&gt;GitHub&lt;/h2&gt;
+&lt;br&gt;
+&lt;a class=&quot;ul-disabled&quot; href=&quot;https://github.com/athiththan11/RepoDeWS&quot;&gt;
+    &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;card-horizontal&quot;&gt;
+            &lt;div class=&quot;card-body py-4 px-5&quot;&gt;
+                &lt;h4 class=&quot;card-title mt-4&quot;&gt;RepoDeWS&lt;/h4&gt;
+                &lt;p&gt;A Simple Spring Boot (SOAP) Web Service&lt;/p&gt;
+                &lt;footer class=&quot;blockquote-footer&quot;&gt;
+                    &lt;small class=&quot;text-muted&quot;&gt;
+                        athiththan11
+                    &lt;/small&gt;
+                &lt;/footer&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;img-square-wrapper&quot;&gt;
+                &lt;img class=&quot;rounded mb-0&quot; width=&quot;220.172&quot; src=&quot;https://avatars3.githubusercontent.com/u/29927177?s=460&amp;amp;v=4&quot; alt&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/a&gt;
+&lt;hr class=&quot;three--dots&quot;/&gt;</content:encoded></item><item><title><![CDATA[Configure LDAP as a Secondary User Store]]></title><description><![CDATA[This post illustrates how to add an LDAP user-store as a secondary user-store in WSO2 API Manager (in almost every WSO2 Product). For demo…]]></description><link>https://stackcheats.github.io/Configure-LDAP-as-a-Secondary-User-Store/</link><guid isPermaLink="false">https://stackcheats.github.io/Configure-LDAP-as-a-Secondary-User-Store/</guid><pubDate>Sun, 08 Sep 2019 16:25:00 GMT</pubDate><content:encoded>&lt;p&gt;This post illustrates how to add an LDAP user-store as a secondary user-store in WSO2 API Manager (in almost every WSO2 Product).&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;For demo purposes, we will be using a pre-configured LDAP user-store which resides in &lt;strong&gt;WSO2 Identity Server&lt;/strong&gt; and shipped by default&lt;/p&gt;
 &lt;/blockquote&gt;
