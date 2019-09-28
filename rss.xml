@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[stackcheats]]></title><description><![CDATA[stackcheats: where cheats get stacked]]></description><link>https://stackcheats.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 08 Sep 2019 11:13:08 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><link>https://stackcheats.github.io/README/</link><guid isPermaLink="false">https://stackcheats.github.io/README/</guid><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[stackcheats]]></title><description><![CDATA[stackcheats: where cheats get stacked]]></description><link>https://stackcheats.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 28 Sep 2019 09:53:13 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><link>https://stackcheats.github.io/README/</link><guid isPermaLink="false">https://stackcheats.github.io/README/</guid><content:encoded>&lt;br&gt;
 &lt;br&gt;
 &lt;p align=&quot;center&quot;&gt;
   
@@ -44,42 +44,7 @@
 # windows env
 ./wso2server.bat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And login to the management console by directing to &lt;a href=&quot;https://localhost:9444/carbon&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://localhost:9444/carbon&lt;/code&gt;&lt;/a&gt; and enter &lt;code class=&quot;language-text&quot;&gt;admin&lt;/code&gt; as both the username and password. Next select &lt;code class=&quot;language-text&quot;&gt;Add&lt;/code&gt; under &lt;code class=&quot;language-text&quot;&gt;User Stores&lt;/code&gt; section in &lt;code class=&quot;language-text&quot;&gt;Main&lt;/code&gt; tab.&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/add-user-store-api-manager-7273440cac348f0e21705d2dc95241ae-db317.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 47.99357945425361%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAABsElEQVQoz22RT2/TMBiH8+mROPAhuG1Sue2E4AASJ0o60nZp065NnDixnfh/bMdJSvE2DhNgPX70/nx4Zb+OJM7rQ7zZ3q3ub74v34PiqOXEaiaJVNJ0tEUtZFwx6oT0Sk+vieJvnz7f3XxYvFss3t7evvn65WP6kG+XPx/iJFuvNslylcRJkiY/9uv1cZueXhPd7/KiahCidc0CECIAQJEXJYSwAtXTrsoKAvDssipA+UI4iWDVKmEm/2twszOjMzPtpJS9wEJ2OlhRrVjfCxvs/WWar+N0DfbjNdqnx336mGXFbncmSLZEY8wx7g7bY34sHnenbJNl630oDuusBE2DOcK8wUwoFzFLTrjq7eycH/w8+ItxXsgeEdZSSTpRYxrcoA63HNakrgnCNERjx0joNkdhuMaPs/OzHS6qH9wwdh2tILTWGmP63vxZIVr7kqRSUZnGu1UMNqkApSqhKmuW50b3bccIab0fw43+i7Eu0uycn1PP1cT5QNlAucYo9CeYHvbnqkRSWMnNvwimowbj7AS4sMbNvZ3C44V21nnORPicpkYYET+Mo5/+wrnhNw5wIr1CS/enAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;Add User Store in WSO2 API Manager (2.6.0)&quot;
-        title=&quot;&quot;
-        src=&quot;/static/add-user-store-api-manager-7273440cac348f0e21705d2dc95241ae-fb8a0.png&quot;
-        srcset=&quot;/static/add-user-store-api-manager-7273440cac348f0e21705d2dc95241ae-1a291.png 148w,
-/static/add-user-store-api-manager-7273440cac348f0e21705d2dc95241ae-2bc4a.png 295w,
-/static/add-user-store-api-manager-7273440cac348f0e21705d2dc95241ae-fb8a0.png 590w,
-/static/add-user-store-api-manager-7273440cac348f0e21705d2dc95241ae-526de.png 885w,
-/static/add-user-store-api-manager-7273440cac348f0e21705d2dc95241ae-fa2eb.png 1180w,
-/static/add-user-store-api-manager-7273440cac348f0e21705d2dc95241ae-db317.png 1246w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/configure-ldap-as-a-secondary-user-store/add-user-store-api-manager.png&quot; alt=&quot;Add User Store in WSO2 API Manager (2.6.0)&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Enter the inputs as follows …&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;User Store Manager Class: select &lt;code class=&quot;language-text&quot;&gt;ReadWriteLDAPUserStoreManager&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;ReadOnlyLDAPUserStoreManager&lt;/code&gt; based on your preference&lt;/li&gt;
@@ -96,159 +61,15 @@
 &lt;blockquote&gt;
 &lt;p&gt;Please enter relavant configuration values and properties if your LDAP configurations are different from the above-mentioned&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/user-store-configurations-a8a7ace193dd356e9df5c987d08d45f3-bb851.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 44.43661971830986%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsSAAALEgHS3X78AAABDElEQVQoz3WQ246EIBBE+f9fNOPE8S7IXQQkuiW6O/viSUka6C6bJmPP6qrFamywS1zc9idscfgkJhwRXH6qis/cOccYmzLDMA7DMM/z8gzyiV2ctfYA+y4FR4FSUuGTMgR/PLPvB5FKU0q11peZ935dV5/Bds0g+P/DC4REoXiaUkowk1L1/eB9iHE7tW2cz0IIpIYQUma7wWUiQsh3WQZ/dshmXr4/QtlljWYJbg199ymKomkaPEdmrnawxhiJMbaua5+L8dZxYigNMUEwZ1PfNC3ouk4IjinEX9AF4UK2XQsLCNNGXp6ZvsQoHU+mSxgQULcMGUf6epXaGK2NhoW1d6y/J6ey+/c86wdPKACelgb74QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;User Store Configurations&quot;
-        title=&quot;&quot;
-        src=&quot;/static/user-store-configurations-a8a7ace193dd356e9df5c987d08d45f3-fb8a0.png&quot;
-        srcset=&quot;/static/user-store-configurations-a8a7ace193dd356e9df5c987d08d45f3-1a291.png 148w,
-/static/user-store-configurations-a8a7ace193dd356e9df5c987d08d45f3-2bc4a.png 295w,
-/static/user-store-configurations-a8a7ace193dd356e9df5c987d08d45f3-fb8a0.png 590w,
-/static/user-store-configurations-a8a7ace193dd356e9df5c987d08d45f3-526de.png 885w,
-/static/user-store-configurations-a8a7ace193dd356e9df5c987d08d45f3-fa2eb.png 1180w,
-/static/user-store-configurations-a8a7ace193dd356e9df5c987d08d45f3-08f6a.png 1770w,
-/static/user-store-configurations-a8a7ace193dd356e9df5c987d08d45f3-bb851.png 2840w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/configure-ldap-as-a-secondary-user-store/user-store-configurations.png&quot; alt=&quot;User Store Configurations&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Click on &lt;code class=&quot;language-text&quot;&gt;Add&lt;/code&gt; to save and add the user-store in WSO2 API Manager. The following alert box will appear if the user-store is added correctly.&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/successful-alert-box-7203239a97e5d03412dabc95de4a2818-4310c.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 51%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAAAvUlEQVQoz62Q3QrCMAyF+/7vpYPt0jbpTyYT3OaU4cB2oDBnFB1ScOzCw0co4ZykRCjQUqECRG1ycgjKOlookWbZap2skyRNM9Qa4DmGH0sQiO6D1ZqMIa6I9NV/w/0IAeAijCZy2zzfTRAVDLsjZxxGcLaoivLUHOpJbdt2XVfXjZR2Lsz3qo7ncL3fbtdJwzCM48gTNhvD//8ZVsru91UIwfve+/Civ1x8CH1ZHqQ0s5s5/wIWIGCZ7//hB4YgAf3D5MV6AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;Successful Alert Box&quot;
-        title=&quot;&quot;
-        src=&quot;/static/successful-alert-box-7203239a97e5d03412dabc95de4a2818-fb8a0.png&quot;
-        srcset=&quot;/static/successful-alert-box-7203239a97e5d03412dabc95de4a2818-1a291.png 148w,
-/static/successful-alert-box-7203239a97e5d03412dabc95de4a2818-2bc4a.png 295w,
-/static/successful-alert-box-7203239a97e5d03412dabc95de4a2818-fb8a0.png 590w,
-/static/successful-alert-box-7203239a97e5d03412dabc95de4a2818-526de.png 885w,
-/static/successful-alert-box-7203239a97e5d03412dabc95de4a2818-fa2eb.png 1180w,
-/static/successful-alert-box-7203239a97e5d03412dabc95de4a2818-08f6a.png 1770w,
-/static/successful-alert-box-7203239a97e5d03412dabc95de4a2818-4310c.png 2200w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/configure-ldap-as-a-secondary-user-store/successful-alert-box.png&quot; alt=&quot;Successful Alert Box&quot;&gt;&lt;/p&gt;
 &lt;h2&gt;Run &amp;#x26; Test&lt;/h2&gt;
 &lt;p&gt;Direct to &lt;a href=&quot;https://localhost:9444/carbon&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://localhost:9444/carbon&lt;/code&gt;&lt;/a&gt; and select &lt;code class=&quot;language-text&quot;&gt;List&lt;/code&gt; under &lt;code class=&quot;language-text&quot;&gt;Users and Roles&lt;/code&gt; section and select &lt;code class=&quot;language-text&quot;&gt;Users&lt;/code&gt; from the prompted page to list all available users from all defined user-stores.&lt;/p&gt;
 &lt;p&gt;You will see a similar page as follows …&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/user-list-in-api-manager-5fd493fcf2a71e080a7fa9c81df45612-ef9ea.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 35.52083333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsSAAALEgHS3X78AAAA0ElEQVQY02WP227EIAxE+f9P3L6moUsWm4Ax5rLZupESRc3RgJDHhsG4J3qfWEbmfhWXweW97/+tUwZ8mCYbVspcE5VTWgGMKj1Qlqt1yiTieZ4RkTMzl36gFWutWo+vBwCMMfoNw0UQARBFpLX2OSCiWmtvzTm3LG7bts8Nk1IOIWhf26kH3nvKWf7qXVfRuw9LdikmhOgBdEwuqAnonxBfgTSzjzx925/XGnGJKy4Q/JpLEaNh9a/3SBqCSsvS9U2u70iUWF/Qkcqlch3a8wvJD5OTjIjUvQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;Users List in WSO2 API Manager&quot;
-        title=&quot;&quot;
-        src=&quot;/static/user-list-in-api-manager-5fd493fcf2a71e080a7fa9c81df45612-fb8a0.png&quot;
-        srcset=&quot;/static/user-list-in-api-manager-5fd493fcf2a71e080a7fa9c81df45612-1a291.png 148w,
-/static/user-list-in-api-manager-5fd493fcf2a71e080a7fa9c81df45612-2bc4a.png 295w,
-/static/user-list-in-api-manager-5fd493fcf2a71e080a7fa9c81df45612-fb8a0.png 590w,
-/static/user-list-in-api-manager-5fd493fcf2a71e080a7fa9c81df45612-526de.png 885w,
-/static/user-list-in-api-manager-5fd493fcf2a71e080a7fa9c81df45612-fa2eb.png 1180w,
-/static/user-list-in-api-manager-5fd493fcf2a71e080a7fa9c81df45612-08f6a.png 1770w,
-/static/user-list-in-api-manager-5fd493fcf2a71e080a7fa9c81df45612-ef9ea.png 1920w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/configure-ldap-as-a-secondary-user-store/user-list-in-api-manager.png&quot; alt=&quot;Users List in WSO2 API Manager&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Select &lt;code class=&quot;language-text&quot;&gt;View Roles&lt;/code&gt; of &lt;code class=&quot;language-text&quot;&gt;IS/admin&lt;/code&gt; user and click on &lt;code class=&quot;language-text&quot;&gt;Permissions&lt;/code&gt; of &lt;code class=&quot;language-text&quot;&gt;IS/admin&lt;/code&gt; role in the next page. Thereafter, select theLogin permission in the listed permission tree.&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/permission-tree-13bf8bcccc30f9bd2750c8547ab65036-ef9ea.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 65.72916666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAAsSAAALEgHS3X78AAAAzklEQVQoz5WSy47DIAxF+f/fG3W2s2iTNsaAeYTQgEndqtIsW67M8uiYKyt9c5e/CWZ0QGSiAfJuzRuvuX0cZW24zqjBTpMGsA4dUQgph/h5lFjAOLAx5tK4cZfH7buovTYfws14Stu9CtyPr6MaH6U85ehXwZmH4NZr3cHSYqPwIh8y91LKIj2lrY6Qb3Or1Yd4RX/R5GIegF8dsY9p0gTuWdoAzHyklMBQG6nqf21EBBeO8QjM5KP26y7H0cfkCtH+nH7P8yK/ve9jbT8Avif7pdBhTpoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;Permission Tree of IS/admin Role&quot;
-        title=&quot;&quot;
-        src=&quot;/static/permission-tree-13bf8bcccc30f9bd2750c8547ab65036-fb8a0.png&quot;
-        srcset=&quot;/static/permission-tree-13bf8bcccc30f9bd2750c8547ab65036-1a291.png 148w,
-/static/permission-tree-13bf8bcccc30f9bd2750c8547ab65036-2bc4a.png 295w,
-/static/permission-tree-13bf8bcccc30f9bd2750c8547ab65036-fb8a0.png 590w,
-/static/permission-tree-13bf8bcccc30f9bd2750c8547ab65036-526de.png 885w,
-/static/permission-tree-13bf8bcccc30f9bd2750c8547ab65036-fa2eb.png 1180w,
-/static/permission-tree-13bf8bcccc30f9bd2750c8547ab65036-08f6a.png 1770w,
-/static/permission-tree-13bf8bcccc30f9bd2750c8547ab65036-ef9ea.png 1920w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/configure-ldap-as-a-secondary-user-store/permission-tree.png&quot; alt=&quot;Permission Tree of IS/admin Role&quot;&gt;&lt;/p&gt;
 &lt;p&gt;And select Update to update the permission tree. Now, logout from the carbon console and again Sign-in using the following credentials …&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Username: &lt;code class=&quot;language-text&quot;&gt;IS/admin&lt;/code&gt;&lt;/li&gt;
@@ -281,43 +102,7 @@
 &lt;p&gt;This is where the SAML Bearer Assertion grant comes to play. The SAML Bearer Assertion grant is used to exchange the acquired SAML Assertion for an OAuth2 access token.&lt;/p&gt;
 &lt;p&gt;To simply put, SAML Bearer Assertion grant-flow is very similar to the Authorization code grant-flow in OAuth, wherein SAML Bearer Assertion flow, a SAML Assertion is used instead of a cryptography code to gain an OAuth2 access token.&lt;/p&gt;
 &lt;p&gt;Given below is a simple diagram of how SAML Bearer Assertion flow works.&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/saml2-bearer-assertion-911573483b590388d8ceb9bec5468a6c-75e99.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 64.59252379846761%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAFxGAABcRgEUlENBAAAC3klEQVQ4y43R30tTURwA8ONaWqmUPejEbSpss22kyWRkjqB62Jzuh67pfrtGoYXURHqw2MasUCdEEPXSH1BIjikVUtAonGCKkDFpbmULNqcZxuZ0TuN0znE+FEJe+PI9937P/dzv9x4A/rnWPyioOCcnFV1wvhmmpxtT8JMcbk7LQ4ExQw6uJSabwL6v1FQjAbdn5DY42wA/Dok2Im/OYzj2w6fNxbX0jBKw2WygVCr/D25Myag7sNwOv6vg5pQUwjkZ6lC2AgOWw7g2/0Kate8Ol96ryOaoV8WJTzZfjryVXYl6FdeiXmXT2brqg/kFTMru3qrPbsBZ8FDYCyMkKr56KHuiT1yavQo5ZeXlxXw+7xC+4Q12792R2+0GPp+PrCsrK4FWoybYJbOxxtymv2fQtTrbjLpes0nf6bDbSE141UCmqAmO5nG/jYq4y69FJ2JjIt4Xz2kAIfzrA06nk7yk1+vvtLe3Q6PRCC0WC9TpdOvoGTmUcxASkBNytzJjr2DJ3NNN+vzQFmPxZZogNBoNIxTUYX5tbe2xDHjLZDJBjUazrtVqMRhBNRqDwSgoOyOgHweAyp591lGafAdLQsOQHh6BzIQXAr/frwsEAgMYEQgEhUKhkIHXCLGbzWaI8hrCIPpARCwWF7JYLDavuorLBTnFFbHnHOYv911m0uNkrnl6mavDDhAOhx8Hg8EQRtD4WVarNRuvUWe9GETYEkJ/oxxD4+fhmqK5+wDO5o54Qat1rVFlTTRdtCaUmhtJCRgfH78wMTGhz4CUlpYWambk2xhE8BbuEMWiWq0mYOfCzj+s74sYGx5CKBmMr4pd8bTk/jY5kGIUzN3DQd0QEAH2DJjKgMsikagI/cMifnUdC205Irb5O2SPEDiQSElcSSh9gBCXy0Wx2WxkBIfDAQwGAwFR7sqMnEJriCLY09OTTafTj/JPnmLRAchVDkRLG/pXuuv7ft7EIe1fuf4HwvVJTvH8z8gAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;SAML2 Bearer Assertion Flow&quot;
-        title=&quot;&quot;
-        src=&quot;/static/saml2-bearer-assertion-911573483b590388d8ceb9bec5468a6c-fb8a0.png&quot;
-        srcset=&quot;/static/saml2-bearer-assertion-911573483b590388d8ceb9bec5468a6c-1a291.png 148w,
-/static/saml2-bearer-assertion-911573483b590388d8ceb9bec5468a6c-2bc4a.png 295w,
-/static/saml2-bearer-assertion-911573483b590388d8ceb9bec5468a6c-fb8a0.png 590w,
-/static/saml2-bearer-assertion-911573483b590388d8ceb9bec5468a6c-526de.png 885w,
-/static/saml2-bearer-assertion-911573483b590388d8ceb9bec5468a6c-fa2eb.png 1180w,
-/static/saml2-bearer-assertion-911573483b590388d8ceb9bec5468a6c-08f6a.png 1770w,
-/static/saml2-bearer-assertion-911573483b590388d8ceb9bec5468a6c-75e99.png 4307w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/saml-bearer-assertion/saml2-bearer-assertion.png&quot; alt=&quot;SAML2 Bearer Assertion Flow&quot;&gt;&lt;/p&gt;
 &lt;h2&gt;Experiential&lt;/h2&gt;
 &lt;p&gt;For practical, we will be using &lt;strong&gt;WSO2 API Manager&lt;/strong&gt; along with &lt;strong&gt;WSO2 Identity Server&lt;/strong&gt; and a simple Passport-SAML express application to retrieve a SAML2 Bearer Assertion and to exchange to an OAuth2 access token and finally to invoke an API defined in the API Manager.&lt;/p&gt;
 &lt;p&gt;As first step, we’ll configure our WSO2 Identity Server with the API Manager to function as a Federated Identity Provider. Then, we’ll setup our Passport SAML application with the Identity Server as a service provider to gain SAML2 Token.&lt;/p&gt;
@@ -331,79 +116,8 @@
 ./wso2server.bat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And login to the management console (&lt;code class=&quot;language-text&quot;&gt;https://localhost:9443/carbon&lt;/code&gt;), using &lt;code class=&quot;language-text&quot;&gt;admin&lt;/code&gt; for both the username and password.&lt;/p&gt;
 &lt;p&gt;Click on &lt;code class=&quot;language-text&quot;&gt;Add&lt;/code&gt; under &lt;code class=&quot;language-text&quot;&gt;Identity Providers&lt;/code&gt; accordian as following&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/add-identity-provider-0f07e9988ae6bd8966a13c88722643ec-d1072.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 33.81642512077295%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABLUlEQVQoz3WRW0/CQBSE+/9/lolPvqkU2wp0aSlbStn7pRccD1XjC2zyZV42kzMzCeMc27IG23OU7AghA4ydIFWA8wEtP6PINhC9XtDKwdkIZ+6THP0RaVNC6whrPXwYEeIM64bFsD9LlNsKFWuwI+07CUt/jfJ3SUbToD0d4CYsb5y+EIcrmY1kHsB5iyzPsCtLVHUNpTWhHpL4eoNNmiMtKrpgD3ExsGaAku4nctuhyD/R9wIxDPA+IpA+ImnXz/h4eYJevUOnr7DZGr7IYNI36sRQZIWacXRcwOmBYkUo4R+SaEFROIMLV8zThDGOdAnFpT6d9+gvAlV1G62i0Rjq+kB9G2hjiT/9J5k7WpZ6asTt5InMZtKZVv6NfDohz3NIKRcDQwTqNsR4l28XexPrEFp2CAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;Add Identity Provider&quot;
-        title=&quot;&quot;
-        src=&quot;/static/add-identity-provider-0f07e9988ae6bd8966a13c88722643ec-fb8a0.png&quot;
-        srcset=&quot;/static/add-identity-provider-0f07e9988ae6bd8966a13c88722643ec-1a291.png 148w,
-/static/add-identity-provider-0f07e9988ae6bd8966a13c88722643ec-2bc4a.png 295w,
-/static/add-identity-provider-0f07e9988ae6bd8966a13c88722643ec-fb8a0.png 590w,
-/static/add-identity-provider-0f07e9988ae6bd8966a13c88722643ec-526de.png 885w,
-/static/add-identity-provider-0f07e9988ae6bd8966a13c88722643ec-fa2eb.png 1180w,
-/static/add-identity-provider-0f07e9988ae6bd8966a13c88722643ec-d1072.png 1242w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/add-new-identity-provider-4b6fdecad06acead44184d7298bbb2ea-bb851.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 52.816901408450704%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABN0lEQVQoz51Si07DMBDL/38WIAG/ABPqY1vbtb2kTZq+0ppctsEQoA0iWadLIp/tRBz2FaqcQLWG7iZoM6L1CFUzhov6G0bIpkdRW4gkjkFVDd1qEEmQlFCqgVQKWmsYY26GtQPEPM84r6oqkecFpFRo/QDnHP6ynFuZcArNuq5BEXky1TTexichn12Dv4XZLRBd16HveyyLQ29NsMqWGTxgmqabSD8Udp3BOI5hg3OQJ4XGHAedI7mZsG3boGSeHfJSId3uQ892edCyLF9yumr54qpXR8j8oxTFISi11mIYhmCbya89Es8WURQhyzI0XikRoa6P4C/EpNJ/o/CdTv053+/gqDTE3f0DHp+e8fK6QZykn4hTRHES6iV470dEMba7DGKzeUOS7nx2O5RljbL6DyhUogbvuIxP5KtSgQsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;Add new Identity Provider&quot;
-        title=&quot;&quot;
-        src=&quot;/static/add-new-identity-provider-4b6fdecad06acead44184d7298bbb2ea-fb8a0.png&quot;
-        srcset=&quot;/static/add-new-identity-provider-4b6fdecad06acead44184d7298bbb2ea-1a291.png 148w,
-/static/add-new-identity-provider-4b6fdecad06acead44184d7298bbb2ea-2bc4a.png 295w,
-/static/add-new-identity-provider-4b6fdecad06acead44184d7298bbb2ea-fb8a0.png 590w,
-/static/add-new-identity-provider-4b6fdecad06acead44184d7298bbb2ea-526de.png 885w,
-/static/add-new-identity-provider-4b6fdecad06acead44184d7298bbb2ea-fa2eb.png 1180w,
-/static/add-new-identity-provider-4b6fdecad06acead44184d7298bbb2ea-08f6a.png 1770w,
-/static/add-new-identity-provider-4b6fdecad06acead44184d7298bbb2ea-bb851.png 2840w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/saml-bearer-assertion/add-identity-provider.png&quot; alt=&quot;Add Identity Provider&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/saml-bearer-assertion/add-new-identity-provider.png&quot; alt=&quot;Add new Identity Provider&quot;&gt;&lt;/p&gt;
 &lt;h3&gt;WSO2 Identity Server&lt;/h3&gt;</content:encoded></item><item><title><![CDATA[Replace H2 with Postgres]]></title><description><![CDATA[Docker: Postgres Pull Prerequisites: Docker installed in your environment. You can follow the  Docker  docs to get it done. Follow the given…]]></description><link>https://stackcheats.github.io/Replace-H2-with-Postgres/</link><guid isPermaLink="false">https://stackcheats.github.io/Replace-H2-with-Postgres/</guid><pubDate>Sat, 03 Aug 2019 10:18:00 GMT</pubDate><content:encoded>&lt;h2&gt;Docker: Postgres&lt;/h2&gt;
 &lt;h3&gt;Pull&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -1478,7 +1192,7 @@ docker exec -ti postgres-9.6.14 psql -h localhost -U postgres -d wso2postgres -f
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 54.214285714285715%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAAA90lEQVQoz6WRbW+DIBRG+f8/cB/2wYx2FhAQKVpAXtzDXJZ0bROTndwYvAqe50p8iFqPO0opa22tdTsGuTpHKe37ixCScT4MMsb1YJE1lbd3ej6dBinx2RDjstwOFoGjm29aKylVzqk+46V2CIHSj67rhBDTZI0x9tqwO2jZ1nwKKaVM04QVrsjhg2fs0l+YHo2bF0xknpcMpZTyAwROcV2x2ramh9fkwDmmJxX+glRqNOalNiLB/HtzI6V1EAwReDvhB6TAfNZ7YoxtM2JprZ1zpdZcYNgeQGcv4L1HI5fyp1pmzthn3yM0DiqNu1H/3pUHyPYPvgA2S34T1R2LoAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 54.214285714285715%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAAA9klEQVQoz6WS62qEMBCF8/4v2B8FqW7d3G/GaO7biVsK223B0o9hMNEZzjmI9hCl1OpACGGtba3dzoEW58ZxmucrpQwTwhiPMZ0slHJ7eZ0ul4lxbu0SYvTbdrIQaFzWTYJiLnLO7S+gEMI4vg3DQCk11mqt7dKxHWNMb/oXUK3VHK+hg4897Bjj+Yql0m71kMi6+nxQngDZLcZ4FwwBlpI5AxGMCyGVgq60/jFq+PpzGNbcr3JOjGBKKDmANfAERrz36RGY6sPgS0jpnKutlVpSTiFEiB2qk9K2w98QS63fqnsmGL/PM5iGRbXzEOnXqT6Bbv/gAxlnfe9jbFbcAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1516,7 +1230,7 @@ docker exec -ti postgres-9.6.14 psql -h localhost -U postgres -d wso2postgres -f
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 56.35714285714286%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAABIUlEQVQoz32SiY6DMAxE8/+/WMq5KiAoEHJBufqabFeV2u4ochywxx4nQkpZFAV2HMe+79m9qzBhjUqZT5imSWzbtq7rcRyjHGBpmrZpW+fc7YllWY4vEPwjFIplmeHTWmOttesLti8QEOweIcy7fDn+R4gXvuaNs7OmaRpke5lqnmdUBfuH2QOHLPIFPdd13XU9zWoP37zxO95j6bdlrSNeMBLG66yT2lz7AbVQQus7Wr6pJQYKQethnr0c0uLn0fkwGGs6qUal5yeooZXk0nDCEWlifw6H2Ph8juP42nXWkMwVHK+lJqu0dbtvCosmgXpeCGQwXS4XKrdtyxFVYTAfr+o3OeSUZVlVVZ7nWZalaUr90+kURRF+kiQE1G+gxh3oHXqLalXiigAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 56.35714285714286%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAABJklEQVQoz41Si46DIBDk/39Rq409Hy0WXUEQ0PMGaL0m1yY32egIy+7MIiOiqqpoHKdpEsNANCGARCKX8zssy8K2bVvXdd93oqGqLpz3CGOMcz6F92H3LRg2tdYo4b1DPaUUnlhZX7B9AEOB74iUBLL/AymfxZ4e30Yrzm9DsE1SSmstXMXHL2wECE4F2bB3vV6FEBCrIqL4Ob4f5Bnq4PCFXeacw0BRgtR8H0asJhdhkN5/couEcBjSMSpoGGg8X74451CODYG7kyrojmGdk5JwaSDPT8mOCclpKk6noijuQkCTIANfr60WLZU2SdSjM9xjQqiFSm3bonPf99ZZrQ0WU2rKPkjqB4MMZ+q6xrGu6/CrnSPQP8uyPM/By7Jsmqb7A7T5AccwenTKxCsCAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1560,7 +1274,7 @@ docker exec -ti postgres-9.6.14 psql -h localhost -U postgres -d wso2postgres -f
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 59.21428571428571%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAIAAADtbgqsAAAACXBIWXMAAAsSAAALEgHS3X78AAABBklEQVQoz41SCW6EMAzk/4+stISwFMhBTshFB9KVqqosHRlFcjIej01jjFFKGWO11jGmlPL/o+FCdZQKLqyx629sbwJocPR9zzmPQIo5p4zvhZq8igZtj+Nord1CQDnG5TQLZfyirT/rrxdxKKM0+vPeQ3Dfd++8XJTS2vs1hi3EuF+glNI454ZhgHI8383z3LYtIS1jDPe14iXZO0cpnacJBpGChY8Tj8cDjm7Ih0/GIBhDQAqT6zqM/4AQYr/GqbzGlnSEEGwbFuqKMOd6fUOOKeMPAS3jaSlCSNp/YuDG+ntyygWjhlpNCcEI6Z7PAf2/MfxN3mLh0ixS/lhYqcgv/NkCkl9eu7vpCEGQawAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 59.21428571428571%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAIAAADtbgqsAAAACXBIWXMAAAsSAAALEgHS3X78AAABB0lEQVQoz42R646EIAyFff93dBIFxiuICKLc3KPO/NmsuidNJJWvPaWZ1loppbWZpsn7EEL8f2RCKkKZEAL88lvrTUAZPu93BdhD4WgdUfWjM3kVGWy3bWuMWZ1DOS5kxwel53Ey9qi/XMTeGeX3G9ai4bZt1tpxVJjf2sW7xXm3XSillM3zXNc1OsMgUn3fk7IkhHAucOGseAczxsDAAlJN0+R5/nq9iqLARA/wPifnfdd5tzvEy1FK2SGct2vtMEYrCYVPbBsuzhWdLvD7AfYhYsPAIq6mNAySVU3XD9rYZzjEhBdGtzM1DJwQWtU1PN8M/IFXn4TUo5Tg7bGw9FX86k8LSP4AXVC757Bm6ewAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1619,7 +1333,7 @@ WSO2_EMAIL_CLAIM=&amp;quot;http://wso2.org/claims/emailaddress&amp;quot;&lt;/cod
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 45.07142857142858%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsSAAALEgHS3X78AAABAklEQVQoz42Q4W6DIBSFef+n6v7Udkn7AHNmrtoWEBVBkWrVHXC2iemSfbkCAvce7iF1XReltPZ2H4b7Qr+KV+A+kVKeTklVKVlVeZ5jdCj1OyqltK6bZhW6aay1ZPCC0zRprRjnpafr+8HjFPzpS0jXdW3bjuMoZRlFUZqmlFLGGF4B9bmL4Q8I0ubacfz1ttns97v3hTAMsT8urGRd8uOnLESSXigTPCvQrjEGLrr6Xhjy6ODhFt4LyWdy2xq4BXOUM8igFzTv/dKzZ1jgAgz2ViqUIJji+JvzDLtCiCxzAXKPeJIvFPiQDgFyvdLtNgiC3eFw/Ag/z+fLfyJJUrj6A5rb/wZrrgblAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 45.07142857142858%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsSAAALEgHS3X78AAABA0lEQVQoz42Q63KCMBCF8/5PxS8ExvYBsEyRi3KJISEo1wRPUqudVmf6TRayG3ZPOKTrOtbwYRgWpcx6xvwMfEw450mSCCG44JSeOF5C2PS2adu2+4OUEnpEKSO3rquUbVlVjWWaZ6U1ZhuFRa0vINM09X2vtRa8iaIoy7KiKMqyZIxB8+va6gUEbYtVjuNPx3E8zwsCP0D4fhiGqOtvfsma5nvSMJrmh6KiFTWauM44jncRyP90C/eF5KO57y9wSHbnFnG+oBk/jynwBoESNnDTYnzECILjfbyvqxp1Sml9g54s9AEyZsM80QUBcjwWrrtxN9727T3cfeT54T8rTTO4egV1Ev7wMpG5rgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1646,7 +1360,7 @@ WSO2_EMAIL_CLAIM=&amp;quot;http://wso2.org/claims/emailaddress&amp;quot;&lt;/cod
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 45.07142857142858%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsSAAALEgHS3X78AAAA10lEQVQoz4VQ0W6EIBD0//+vTZo+3KnFnAuFyCq6KNA5vTR96HkTlsAys0Om8sxa6xCCiCwizDxNk8Q4LwuuR/Pfta5rhZp35JxLKTiM4wh9BGTZtq08AfgV2NZaOBw8IlJKdV2HEXhPKZ2JQWrb1jlXduemaS47oMfHy3M8nKnvjaYE55ypv9XXa13XmOK9fyEerL+8v6nPD6bbZPRsTTCU5oDnkz8/xDEmZ93IDGeswTmtCZkjyHKKuxgle+5Hyxj9pRT2e2AvxRLTtx3Y+78j8mnOv5wfUoENQgqHx5AAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 45.07142857142858%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsSAAALEgHS3X78AAAA20lEQVQoz4VRXXODIBD0//++9qHThxiMtgIDFVQ+D7rRTJ6i2TlmgNtlb5bGWCuEWNc1hOBDsNYuyxJjdN7juF++rJRSk1NyG0optVZs5nne9TH4lHM9APgN2EopOOSNxznv+34YBujRJ6IzMXxY12mt6+Z8ZeyyAXoMXo+xO3s+cikEwbmUcfxt2/YKMGaMeSOelLl8fvTfX3b8WSR3SjrJya339vHMD3FMpJWerSXKqOlPC8GROcKsp7iLsZ5pAVLy7nbD5yGL9+IQSarJmAlP4HeeDTqdeef8A1ReDTzm6QslAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1802,7 +1516,7 @@ openssl pkcs12 -in wso2carbon.p12  -nodes -nocerts -out private-key.pem&lt;/code
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 51.78571428571428%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAAA40lEQVQoz43O3WrCMBQH8DxQd9Hbro8nbt47Cei9L7DpG0zmlXcykIlik7XQxpmlTU4+XOmYFNpZf4QQ/jmHc9C5xlU3BzddJZMlHS0IXpDRKxm/0ZNyl4ILVDSIvIizY/olMl6k1SkfZdiEVAMAKCWNMfUhoFr815x/80yIo4ZcK2HNb9jdLEEbJRKerjnbMLbLTx8GGIDubpZSOuvms+fHhx7GQ4yfBoP+fPZirS2/utfWGij9XL9vtvtDHCdRRBhj7WvbNueG1jJE/lBKo5oqi65D95UgCMIw9H3f87y7m/0A1GYI46aYegUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 51.78571428571428%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAAA50lEQVQoz43OTU4CMRQH8N5HktnOzPGIhAMYMJEDeAAyHAGiK3fqAokuWmzCdHT6+aYtVkjIMFOiv7y+Td//tWjf4g+dg79/orNHMlnh2xWeLPHdA6nBnwZOkFJShdMipKRltfsWJVdlLY8lZAQyPQBgjLbWth8BE3EpLHnNhPhqQIERzoIB+E9YQ2ONpLx84WxdVe+6fnMNA2j+DmutvfdFMR+NhtPpTajx+HpRzJ1z4aob1j3hg5hsn1/Xmw/8SSnGmDF23NuBXMy+JzqGtudIB/5FLkBZluV5nqZp6EmSDA6uegYxP4HFCKTMO9+bAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1829,7 +1543,7 @@ openssl pkcs12 -in wso2carbon.p12  -nodes -nocerts -out private-key.pem&lt;/code
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 51.78571428571428%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAAA/UlEQVQoz42Ry0rEMBSG+0B10W3tYwq6cSWCO59CXYiCCxHdiNNLOp1pp2k69FyS1Ey9YDtS5uODcMg5/CfE68ewsdfP64uH/OqpOL8Xp7fp2V16cpNcPubaTHp7r5sAuJHVsvgoVnG+ikWxEMtFUaaVqt3dpNfDMUQEQI2sCTpGcBKC0dRbi3uMhgFRM60VvopNpjBpMJWQSIhrUMBMNDf8m6yabdt27RZa1F8ia5pPdjCzUlJWGXcldrI37aCy2q01mwwAvdFvcfnyLqxBYtL6W7f0P282e1hr3TfsDmtd9ccpXvaDECIdSJKdh+AdD4RhGEVREAS+7x8dzCdXiQ236CdkDQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 51.78571428571428%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAAA/klEQVQoz43RzUrEMBAH8LyPC722fU0RL14EwZtvoYKg4GFBLyLdzdY22s/sJjOTpKatyHYriz/+SQ7JMCFh3RRZd7P8vHzMrp/FxUN6dsfP7/np7frqKTPWHRxmSu2UH7+ULusiz99zkWRileaJjyh42VR+bzfFYAoRtca2qRAUoR5jDXWdg5lJsQYwhKKBF17wFlY1rGvtk1Sq1USIx4rHzqBRNlspldxqCWYMkMHjnT0iamXdlBtSX6DqzsohrTP+WrPOeo9/OWfoNRHLN25Nf5joJ/2FZpidca7/kn6xzk5yiH3sSQebQfoPLIqiOI7DMPRzEASLwcnM4i/f91gNcd/bBN8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1856,7 +1570,7 @@ openssl pkcs12 -in wso2carbon.p12  -nodes -nocerts -out private-key.pem&lt;/code
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 23.357142857142854%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsSAAALEgHS3X78AAAATElEQVQY02P48ePH+w8fP3/58uPnr+8/fiLQTxAJFMSFgLIM/2HgFRi8efP2JZB6/frZs+fv3r3/jxcgNP8Bg79//yKTxGomA1CkGQClQydVm7KWaQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 23.357142857142854%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsSAAALEgHS3X78AAAAUElEQVQY06WL0QqAIAxF/f8PTWisFQlepWlOCnqpoA6Xu7FxHACZlzUEpByRItD7SDvepX1dPRkNYmYbRIP3k0h9xORSbNs6qnrtd/kzv+Qdp8QnWLH1Ei8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
