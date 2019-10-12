@@ -27,7 +27,14 @@ module.exports = {
 				path: `${stackcheats_path}/assets`,
 				name: `assets`
 			}
-		},
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${stackcheats_path}/covers`,
+                name: `covers`
+            }
+        },
 		{
 			resolve: `gatsby-transformer-remark`,
 			options: {

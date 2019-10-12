@@ -40,7 +40,13 @@ const onCreateNode = ({ node, actions, getNode }) => {
 			node,
 			name: 'tags',
 			value: node.frontmatter.tags,
-		})
+        })
+        
+        createNodeField({
+            node,
+            name: 'cover',
+            value: node.frontmatter.cover
+        })
 	}
 }
 

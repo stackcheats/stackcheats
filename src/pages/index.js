@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image';
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
@@ -35,13 +36,19 @@ class BlogIndex extends React.Component {
 				<div className="container card-columns">
 					{posts.map(({ node }) => {
 						const title = node.frontmatter.title || node.fields.slug
-						const { intro, author, updated } = node.frontmatter
+                        const { intro, author, updated, cover } = node.frontmatter
+                        
+                        let coverBlock;
+                        if (cover != null) {
+                            coverBlock = <Img fluid={cover.childImageSharp.fluid} className="card-img-top" />
+                        }
 
 						return (
 							<div
 								className="card rounded-5"
 								key={node.fields.slug}
-							>
+                            >
+                                {coverBlock}
 								<div className="card-body">
 									<h5 className="card-title">
 										<Link
@@ -88,7 +95,25 @@ export const pageQuery = graphql`
 						title
 						intro
 						updated(formatString: "MMMM DD, YYYY")
-						author
+                        author
+                        cover {
+                            childImageSharp {
+                                fluid {
+                                    base64
+                                    tracedSVG
+                                    aspectRatio
+                                    src
+                                    srcSet
+                                    srcWebp
+                                    srcSetWebp
+                                    sizes
+                                    originalImg
+                                    originalName
+                                    presentationWidth
+                                    presentationHeight
+                                }
+                            }
+                        }
 					}
 					fields {
 						slug

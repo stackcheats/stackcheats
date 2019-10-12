@@ -2,28 +2,46 @@ const path = require(`path`)
 const _ = require('lodash')
 
 const query = `
-  {
+{
     allMarkdownRemark {
-      edges {
-        node {
-          id
-          fileAbsolutePath
-          frontmatter {
-              title
-              category
-              weight
-              updated
-              author
-              short
-              tags
-          }
-          fields {
-            slug
-          }
+        edges {
+            node {
+                id
+                fileAbsolutePath
+                frontmatter {
+                    title
+                    category
+                    weight
+                    updated
+                    author
+                    short
+                    tags
+                    cover {
+                        childImageSharp {
+                            fluid {
+                                base64
+                                tracedSVG
+                                aspectRatio
+                                src
+                                srcSet
+                                srcWebp
+                                srcSetWebp
+                                sizes
+                                originalImg
+                                originalName
+                                presentationWidth
+                                presentationHeight
+                            }
+                        }
+                    }
+                }
+                fields {
+                    slug
+                }
+            }
         }
-      }
     }
-  }
+}
 `
 
 const createPages = ({ graphql, actions }) => {
@@ -63,7 +81,8 @@ function buildPage({ node, actions, stackcheatTemplate }) {
 		updated: node.frontmatter.updated,
 		author: node.frontmatter.author,
 		short: node.frontmatter.short,
-		tags: node.frontmatter.tags,
+        tags: node.frontmatter.tags,
+        cover: node.frontmatter.cover,
 	}
 
 	createPage({
