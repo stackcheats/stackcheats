@@ -41,6 +41,12 @@ const onCreateNode = ({ node, actions, getNode }) => {
 			name: 'tags',
 			value: node.frontmatter.tags,
         })
+
+        createNodeField({
+            node,
+            name: 'background',
+            value: node.frontmatter.background
+        })
         
         createNodeField({
             node,

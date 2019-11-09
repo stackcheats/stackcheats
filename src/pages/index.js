@@ -25,7 +25,7 @@ class BlogIndex extends React.Component {
 
 				<div className="container my-5">
 					<div className="row">
-						<div className="col-6">
+						<div className="col">
 							<h1 className="display-4 h-100 font-weight-normal text-muted">
 								stack
                                 <span className="font-weight-lighter">cheats</span>
@@ -38,8 +38,8 @@ class BlogIndex extends React.Component {
 				<div className="container card-columns">
 					{posts.map(({ node }) => {
 						const title = node.frontmatter.title || node.fields.slug
-                        const { intro, author, updated, cover } = node.frontmatter
-                        
+                        const { intro, author, updated, cover, background } = node.frontmatter
+
                         let coverBlock;
                         if (cover != null) {
                             coverBlock = <Img fluid={cover.childImageSharp.fluid} className="card-img-top" />
@@ -51,7 +51,7 @@ class BlogIndex extends React.Component {
 								key={node.fields.slug}
                             >
                                 {coverBlock}
-								<div className="card-body">
+                                <div className="card-body rounded" style={{ backgroundColor: background }}>
 									<h6 className="card-title">
 										<Link
 											to={node.fields.slug}
@@ -95,7 +95,7 @@ class BlogIndex extends React.Component {
 								key={node.fields.slug}
                             >
 								<div className="card-body">
-									<h6 class="card-title mb-0">
+									<h6 className="card-title mb-0">
 										<Link
 											style={{ textDecoration: `none` }}
 											to={node.fields.slug}
@@ -135,6 +135,7 @@ export const pageQuery = graphql`
 						intro
 						updated(formatString: "MMMM DD, YYYY")
                         author
+                        background
                         cover {
                             childImageSharp {
                                 fluid {

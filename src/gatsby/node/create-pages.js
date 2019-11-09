@@ -16,6 +16,7 @@ const query = `
                     author
                     short
                     tags
+                    background
                     cover {
                         childImageSharp {
                             fluid {
@@ -82,6 +83,7 @@ function buildPage({ node, actions, stackcheatTemplate }) {
 		author: node.frontmatter.author,
 		short: node.frontmatter.short,
         tags: node.frontmatter.tags,
+        background: node.frontmatter.background,
         cover: node.frontmatter.cover,
 	}
 

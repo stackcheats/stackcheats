@@ -17,11 +17,11 @@ class StackCheatTemplate extends React.Component {
 					description={post.excerpt}
 				/>
 
-                <div className="container stackcheat-container my-5">
+                <div className="container stackcheat-container py-5">
 					<div className="row mb-2">
 						{/* title block */}
                         <div className="col">
-							<h1 className="stackcheat--title">
+							<h1 className="stackcheat--title text-light">
 								{post.frontmatter.title}
 							</h1>
 							<h4 className="stackcheat--sub-title text-secondary font-weight-light">
@@ -55,7 +55,7 @@ class StackCheatTemplate extends React.Component {
 					</div> */}
 
 					{/* intro block */}
-					<div className="row stackcheat-body pt-4">
+					<div className="row stackcheat-body text-secondary-light pt-4">
 						<div
 							className="col"
 							dangerouslySetInnerHTML={{ __html: post.html }}

@@ -35,3 +35,7 @@
   float: left; /* 1 */
   min-width: 100%; /* 2 */
 }
+
+.gatsby-highlight pre[class*='language-shell'] {
+    background-color: #212529 !important;
+}
