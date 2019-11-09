@@ -8,7 +8,7 @@ import { TagsList } from '../components/subcomponents/TagsList'
 class StackCheatTemplate extends React.Component {
 	render() {
 		const post = this.props.data.markdownRemark
-		const siteTitle = this.props.data.site.siteMetadata.title
+        const siteTitle = this.props.data.site.siteMetadata.title
 
 		return (
 			<Layout location={this.props.location} title={siteTitle}>
@@ -17,10 +17,10 @@ class StackCheatTemplate extends React.Component {
 					description={post.excerpt}
 				/>
 
-				<div className="container stackcheat-container my-5">
+                <div className="container stackcheat-container my-5">
 					<div className="row mb-2">
 						{/* title block */}
-						<div className="col">
+                        <div className="col">
 							<h1 className="stackcheat--title">
 								{post.frontmatter.title}
 							</h1>
@@ -28,13 +28,20 @@ class StackCheatTemplate extends React.Component {
 								{post.frontmatter.intro}
 							</h4>
 						</div>
-					</div>
+                    </div>
 
 					<TagsList
 						className="row stackcheat-tags"
 						tags={post.frontmatter.tags}
 					/>
 
+                    {/* cover block */}
+                    {/* <div className="row mt-5">
+                        <div className="col">
+                            {coverBlock}
+                        </div>
+                    </div> */}
+                    
 					{/* <div className="row mt-4">
 						<div className="col">
 							<p className="mb-0">
@@ -77,7 +84,25 @@ export const pageQuery = graphql`
 				title
 				intro
 				tags
-				author
+                author
+                cover {
+                    childImageSharp {
+                        fluid {
+                            base64
+                            tracedSVG
+                            aspectRatio
+                            src
+                            srcSet
+                            srcWebp
+                            srcSetWebp
+                            sizes
+                            originalImg
+                            originalName
+                            presentationWidth
+                            presentationHeight
+                        }
+                    }
+                }
 			}
 		}
 	}

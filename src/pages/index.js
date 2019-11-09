@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image';
+import Img from 'gatsby-image'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
@@ -26,13 +26,15 @@ class BlogIndex extends React.Component {
 				<div className="container my-5">
 					<div className="row">
 						<div className="col-6">
-							<h1 className="display-3 h-100 font-weight-lighter text-muted">
-								{siteTitle}
-							</h1>
+							<h1 className="display-4 h-100 font-weight-normal text-muted">
+								stack
+                                <span className="font-weight-lighter">cheats</span>
+                            </h1>
 						</div>
 					</div>
 				</div>
 
+                {/* story block */}
 				<div className="container card-columns">
 					{posts.map(({ node }) => {
 						const title = node.frontmatter.title || node.fields.slug
@@ -45,19 +47,18 @@ class BlogIndex extends React.Component {
 
 						return (
 							<div
-								className="card rounded-5"
+								className="card border-0"
 								key={node.fields.slug}
                             >
                                 {coverBlock}
 								<div className="card-body">
-									<h5 className="card-title">
+									<h6 className="card-title">
 										<Link
-											style={{ textDecoration: `none` }}
 											to={node.fields.slug}
 										>
 											{title}
 										</Link>
-									</h5>
+									</h6>
 									<p className="card-text">{intro}</p>
 
 									<footer className="blockquote-footer">
@@ -69,7 +70,45 @@ class BlogIndex extends React.Component {
 							</div>
 						)
 					})}
-				</div>
+                </div>
+
+                <div className="container">
+                    <div className="row my-5">
+                        <div className="col">
+                            <h3 className="font-weight-normal text-secondary">
+                                cheat
+                                <span className="font-weight-normal text-info">sheets</span>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                {/* cheats block */}
+				<div className="container card-columns">
+					{posts.map(({ node }) => {
+                        const title = node.frontmatter.title || node.fields.slug
+                        const { intro } = node.frontmatter
+
+						return (
+							<div
+								className="card"
+								key={node.fields.slug}
+                            >
+								<div className="card-body">
+									<h6 class="card-title mb-0">
+										<Link
+											style={{ textDecoration: `none` }}
+											to={node.fields.slug}
+										>
+											{title}
+										</Link>
+                                    </h6>
+                                    <p className="card-text">{intro}</p>
+                                </div>
+                            </div>
+						)
+					})}
+                </div>
 			</Layout>
 		)
 	}

@@ -9,6 +9,16 @@
 	border-radius: 50%;
 }
 
+#___gatsby {
+    background-color: #080808;
+}
+
+.card-body .card-title a {
+    color: #525252;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 /* ================================================================================= */
 
 .stackcheat-container {
