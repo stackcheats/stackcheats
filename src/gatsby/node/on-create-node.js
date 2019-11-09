@@ -50,6 +50,12 @@ const onCreateNode = ({ node, actions, getNode }) => {
         
         createNodeField({
             node,
+            name: 'cheat',
+            value: node.frontmatter.cheat
+        })
+
+        createNodeField({
+            node,
             name: 'cover',
             value: node.frontmatter.cover
         })

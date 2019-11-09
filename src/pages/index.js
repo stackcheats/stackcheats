@@ -9,7 +9,8 @@ class BlogIndex extends React.Component {
 	render() {
 		const { data } = this.props
 		const siteTitle = data.site.siteMetadata.title
-		const posts = data.allMarkdownRemark.edges
+        const stories = data.story.edges
+        const cheats = data.cheat.edges
 
 		return (
 			<Layout location={this.props.location} title={siteTitle}>
@@ -36,9 +37,9 @@ class BlogIndex extends React.Component {
 
                 {/* story block */}
 				<div className="container card-columns">
-					{posts.map(({ node }) => {
+					{stories.map(({ node }) => {
 						const title = node.frontmatter.title || node.fields.slug
-                        const { intro, author, updated, cover, background } = node.frontmatter
+                        const { intro, author, updated, cover, background, cheat } = node.frontmatter
 
                         let coverBlock;
                         if (cover != null) {
@@ -51,7 +52,7 @@ class BlogIndex extends React.Component {
 								key={node.fields.slug}
                             >
                                 {coverBlock}
-                                <div className="card-body rounded" style={{ backgroundColor: background }}>
+                                <div className="card-body rounded-bottom" style={{ backgroundColor: background }}>
 									<h6 className="card-title">
 										<Link
 											to={node.fields.slug}
@@ -77,7 +78,7 @@ class BlogIndex extends React.Component {
                         <div className="col">
                             <h3 className="font-weight-normal text-secondary">
                                 cheat
-                                <span className="font-weight-normal text-info">sheets</span>
+                            <span className="font-weight-normal text-info">sheets</span>
                             </h3>
                         </div>
                     </div>
@@ -85,7 +86,7 @@ class BlogIndex extends React.Component {
 
                 {/* cheats block */}
 				<div className="container card-columns">
-					{posts.map(({ node }) => {
+					{cheats.map(({ node }) => {
                         const title = node.frontmatter.title || node.fields.slug
                         const { intro } = node.frontmatter
 
@@ -123,9 +124,9 @@ export const pageQuery = graphql`
 				title
 			}
 		}
-		allMarkdownRemark(
+		story: allMarkdownRemark(
 			sort: { fields: [frontmatter___date], order: DESC }
-			filter: { frontmatter: { title: { ne: "" }, intro: { ne: null } } }
+			filter: { frontmatter: { title: { ne: "" }, intro: { ne: null }, cheat: { eq: null } } }
 		) {
 			edges {
 				node {
@@ -154,6 +155,23 @@ export const pageQuery = graphql`
                                 }
                             }
                         }
+					}
+					fields {
+						slug
+					}
+				}
+			}
+        }
+        cheat: allMarkdownRemark(
+			sort: { fields: [frontmatter___date], order: DESC }
+			filter: { frontmatter: { title: { ne: "" }, intro: { ne: null }, cheat: { ne: null } } }
+		) {
+			edges {
+				node {
+					excerpt
+					frontmatter {
+						title
+						intro
 					}
 					fields {
 						slug

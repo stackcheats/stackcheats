@@ -17,6 +17,7 @@ const query = `
                     short
                     tags
                     background
+                    cheat
                     cover {
                         childImageSharp {
                             fluid {
@@ -84,6 +85,7 @@ function buildPage({ node, actions, stackcheatTemplate }) {
 		short: node.frontmatter.short,
         tags: node.frontmatter.tags,
         background: node.frontmatter.background,
+        cheat: node.frontmatter.cheat,
         cover: node.frontmatter.cover,
 	}
 
