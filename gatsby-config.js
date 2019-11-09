@@ -1,19 +1,19 @@
 const root = require('path').resolve.bind(null, __dirname)
 
-const stackcheats_path = root('stackcheats')
+const stackcheats_path = root('stackcheats/stack')
 
 module.exports = {
-	siteMetadata: {
-		title: `stackcheats`,
-		author: `Athiththan`,
-		description: `stackcheats: where cheats get stacked`,
-		sheetPath: stackcheats_path,
-		siteUrl: `https://stackcheats.github.io`,
-		social: {
-			twitter: `athiththan11`
-		}
-	},
-	plugins: [
+    siteMetadata: {
+        title: `stackcheats`,
+        author: `Athiththan`,
+        description: `stackcheats: where cheats get stacked`,
+        sheetPath: stackcheats_path,
+        siteUrl: `https://stackcheats.github.io`,
+        social: {
+            twitter: `athiththan11`
+        }
+    },
+    plugins: [
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -36,20 +36,15 @@ module.exports = {
             }
         },
 		{
-			resolve: `gatsby-transformer-remark`,
-			options: {
-				plugins: [
+			resolve: `gatsby-plugin-mdx`,
+            options: {
+                extensions: ['.mdx', '.md'],
+				gatsbyRemarkPlugins: [
 					{
-						resolve: 'gatsby-remark-embed-gist',
+						resolve: `gatsby-remark-embed-gist`,
 						options: {
 							username: 'athiththan11',
 							includeDefaultCss: false
-						}
-					},
-					{
-						resolve: `gatsby-remark-images`,
-						options: {
-							maxWidth: 590
 						}
 					},
 					{
@@ -67,14 +62,22 @@ module.exports = {
 							showLineNumbers: false,
 							noInlineHighlight: false
 						}
+                    },
+                    {
+						resolve: `gatsby-remark-images`,
+						options: {
+							maxWidth: 590
+						}
 					},
 					`gatsby-remark-copy-linked-files`,
 					`gatsby-remark-smartypants`
 				]
 			}
-		},
+        },
+        `gatsby-theme-blog`,
+        `gatsby-theme-waves`,
 		`gatsby-transformer-sharp`,
-		`gatsby-plugin-sharp`,
+        `gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-plugin-google-analytics`,
 			options: {
@@ -91,7 +94,7 @@ module.exports = {
 				background_color: `#ffffff`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `stackcheats/assets/stackcheats-icon.png`
+				icon: `stackcheats/stack/assets/stackcheats-icon.png`
 			}
 		},
 		// `gatsby-plugin-offline`,

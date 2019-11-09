@@ -3,7 +3,7 @@ const _ = require('lodash')
 
 const query = `
 {
-    allMarkdownRemark {
+    allMdx {
         edges {
             node {
                 id
@@ -57,7 +57,7 @@ const createPages = ({ graphql, actions }) => {
 			throw result.errors
 		}
 
-		const stackcheats = result.data.allMarkdownRemark.edges
+		const stackcheats = result.data.allMdx.edges
 
 		// Create stackcheats pages
 		stackcheats.forEach(({ node }) => {

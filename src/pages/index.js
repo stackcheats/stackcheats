@@ -124,13 +124,12 @@ export const pageQuery = graphql`
 				title
 			}
 		}
-		story: allMarkdownRemark(
+		story: allMdx(
 			sort: { fields: [frontmatter___date], order: DESC }
 			filter: { frontmatter: { title: { ne: "" }, intro: { ne: null }, cheat: { eq: null } } }
 		) {
 			edges {
 				node {
-					excerpt
 					frontmatter {
 						title
 						intro
@@ -162,13 +161,12 @@ export const pageQuery = graphql`
 				}
 			}
         }
-        cheat: allMarkdownRemark(
+        cheat: allMdx(
 			sort: { fields: [frontmatter___date], order: DESC }
 			filter: { frontmatter: { title: { ne: "" }, intro: { ne: null }, cheat: { ne: null } } }
 		) {
 			edges {
 				node {
-					excerpt
 					frontmatter {
 						title
 						intro

@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
@@ -7,7 +8,7 @@ import { TagsList } from '../components/subcomponents/TagsList'
 
 class StackCheatTemplate extends React.Component {
 	render() {
-		const post = this.props.data.markdownRemark
+		const post = this.props.data.mdx
         const siteTitle = this.props.data.site.siteMetadata.title
 
 		return (
@@ -56,10 +57,13 @@ class StackCheatTemplate extends React.Component {
 
 					{/* intro block */}
 					<div className="row stackcheat-body text-secondary-light pt-4">
-						<div
+						{/* <div
 							className="col"
-							dangerouslySetInnerHTML={{ __html: post.html }}
-						/>
+							dangerouslySetInnerHTML ={{ __html: post.html }}
+                        /> */}
+                        <div className="col">
+                            <MDXRenderer className="col">{post.body}</MDXRenderer>
+                        </div>
 					</div>
 				</div>
 			</Layout>
@@ -76,10 +80,9 @@ export const pageQuery = graphql`
 				title
 			}
 		}
-		markdownRemark(fields: { slug: { eq: $slug } }) {
-			id
-			excerpt(pruneLength: 160)
-			html
+		mdx(fields: { slug: { eq: $slug } }) {
+            id
+            excerpt(pruneLength: 160)
 			frontmatter {
 				title
 				intro
@@ -103,7 +106,8 @@ export const pageQuery = graphql`
                         }
                     }
                 }
-			}
+            }
+            body
 		}
 	}
 `
