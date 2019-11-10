@@ -17,8 +17,15 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				path: `${stackcheats_path}`,
+				path: `${stackcheats_path}/sheets`,
 				name: `blog`
+			}
+        },
+        {
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${stackcheats_path}/cheats`,
+				name: `cheatsheet`
 			}
 		},
 		{
@@ -71,11 +78,9 @@ module.exports = {
 					},
 					`gatsby-remark-copy-linked-files`,
 					`gatsby-remark-smartypants`
-				]
+                ]
 			}
         },
-        `gatsby-theme-blog`,
-        `gatsby-theme-waves`,
 		`gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
 		{
