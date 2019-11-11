@@ -9,8 +9,13 @@
 	border-radius: 50%;
 }
 
-#___gatsby {
+#___gatsby,
+html {
     background-color: #080808;
+}
+
+html {
+    height: 100vh;
 }
 
 .card-body .card-title a {
@@ -179,6 +184,10 @@ hr.three--dots::before {
     background-color: transparent !important;
     border-radius: unset !important;
     color: unset !important;
+}
+
+ul li pre {
+    color: #17a2b8f2 !important;
 }
 
 :not(pre) > code[class*='language-'],

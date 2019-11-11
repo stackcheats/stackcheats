@@ -6,19 +6,18 @@ import Layout from '../components/Layout'
 
 const Tags = ({ location, pageContext, data }) => {
 	const { tag } = pageContext
-	const { edges, totalCount } = data.allMdx
-	const tagHeader = `${totalCount} post${
-		totalCount === 1 ? '' : 's'
-	} tagged with "${tag}"`
-
+	const { edges } = data.allMdx
 	const siteTitle = data.site.siteMetadata.title
 
 	return (
 		<Layout location={location} title={siteTitle}>
-			<div className="container">
-				<h4>{tagHeader}</h4>
+			<div className="container mb-5">
+                <h5 className="text-secondary font-weight-normal">
+                    Sheets with tag
+                    <span className="font-weight-bold text-uppercase text-secondary-light"> {tag}</span>
+                </h5>
 			</div>
-			<div className="container card-columns">
+			<div className="container card-columns pb-5">
 				{edges.map(({ node }) => {
 					const { slug } = node.fields
 					const { title, intro, author } = node.frontmatter
