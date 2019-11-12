@@ -7,3 +7,4 @@ require('prismjs/plugins/line-numbers/prism-line-numbers.css')
 import './src/styles/sidebar-menu.css'
 import './src/styles/styles.css'
 import './src/styles/gist.css'
+import './src/styles/code-surfer.css'

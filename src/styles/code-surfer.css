@@ -1,0 +1,23 @@
+/* code-surfer styling */
+
+.cs-content,
+.cs-scaled-content {
+    background: #212529 !important;
+}
+
+pre.cs-content {
+    color: #adb5bd;
+    font-size: unset;
+}
+
+div[class*='-CodeSticker'] div {
+    border-radius: 10px;
+}
+
+span.token-tag {
+    color: #b3d7ff;
+}
+
+span.token-attr-value {
+    color: #17a2b8;
+}

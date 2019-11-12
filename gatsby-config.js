@@ -14,6 +14,7 @@ module.exports = {
         }
     },
     plugins: [
+        `gatsby-plugin-theme-ui`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -40,6 +41,14 @@ module.exports = {
             options: {
                 path: `${stackcheats_path}/covers`,
                 name: `covers`
+            }
+        },
+        {
+            resolve: `gatsby-mdx`,
+            options: {
+                defaultLayouts: {
+                    posts: require.resolve('./src/components/Layout.js')
+                }
             }
         },
 		{
