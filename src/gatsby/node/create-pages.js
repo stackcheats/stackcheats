@@ -83,10 +83,10 @@ function buildPage({ node, actions, stackcheatTemplate }) {
 		updated: node.frontmatter.updated,
 		author: node.frontmatter.author,
 		short: node.frontmatter.short,
-        tags: node.frontmatter.tags,
-        background: node.frontmatter.background,
-        cheat: node.frontmatter.cheat,
-        cover: node.frontmatter.cover,
+		tags: node.frontmatter.tags,
+		background: node.frontmatter.background,
+		cheat: node.frontmatter.cheat,
+		cover: node.frontmatter.cover,
 	}
 
 	createPage({

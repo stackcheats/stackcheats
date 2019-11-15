@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx } from 'theme-ui'
 import React from 'react'
 import { useSpring } from 'use-spring'
 
@@ -8,7 +8,7 @@ function Scroller({ steps, currentStep, progress, variant }) {
 		decimals: 3,
 		stiffness: 52,
 		damping: 14,
-		mass: 0.1
+		mass: 0.1,
 	})
 
 	const startBorder = Math.min(fasterProgress, progress)
@@ -25,8 +25,8 @@ function Scroller({ steps, currentStep, progress, variant }) {
 			return {
 				top: from * 100 + '%',
 				bottom: 100 - to * 100 + '%',
-                width,
-                borderLeft: '2px solid orange'
+				width,
+				borderLeft: '2px solid orange',
 			}
 		}
 	})
@@ -38,15 +38,15 @@ function Scroller({ steps, currentStep, progress, variant }) {
 			{steps.map((step, i) => (
 				<div
 					sx={{
-						variant: `styles.waves.${variant}.ScrollerStep`
+						variant: `styles.waves.${variant}.ScrollerStep`,
 					}}
 					key={i}
 				>
 					<div
 						sx={{
-							variant: `styles.waves.${variant}.ScrollerProgress`
+							variant: `styles.waves.${variant}.ScrollerProgress`,
 						}}
-                        style={progressStyles[i]}
+						style={progressStyles[i]}
 					/>
 					{step}
 				</div>

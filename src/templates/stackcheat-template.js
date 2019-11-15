@@ -9,7 +9,7 @@ import { TagsList } from '../components/subcomponents/TagsList'
 class StackCheatTemplate extends React.Component {
 	render() {
 		const post = this.props.data.mdx
-        const siteTitle = this.props.data.site.siteMetadata.title
+		const siteTitle = this.props.data.site.siteMetadata.title
 
 		return (
 			<Layout location={this.props.location} title={siteTitle}>
@@ -18,10 +18,10 @@ class StackCheatTemplate extends React.Component {
 					description={post.excerpt}
 				/>
 
-                <div className="container stackcheat-container py-5">
+				<div className="container stackcheat-container py-5">
 					<div className="row mb-2">
 						{/* title block */}
-                        <div className="col">
+						<div className="col">
 							<h1 className="stackcheat--title text-light">
 								{post.frontmatter.title}
 							</h1>
@@ -29,20 +29,20 @@ class StackCheatTemplate extends React.Component {
 								{post.frontmatter.intro}
 							</h4>
 						</div>
-                    </div>
+					</div>
 
 					<TagsList
 						className="row stackcheat-tags"
 						tags={post.frontmatter.tags}
 					/>
 
-                    {/* cover block */}
-                    {/* <div className="row mt-5">
+					{/* cover block */}
+					{/* <div className="row mt-5">
                         <div className="col">
                             {coverBlock}
                         </div>
                     </div> */}
-                    
+
 					{/* <div className="row mt-4">
 						<div className="col">
 							<p className="mb-0">
@@ -61,9 +61,11 @@ class StackCheatTemplate extends React.Component {
 							className="col"
 							dangerouslySetInnerHTML ={{ __html: post.html }}
                         /> */}
-                        <div className="col">
-                            <MDXRenderer className="col">{post.body}</MDXRenderer>
-                        </div>
+						<div className="col">
+							<MDXRenderer className="col">
+								{post.body}
+							</MDXRenderer>
+						</div>
 					</div>
 				</div>
 			</Layout>
@@ -81,33 +83,33 @@ export const pageQuery = graphql`
 			}
 		}
 		mdx(fields: { slug: { eq: $slug } }) {
-            id
-            excerpt(pruneLength: 160)
+			id
+			excerpt(pruneLength: 160)
 			frontmatter {
 				title
 				intro
 				tags
-                author
-                cover {
-                    childImageSharp {
-                        fluid {
-                            base64
-                            tracedSVG
-                            aspectRatio
-                            src
-                            srcSet
-                            srcWebp
-                            srcSetWebp
-                            sizes
-                            originalImg
-                            originalName
-                            presentationWidth
-                            presentationHeight
-                        }
-                    }
-                }
-            }
-            body
+				author
+				cover {
+					childImageSharp {
+						fluid {
+							base64
+							tracedSVG
+							aspectRatio
+							src
+							srcSet
+							srcWebp
+							srcSetWebp
+							sizes
+							originalImg
+							originalName
+							presentationWidth
+							presentationHeight
+						}
+					}
+				}
+			}
+			body
 		}
 	}
 `

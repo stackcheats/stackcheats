@@ -17,7 +17,7 @@ const Wave = ({
 		decimals: 3,
 		stiffness: 80,
 		damping: 48,
-		mass: 8
+		mass: 8,
 	})
 
 	const columns = React.useMemo(() => {

@@ -40,25 +40,25 @@ const onCreateNode = ({ node, actions, getNode }) => {
 			node,
 			name: 'tags',
 			value: node.frontmatter.tags,
-        })
+		})
 
-        createNodeField({
-            node,
-            name: 'background',
-            value: node.frontmatter.background
-        })
-        
-        createNodeField({
-            node,
-            name: 'cheat',
-            value: node.frontmatter.cheat
-        })
+		createNodeField({
+			node,
+			name: 'background',
+			value: node.frontmatter.background,
+		})
 
-        createNodeField({
-            node,
-            name: 'cover',
-            value: node.frontmatter.cover
-        })
+		createNodeField({
+			node,
+			name: 'cheat',
+			value: node.frontmatter.cheat,
+		})
+
+		createNodeField({
+			node,
+			name: 'cover',
+			value: node.frontmatter.cover,
+		})
 	}
 }
 

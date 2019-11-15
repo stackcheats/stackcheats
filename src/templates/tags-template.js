@@ -12,10 +12,13 @@ const Tags = ({ location, pageContext, data }) => {
 	return (
 		<Layout location={location} title={siteTitle}>
 			<div className="container mb-5">
-                <h5 className="text-secondary font-weight-normal">
-                    Sheets with tag
-                    <span className="font-weight-bold text-uppercase text-secondary-light"> {tag}</span>
-                </h5>
+				<h5 className="text-secondary font-weight-normal">
+					Sheets with tag
+					<span className="font-weight-bold text-uppercase text-secondary-light">
+						{' '}
+						{tag}
+					</span>
+				</h5>
 			</div>
 			<div className="container card-columns pb-5">
 				{edges.map(({ node }) => {
