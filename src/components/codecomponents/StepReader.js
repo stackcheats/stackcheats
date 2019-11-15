@@ -1,15 +1,25 @@
 import { parse } from 'shell-quote'
 
-export function readStepFromElement(element) {
+export function readStepFromElement(element, parsed, count) {
 	if (!element.props.children || !element.props.children.props) {
 		return null
 	}
 	const { props } = element.props.children
 	const className = props.className
-    return {
-        code: buildCode(props.children.props.children),
-        lang: className.substring('language-'.length),
-        ...parseMetastring(props.metastring)
+	// props.metastring
+	// let metastring = "javascript 1,4,5"
+	
+	parsed = JSON.parse(parsed);
+	if (parsed[count]) {
+		parsed = parsed[count];
+	} else {
+		parsed = undefined;
+	}
+
+	return {
+		code: buildCode(props.children.props.children),
+		lang: className.substring('language-'.length),
+		...parseMetastring(parsed)
     }
 }
 

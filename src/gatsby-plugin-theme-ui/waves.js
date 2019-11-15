@@ -41,7 +41,7 @@ export default {
 		// this is used to select the active scroller step
 		// 0.5 selects the step that is at half the screen height
 		// 0.7 the step that is at 70% the screen height
-        focus: [0.5, 0.7]
+        focus: [1, 0.75]
         // focus: [0.7, 0.75]
 	}
 }
