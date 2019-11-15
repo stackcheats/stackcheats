@@ -35,12 +35,13 @@ export default {
 		Sticker: {
 			position: ['static', 'sticky'],
 			width: '100%',
-			height: ['100%', '60vh'],
-			top: ['auto', '20vh']
+			height: ['100%', '80vh'],
+			top: ['auto', '10vh']
 		},
 		// this is used to select the active scroller step
 		// 0.5 selects the step that is at half the screen height
 		// 0.7 the step that is at 70% the screen height
-		focus: [0.7, 0.5]
+        focus: [0.5, 0.7]
+        // focus: [0.7, 0.75]
 	}
 }

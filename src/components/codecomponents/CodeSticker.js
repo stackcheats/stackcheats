@@ -14,25 +14,31 @@ function CodeSticker({ steps: stepElements, progress, variant, parsedSteps }) {
 						return parsedStep
 				  }),
 		[]
-	)
+    )
 
 	return (
 		<div
 			sx={{
 				variant: `styles.waves.${variant}.StickerContainer`
-			}}
-		>
+            }}
+        >
 			<div
 				style={{
 					height: '100%',
 					width: '100%'
 				}}
 			>
-				<div sx={{ variant: `styles.waves.${variant}.Sticker` }}>
+                <div sx={{ variant: `styles.waves.${variant}.Sticker` }}
+                    style={{
+                        top: (progress > 1 ? progress - 1 : 0) * 225 + 'px',
+                        position: 'relative',
+                        height: ((progress < 1) ? `40vh` : (((40 + (progress - 1) * 10) < 80 ? (40 + (progress - 1) * 10) : 80) + 'vh'))
+                    }}
+                >
 					<CodeSurfer
 						progress={progress}
 						steps={steps}
-						parsedSteps={parsedSteps}
+                        parsedSteps={parsedSteps}
 					/>
 				</div>
 			</div>

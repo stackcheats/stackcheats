@@ -5,7 +5,7 @@ import { useSpring } from 'use-spring'
 
 function Scroller({ steps, currentStep, progress, variant }) {
 	const fasterProgress = useSpring(currentStep, {
-		decimals: 4,
+		decimals: 3,
 		stiffness: 52,
 		damping: 14,
 		mass: 0.1
@@ -25,7 +25,8 @@ function Scroller({ steps, currentStep, progress, variant }) {
 			return {
 				top: from * 100 + '%',
 				bottom: 100 - to * 100 + '%',
-				width
+                width,
+                borderLeft: '2px solid orange'
 			}
 		}
 	})
@@ -45,7 +46,7 @@ function Scroller({ steps, currentStep, progress, variant }) {
 						sx={{
 							variant: `styles.waves.${variant}.ScrollerProgress`
 						}}
-						style={progressStyles[i]}
+                        style={progressStyles[i]}
 					/>
 					{step}
 				</div>

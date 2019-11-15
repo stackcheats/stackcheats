@@ -10,7 +10,8 @@ pre.cs-content {
     font-size: unset;
 }
 
-div[class*='-CodeSticker'] div {
+/* div[class*='-CodeSticker'] div, */
+.cs-content {
     border-radius: 10px;
 }
 
@@ -21,3 +22,27 @@ span.token-tag {
 span.token-attr-value {
     color: #17a2b8;
 }
+
+/* .cs-container,
+.cs-container code {
+    height: 100% !important;
+} */
+
+/* .scroller div > div:first-child {
+    border-left: 2px solid #495057;
+} */
+
+/* .code-compact {
+    max-height: 40vh;
+    height: 40vh;
+    transition: all 1s linear;
+}
+
+.code-stretched {
+    height: 80vh;
+    transition: all 1s linear;
+} */
+
+/* .cwave-component > div {
+    height: unset;
+} */
