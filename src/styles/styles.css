@@ -9,11 +9,6 @@
 	border-radius: 50%;
 }
 
-#___gatsby,
-html {
-    background-color: #080808;
-}
-
 html {
     height: 100vh;
 }
@@ -32,10 +27,10 @@ html {
 	padding-right: 20px;
 }
 
-.stackcheat-container .stackcheat--title,
+/* .stackcheat-container .stackcheat--title,
 .stackcheat--sub-title {
-	/* font-family: 'Poiret none'; */
-}
+	font-family: 'Poiret none';
+} */
 
 .text-secondary-light {
     color: #8b8c8e!important;
@@ -114,10 +109,6 @@ html {
 	margin-top: 1.75rem;
 }
 
-.stackcheat-body .card {
-    background-color: rgba(0,123,255,.25) !important;
-}
-
 hr.three--dots {
     background-color: transparent !important;
 	border-top: none !important;
@@ -185,69 +176,70 @@ pre::-webkit-scrollbar,
 
 pre::-webkit-scrollbar-thumb,
 .blob-wrapper::-webkit-scrollbar {
-	background-color: #343a40;
+	/* background-color: #343a40; */
+	background-color: #17a2b838;
 }
 
 /* Language Shell */
-.gatsby-highlight pre[class*='language-'],
+/* .gatsby-highlight pre[class*='language-'],
 .gist .highlight,
 .gist-data tbody {
     background-color: #212529 !important;
-}
+} */
 
 
 /* GIST */
 
 /* Line Numbers */
-.gist-data tbody td:nth-of-type(1) {
+/* .gist-data tbody td:nth-of-type(1) {
   color: #adb5bd !important;
-}
+} */
 
 /* Code */
-.gist-data tbody td:nth-of-type(2){
+/* .gist-data tbody td:nth-of-type(2){
   color: #FFFFFF !important;
-}
+} */
 
-.gist .pl-s .pl-s1, .gist .pl-smi {
+/* .gist .pl-s .pl-s1, .gist .pl-smi {
     color: #b3b7bb !important;
-}
+} */
 
 /* Comments */
-.pl-c
+/* .pl-c
 {
   color: #57A64A !important;
-}
+} */
 
 /* Function */
-.pl-k, tbody tr:first-child .blob-code, tbody tr:last-child .blob-code
+/* .pl-k, tbody tr:first-child .blob-code, tbody tr:last-child .blob-code
 {
   color: #569CD6 !important;
-}
+} */
 
 /* Function Name */
-.pl-en
+/* .pl-en
 {
   color: #FFFFFF !important;
-}
+} */
 
 /* Function Method */
-.pl-c1
+/* .pl-c1
 {
   color: #FFFFFF !important;
-}
+} */
 /* "'s around Strings */
-.pl-pds
+/* .pl-pds
 {
   color: #D69D85 !important;
-}
+} */
 
 /* Strings */
-.pl-s
+/* .pl-s
 {
   color: #D69D85 !important;
-}
+} */
 
-.gist-data td {
+/* .gist-data td {
 	border-bottom: none !important;
 }
 
@@ -280,4 +272,21 @@ pre::-webkit-scrollbar-thumb,
     background-color: transparent !important;
     border-radius: unset !important;
     color: unset !important;
+} */
+
+/* changeable themes */
+
+#___gatsby,
+html {
+    /* background-color: #080808; */
+    background-color: unset !important;
+}
+
+.stackcheat-body .card {
+    /* background-color: rgba(0,123,255,.25) !important; */
+    background-color: #24292e !important;
+}
+
+.card {
+    background-color: #f6f8fa !important;
 }
