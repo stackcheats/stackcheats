@@ -108,7 +108,10 @@ class BlogIndex extends React.Component {
 						const { intro } = node.frontmatter
 
 						return (
-                            <div className="card border-0" key={node.fields.slug}>
+							<div
+								className="card border-0"
+								key={node.fields.slug}
+							>
 								<div className="card-body">
 									<h6 className="card-title mb-0">
 										<Link

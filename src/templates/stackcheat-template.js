@@ -21,9 +21,9 @@ class StackCheatTemplate extends React.Component {
 				<div className="container stackcheat-container py-5">
 					<div className="row mb-2">
 						{/* title block */}
-                        <div className="col">
-                            {/* stackcheat--title text-light */}
-							<h1 className="stackcheat--title text-secondary"> 
+						<div className="col">
+							{/* stackcheat--title text-light */}
+							<h1 className="stackcheat--title text-secondary">
 								{post.frontmatter.title}
 							</h1>
 							<h4 className="stackcheat--sub-title text-secondary font-weight-light">
