@@ -58,7 +58,19 @@ const onCreateNode = ({ node, actions, getNode }) => {
 			node,
 			name: 'cover',
 			value: node.frontmatter.cover,
-		})
+        })
+        
+        createNodeField({
+            node,
+            name: 'seo',
+            value: node.frontmatter.seo,
+        })
+
+        createNodeField({
+            node,
+            name: 'keywords',
+            value: node.frontmatter.keywords
+        })
 	}
 }
 

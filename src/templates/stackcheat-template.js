@@ -14,8 +14,9 @@ class StackCheatTemplate extends React.Component {
 		return (
 			<Layout location={this.props.location} title={siteTitle}>
 				<SEO
-					title={post.frontmatter.title}
-					description={post.excerpt}
+                    title={post.frontmatter.title}
+                    description={post.frontmatter.seo}
+                    keywords={post.frontmatter.keywords}
 				/>
 
 				<div className="container stackcheat-container py-5">
@@ -90,7 +91,9 @@ export const pageQuery = graphql`
 				title
 				intro
 				tags
-				author
+                author
+                seo
+                keywords
 				cover {
 					childImageSharp {
 						fluid {

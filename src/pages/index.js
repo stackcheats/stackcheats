@@ -16,11 +16,13 @@ class BlogIndex extends React.Component {
 			<Layout location={this.props.location} title={siteTitle}>
 				<SEO
 					title="stackcheats"
+					description="Stackcheats is a blog platform developed and maintained by Athiththan Kathirgamasegaran to showcase blogs, cheat-sheets and other related articles"
 					keywords={[
 						`stackcheats`,
 						`stories`,
 						`blogs`,
-						`athiththan11`,
+                        `athiththan11`,
+                        'wso2 cheats'
 					]}
 				/>
 

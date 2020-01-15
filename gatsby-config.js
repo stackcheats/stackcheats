@@ -5,13 +5,15 @@ const stackcheats_path = root('stackcheats/stack')
 module.exports = {
     siteMetadata: {
         title: `stackcheats`,
-        author: `Athiththan`,
-        description: `stackcheats: where cheats get stacked`,
+        author: `Athiththan Kathirgamasegarana`,
+        description: `A blog platform developed as a fun (part-time) and turned out to be a personal meta site. Check out the publoshed stories, sheets and tech guides related to opensource`,
         sheetPath: stackcheats_path,
         siteUrl: `https://stackcheats.github.io`,
         social: {
             twitter: `athiththan11`
-        }
+        },
+        twitterUsername: "@athiththan11",
+        keywords: ['Stackcheats', 'Blogs', 'Stories', 'Cheatsheets'],
     },
     plugins: [
         `gatsby-plugin-theme-ui`,

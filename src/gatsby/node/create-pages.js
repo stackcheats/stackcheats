@@ -18,6 +18,8 @@ const query = `
                     tags
                     background
                     cheat
+                    seo
+                    keywords
                     cover {
                         childImageSharp {
                             fluid {
@@ -86,7 +88,9 @@ function buildPage({ node, actions, stackcheatTemplate }) {
 		tags: node.frontmatter.tags,
 		background: node.frontmatter.background,
 		cheat: node.frontmatter.cheat,
-		cover: node.frontmatter.cover,
+        cover: node.frontmatter.cover,
+        seo: node.frontmatter.seo,
+        keywords: node.frontmatter.keywords,
 	}
 
 	createPage({
