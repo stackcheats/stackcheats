@@ -58,7 +58,7 @@
 		"typography-theme-bootstrap": "0.16.18",
 		"typography-theme-wordpress-2016": "0.15.10",
 		"use-spring": "0.1.1",
-		"yarn": "1.17.3"
+		"yarn": "1.22.0"
 	},
 	"devDependencies": {
 		"eslint": "4.19.1",
