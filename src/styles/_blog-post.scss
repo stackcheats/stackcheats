@@ -1,0 +1,59 @@
+// styles related to blog post content pages
+
+$font-size: 1rem;
+
+$blockquote-color: #ffc107;
+
+$content-h1-color: #6c757d;
+$content-h-color: #bbb;
+$content-p-color: #8b8c8e;
+
+.content-container {
+  
+  max-width: 780px;
+  margin-right: auto;
+  // margin-left: auto;
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+  }
+
+  h2, h3 {
+    margin-top: 1em;
+  }
+
+  h4, h5 {
+    margin-bottom: 1em;
+    font-size: 1em;
+  }
+
+  .badge {
+    margin-right: .5em;
+    padding: .5em .5em;
+    text-transform: lowercase;
+  }
+
+  blockquote {
+    border-left: medium solid $blockquote-color;
+    
+    p {
+      font-size: $font-size;
+      font-style: italic;
+    }
+  }
+
+  span.gatsby-resp-image-wrapper {
+    max-width: 100% !important;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  img.gatsby-resp-image-image {
+    border: 1px dashed;
+    border-radius: 1em;
+  }
+}

@@ -1,125 +1,158 @@
-const root = require('path').resolve.bind(null, __dirname)
-
-const stackcheats_path = root('stackcheats/stack')
-
 module.exports = {
-    siteMetadata: {
-        title: `stackcheats`,
-        author: `Athiththan Kathirgamasegarana`,
-        description: `A blog platform developed as a fun (part-time) and turned out to be a personal meta site. Check out the publoshed stories, sheets and tech guides related to opensource`,
-        sheetPath: stackcheats_path,
-        siteUrl: `https://stackcheats.github.io`,
-        social: {
-            twitter: `athiththan11`
-        },
-        twitterUsername: "@athiththan11",
-        keywords: ['Stackcheats', 'Blogs', 'Stories', 'Cheatsheets'],
-    },
-    plugins: [
-        `gatsby-plugin-theme-ui`,
+	siteMetadata: {
+		title: `StackCheats`,
+		author: `Athiththan Kathirgamasegaran`,
+		description: `A Personal Blog Platform of Athiththan Kathirgamasegaran`,
+		siteUrl: `https://stackcheats.github.io/`,
+		social: {
+			twitter: `athiththan11`,
+		},
+	},
+	plugins: [
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				path: `${stackcheats_path}/sheets`,
-				name: `blog`
-			}
-        },
-        {
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${stackcheats_path}/cheats`,
-				name: `cheatsheet`
-			}
+				path: `${__dirname}/stacksheets/content/blog`,
+				name: `blog`,
+			},
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				path: `${stackcheats_path}/assets`,
-				name: `assets`
-			}
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: `${stackcheats_path}/covers`,
-                name: `covers`
-            }
-        },
-        {
-            resolve: `gatsby-mdx`,
-            options: {
-                defaultLayouts: {
-                    posts: require.resolve('./src/components/Layout.js')
-                }
-            }
-        },
+				path: `${__dirname}/stacksheets/content/assets`,
+				name: `assets`,
+			},
+		},
 		{
 			resolve: `gatsby-plugin-mdx`,
-            options: {
-                extensions: ['.mdx', '.md'],
+			options: {
+				extensions: ['.mdx', '.md'],
+				// a workaround to solve mdx-remark plugin compat issue
+				// https://github.com/gatsbyjs/gatsby/issues/15486
+				plugins: [`gatsby-remark-images`],
 				gatsbyRemarkPlugins: [
 					{
-						resolve: `gatsby-remark-embed-gist`,
+						resolve: `gatsby-remark-images`,
 						options: {
-							username: 'athiththan11',
-							includeDefaultCss: false
-						}
+							maxWidth: 590,
+						},
 					},
 					{
 						resolve: `gatsby-remark-responsive-iframe`,
 						options: {
-							wrapperStyle: `margin-bottom: 1.0725rem`
-						}
+							wrapperStyle: `margin-bottom: 1.0725rem`,
+						},
 					},
 					{
-						resolve: `gatsby-remark-prismjs`,
-						options: {
-							classPrefix: 'language-',
-							inlineCodeMaker: null,
-							aliases: {},
-							showLineNumbers: false,
-							noInlineHighlight: false
-						}
-                    },
-                    {
-						resolve: `gatsby-remark-images`,
-						options: {
-							maxWidth: 590
-						}
+						resolve: `gatsby-remark-copy-linked-files`,
 					},
-					`gatsby-remark-copy-linked-files`,
-					`gatsby-remark-smartypants`
-                ]
-			}
-        },
+
+					{
+						resolve: `gatsby-remark-smartypants`,
+					},
+				],
+			},
+		},
 		`gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
+		`gatsby-plugin-sharp`,
+		`gatsby-plugin-sass`,
 		{
 			resolve: `gatsby-plugin-google-analytics`,
 			options: {
-				trackingId: `UA-144714384-1`
-			}
+				//trackingId: `ADD YOUR TRACKING ID HERE`,
+			},
 		},
-		// `gatsby-plugin-feed`,
+		{
+			resolve: `gatsby-plugin-feed`,
+			options: {
+				query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+              }
+            }
+          }
+        `,
+				feeds: [
+					{
+						serialize: ({ query: { site, allMdx } }) => {
+							return allMdx.edges.map((edge) => {
+								return Object.assign(
+									{},
+									edge.node.frontmatter,
+									{
+										description: edge.node.excerpt,
+										data: edge.node.frontmatter.date,
+										url:
+											site.siteMetadata.siteUrl +
+											edge.node.fields.slug,
+										guid:
+											site.siteMetadata.siteUrl +
+											edge.node.fields.slug,
+										custom_elements: [
+											{
+												'content:encoded':
+													edge.node.html,
+											},
+										],
+									}
+								)
+							})
+						},
+
+						/* if you want to filter for only published posts, you can do
+						 * something like this:
+						 * filter: { frontmatter: { published: { ne: false } } }
+						 * just make sure to add a published frontmatter field to all posts,
+						 * otherwise gatsby will complain
+						 **/
+						query: `
+            {
+              allMdx(
+                limit: 1000,
+                sort: { order: DESC, fields: [frontmatter___date] },
+              ) {
+                edges {
+                  node {
+                    fields { slug }
+                    frontmatter {
+                      title
+                      date
+                    }
+                    html
+                  }
+                }
+              }
+            }
+            `,
+						output: '/rss.xml',
+						title: 'Gatsby RSS feed',
+					},
+				],
+			},
+		},
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `stackcheats.io`,
-				short_name: `stackcheats`,
+				name: `StackCheats`,
+				short_name: `StackCheats`,
 				start_url: `/`,
 				background_color: `#ffffff`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `stackcheats/stack/assets/stackcheats-icon.png`
-			}
+				icon: `stacksheets/content/assets/gatsby-icon.png`,
+			},
 		},
-		// `gatsby-plugin-offline`,
+		`gatsby-plugin-offline`,
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-plugin-typography`,
 			options: {
-				pathToConfigModule: `src/utils/typography`
-			}
-        }
-	]
+				pathToConfigModule: `src/utils/typography`,
+			},
+		},
+	],
 }

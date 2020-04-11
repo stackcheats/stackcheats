@@ -1,4 +1,4 @@
 
-[submodule "stackcheats"]
-	path = stackcheats
+[submodule "stacksheets"]
+	path = stacksheets
 	url = git@github.com:stackcheats/stacksheets.git

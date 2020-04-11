@@ -1,10 +1,10 @@
+// custom typefaces
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 
-require('prismjs/themes/prism-solarizedlight.css')
-require('prismjs/plugins/line-numbers/prism-line-numbers.css')
+import { wrapRootElement as wrap } from './wrap-root-element'
 
-import './src/styles/sidebar-menu.css'
-import './src/styles/styles.css'
-import './src/styles/gist.css'
-import './src/styles/code-surfer.css'
+// styles
+import './src/styles/style.scss'
+
+export const wrapRootElement = wrap

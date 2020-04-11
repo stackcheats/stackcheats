@@ -1,11 +1,11 @@
 import Typography from 'typography'
-import bootstrapTheme from 'typography-theme-bootstrap'
+import Bootstrap from "typography-theme-bootstrap";
 
-const typography = new Typography(bootstrapTheme)
+const typography = new Typography(Bootstrap)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
-	typography.injectStyles()
+  typography.injectStyles()
 }
 
 export default typography
