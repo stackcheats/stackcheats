@@ -5,6 +5,8 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
 
+import { Medium } from '@icons-pack/react-simple-icons'
+
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
@@ -23,7 +25,7 @@ class BlogIndex extends React.Component {
             return (
               <div className="card p-4 rounded-lg" key={node.fields.slug}>
                 <div className="card-body d-flex flex-column">
-                  <h4
+                  <h5
                     className="card-title"
                     style={{
                       marginBottom: rhythm(1 / 4),
@@ -39,18 +41,29 @@ class BlogIndex extends React.Component {
                     >
                       {title}
                     </Link>
-                  </h4>
+                  </h5>
                   <small className="text-muted">{node.frontmatter.date}</small>
                   <p className="card-text mt-3">{node.frontmatter.short}</p>
-                  <Link
-                    className="btn btn-sm btn-light mt-auto"
-                    style={{
-                      width: "max-content",
-                    }}
-                    to={node.fields.slug}
-                  >
-                    Read More
-                  </Link>
+                  <div className="mt-auto">
+                    <Link
+                      className="btn btn-sm btn-light"
+                      style={{
+                        width: 'max-content',
+                      }}
+                      to={node.fields.slug}
+                    >
+                      Read More
+                    </Link>
+                    <a
+                      className="btn btn-sm ml-2 rounded"
+                      style={{
+                        width: 'max-content',
+                      }}
+                      href={node.frontmatter.medium}
+                    >
+                      <Medium size={24} />
+                    </a>
+                  </div>
                 </div>
               </div>
             )
@@ -61,9 +74,15 @@ class BlogIndex extends React.Component {
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <div className="card p-4 rounded-lg" key={node.fields.slug}>
+              <div
+                className="card p-4 rounded-lg"
+                key={node.fields.slug}
+                style={{
+                  backgroundColor: node.frontmatter.bgcolor
+                }}
+              >
                 <div className="card-body">
-                  <h4
+                  <h5
                     className="card-title"
                     style={{
                       marginBottom: rhythm(1 / 4),
@@ -79,7 +98,7 @@ class BlogIndex extends React.Component {
                     >
                       {title}
                     </Link>
-                  </h4>
+                  </h5>
                   <small className="text-muted">{node.frontmatter.date}</small>
                   <p className="card-text mt-3">{node.frontmatter.short}</p>
                   <Link
@@ -88,6 +107,12 @@ class BlogIndex extends React.Component {
                   >
                     Read More
                   </Link>
+                  <a
+                    className="btn btn-sm ml-2 mt-3 rounded"
+                    href={node.frontmatter.medium}
+                  >
+                    <Medium size={24} />
+                  </a>
                 </div>
               </div>
             )
@@ -117,6 +142,8 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             short
+            medium
+            bgcolor
           }
         }
       }
