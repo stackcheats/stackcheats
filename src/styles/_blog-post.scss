@@ -1,46 +1,63 @@
-// styles related to blog post content pages
+@import 'gist';
 
 $font-size: 1rem;
-
 $blockquote-color: #ffc107;
-
 $content-h1-color: #6c757d;
 $content-h-color: #bbb;
 $content-p-color: #8b8c8e;
 
 .content-container {
-  
-  max-width: 780px;
+  max-width: 800px;
   margin-right: auto;
   // margin-left: auto;
 
+  h1 {
+    color: #343a40;
+  }
+
+  h2:not(:first-of-type) {
+    margin-top: 1.72em !important;
+  }
+
   h2 {
+    margin-top: 1em;
     font-size: 1.5em;
+    color: #495057;
   }
 
   h3 {
+    margin-top: 1.25em;
     font-size: 1.25em;
+    color: #495057;
   }
 
-  h2, h3 {
-    margin-top: 1em;
-  }
-
-  h4, h5 {
-    margin-bottom: 1em;
+  h4,
+  h5 {
+    margin-bottom: 1.125em;
     font-size: 1em;
+    color: #495057;
+  }
+
+  p:first-of-type {
+    margin-top: 0;
+  }
+
+  p {
+    margin-top: 1em;
+    color: #1b1b1b;
   }
 
   .badge {
-    margin-right: .5em;
-    padding: .5em .5em;
+    margin-right: 0.5em;
+    padding: 0.5em 0.5em;
     text-transform: lowercase;
   }
 
   blockquote {
     border-left: medium solid $blockquote-color;
-    
+
     p {
+      margin-top: initial;
       font-size: $font-size;
       font-style: italic;
     }
@@ -48,12 +65,22 @@ $content-p-color: #8b8c8e;
 
   span.gatsby-resp-image-wrapper {
     max-width: 100% !important;
-    margin-top: 24px;
-    margin-bottom: 24px;
+  }
+
+  .gist,
+  .prism-code,
+  span.gatsby-resp-image-wrapper {
+    margin-top: 48px;
+    margin-bottom: 48px;
   }
 
   img.gatsby-resp-image-image {
-    border: 1px dashed;
-    border-radius: 1em;
+    border: 1px dashed #dee2e6;
+    border-radius: 0.75em;
+  }
+
+  .card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
   }
 }

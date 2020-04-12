@@ -3,6 +3,10 @@
 @import 'blog-post';
 @import 'prism';
 
+.stackcheats-header {
+  color: #424242 !important;
+}
+
 .card-columns {
   @include media-breakpoint-only(lg) {
     column-count: 3 !important;
@@ -16,9 +20,18 @@
   @extend .card-deck;
   flex-direction: row;
 
+  margin-left: 0;
+  margin-right: 0;
+
   & > .card {
     @extend .mx-3;
-    flex: 0 0 40% !important; /*Change to any size you want*/
-    max-width: 40%;
+
+    flex: 0 0 40% !important;
+    margin-left: 0 !important;
+
+    @include media-breakpoint-only(xs) {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
   }
 }

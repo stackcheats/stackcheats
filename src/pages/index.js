@@ -14,13 +14,50 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title="StackCheats Posts"
+          title="StackCheats"
           keywords={[`stackcheats`, `blog`, `gatsby`, `javascript`, `react`]}
         />
-        <div
-          className="card-columns mb-5"
-          // className="card-deck-scrollable flex-nowrap overflow-auto"
-        >
+        <div className="card-deck-scrollable flex-nowrap overflow-auto  my-5">
+          {posts.slice(0, 4).map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <div className="card p-4 rounded-lg" key={node.fields.slug}>
+                <div className="card-body d-flex flex-column">
+                  <h4
+                    className="card-title"
+                    style={{
+                      marginBottom: rhythm(1 / 4),
+                    }}
+                  >
+                    <Link
+                      className="text-dark"
+                      style={{
+                        textDecoration: `none`,
+                        boxShadow: `none`,
+                      }}
+                      to={node.fields.slug}
+                    >
+                      {title}
+                    </Link>
+                  </h4>
+                  <small className="text-muted">{node.frontmatter.date}</small>
+                  <p className="card-text mt-3">{node.frontmatter.short}</p>
+                  <Link
+                    className="btn btn-sm btn-light mt-auto"
+                    style={{
+                      width: "max-content",
+                    }}
+                    to={node.fields.slug}
+                  >
+                    Read More
+                  </Link>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        <div className="card-columns mb-5">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
@@ -45,6 +82,12 @@ class BlogIndex extends React.Component {
                   </h4>
                   <small className="text-muted">{node.frontmatter.date}</small>
                   <p className="card-text mt-3">{node.frontmatter.short}</p>
+                  <Link
+                    className="btn btn-sm btn-light mt-3"
+                    to={node.fields.slug}
+                  >
+                    Read More
+                  </Link>
                 </div>
               </div>
             )

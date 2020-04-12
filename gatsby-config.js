@@ -50,6 +50,13 @@ module.exports = {
 					{
 						resolve: `gatsby-remark-smartypants`,
 					},
+					{
+						resolve: `gatsby-remark-embed-gist`,
+						options: {
+							username: 'athiththan11',
+							includeDefaultCss: false
+						},
+					},
 				],
 			},
 		},

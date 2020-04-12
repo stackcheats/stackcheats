@@ -14,11 +14,15 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.frontmatter.seo} />
+        <SEO
+          title={post.frontmatter.title}
+          description={post.frontmatter.seo}
+        />
         <div className="content-container mt-5">
           <h1>{post.frontmatter.title}</h1>
           <h2 className="my-0 font-weight-normal">{post.frontmatter.intro}</h2>
           <p
+            className="text-muted"
             style={{
               ...scale(-1 / 5),
               display: `block`,
@@ -27,6 +31,15 @@ class BlogPostTemplate extends React.Component {
           >
             {post.frontmatter.date}
           </p>
+          <div className="my-4">
+            <a href="https://github.com/athiththan11">
+              <img
+                className="mb-0"
+                src="https://avatars3.githubusercontent.com/u/29927177?s=460&amp;v=4"
+                style={{ width: 32, height: 32, borderRadius: 40 }}
+              />
+            </a>
+          </div>
           <Tag tags={post.frontmatter.tags} />
           <MDXRenderer>{post.body}</MDXRenderer>
         </div>
