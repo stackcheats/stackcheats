@@ -23,12 +23,21 @@ module.exports = {
 				name: `assets`,
 			},
 		},
+		// {
+		// 	resolve: "gatsby-plugin-page-creator",
+		// 	options: {
+		// 		path: `${__dirname}/stacksheets/content/blog`,
+		// 	},
+		// },
 		{
 			resolve: `gatsby-plugin-mdx`,
 			options: {
 				extensions: ['.mdx', '.md'],
 				// a workaround to solve mdx-remark plugin compat issue
 				// https://github.com/gatsbyjs/gatsby/issues/15486
+				defaultLayouts: {
+					posts: require.resolve("./src/components/Layout.js"),
+				},
 				plugins: [`gatsby-remark-images`],
 				gatsbyRemarkPlugins: [
 					{
@@ -63,6 +72,7 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-sass`,
+		// `gatsby-theme-waves`,
 		{
 			resolve: `gatsby-plugin-google-analytics`,
 			options: {

@@ -1,11 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { MDXProvider } from "@mdx-js/react";
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 import Tag from '../components/Tag'
+import Reference from '../components/Reference'
+
+const shortcodes = {
+  Reference
+}
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -41,7 +47,9 @@ class BlogPostTemplate extends React.Component {
             </a>
           </div>
           <Tag tags={post.frontmatter.tags} />
-          <MDXRenderer>{post.body}</MDXRenderer>
+          <MDXProvider components={shortcodes}>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </MDXProvider>
         </div>
       </Layout>
     )

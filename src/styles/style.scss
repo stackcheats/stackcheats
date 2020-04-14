@@ -12,7 +12,7 @@
 @include google-font("Comic+Neue");
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 .stackcheats-header {
