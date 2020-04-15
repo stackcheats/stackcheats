@@ -11,6 +11,10 @@ $content-p-color: #8b8c8e;
   margin-right: auto;
 
   h1 {
+    @include media-breakpoint-down(sm) {
+      font-size: 2rem !important;
+    }
+
     color: #343a40;
   }
 
@@ -20,6 +24,10 @@ $content-p-color: #8b8c8e;
   }
 
   h2 {
+    @include media-breakpoint-down(sm) {
+      font-size: 1.25rem !important;
+    }
+
     margin-top: 1rem;
     font-size: 1.5rem;
     color: #495057;
@@ -49,8 +57,9 @@ $content-p-color: #8b8c8e;
   }
 
   .badge {
+    margin-top: 1rem;
     margin-right: 0.5rem;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem;
     text-transform: lowercase;
   }
 
@@ -99,5 +108,38 @@ $content-p-color: #8b8c8e;
 
   a.reference-card:hover {
     text-decoration: none;
+  }
+
+  a.header-permlink.before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    padding-right: 4px;
+  }
+
+  a.header-permlink {
+    color: inherit;
+    fill: #8a4baf;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  h1 .header-permlink svg,
+  h2 .header-permlink svg,
+  h3 .header-permlink svg,
+  h4 .header-permlink svg,
+  h5 .header-permlink svg,
+  h6 .header-permlink svg {
+    visibility: hidden;
+  }
+
+  h1:hover .header-permlink svg,
+  h2:hover .header-permlink svg,
+  h3:hover .header-permlink svg,
+  h4:hover .header-permlink svg,
+  h5:hover .header-permlink svg,
+  h6:hover .header-permlink svg {
+    visibility: visible;
   }
 }
