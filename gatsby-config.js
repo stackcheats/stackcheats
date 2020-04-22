@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
 	siteMetadata: {
 		title: `StackCheats`,
@@ -86,7 +88,7 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-google-analytics`,
 			options: {
-				//trackingId: `ADD YOUR TRACKING ID HERE`,
+				trackingId: process.env.GA_TRACKING_ID,
 			},
 		},
 		{
