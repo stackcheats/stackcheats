@@ -12,6 +12,7 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMdx.edges
+    const tags = data.tagCollection.group
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -19,6 +20,8 @@ class BlogIndex extends React.Component {
           title="StackCheats"
           keywords={[`stackcheats`, `blog`, `gatsby`, `javascript`, `react`]}
         />
+
+        {/* horizontal scrollable card deck */}
         <div className="card-deck-scrollable flex-nowrap overflow-auto  my-5">
           {posts.slice(0, 4).map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
@@ -70,6 +73,27 @@ class BlogIndex extends React.Component {
           })}
         </div>
 
+        {/* tag collection deck */}
+        <div className="mb-5">
+          {tags
+            .sort((a, b) => {
+              return b.totalCount - a.totalCount
+            })
+            .slice(0, 10)
+            .map(({ fieldValue, totalCount }) => {
+              if (totalCount > 1) {
+                return (
+                  <Link key={fieldValue} to={`/tags/${fieldValue}`}>
+                    <span className="tag-badge badge badge-light ">
+                      {fieldValue} <b>#{totalCount}</b>
+                    </span>
+                  </Link>
+                )
+              }
+            })}
+        </div>
+
+        {/* card-columns deck */}
         <div className="card-columns mb-5">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
@@ -78,7 +102,7 @@ class BlogIndex extends React.Component {
                 className="card p-4 rounded-lg"
                 key={node.fields.slug}
                 style={{
-                  backgroundColor: node.frontmatter.bgcolor
+                  backgroundColor: node.frontmatter.bgcolor,
                 }}
               >
                 <div className="card-body">
@@ -146,6 +170,12 @@ export const pageQuery = graphql`
             bgcolor
           }
         }
+      }
+    }
+    tagCollection: allMdx {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
     }
   }

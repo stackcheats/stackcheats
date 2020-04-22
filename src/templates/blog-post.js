@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { MDXProvider } from "@mdx-js/react";
+import { MDXProvider } from '@mdx-js/react'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
@@ -9,8 +9,10 @@ import { rhythm, scale } from '../utils/typography'
 import Tag from '../components/Tag'
 import Reference from '../components/Reference'
 
+import { Medium } from '@icons-pack/react-simple-icons'
+
 const shortcodes = {
-  Reference
+  Reference,
 }
 
 class BlogPostTemplate extends React.Component {
@@ -45,6 +47,15 @@ class BlogPostTemplate extends React.Component {
                 style={{ width: 32, height: 32, borderRadius: 40 }}
               />
             </a>
+            <a
+              className="btn btn-sm ml-2 rounded"
+              style={{
+                width: 'max-content',
+              }}
+              href={post.frontmatter.medium}
+            >
+              <Medium size={28} />
+            </a>
           </div>
           <Tag tags={post.frontmatter.tags} />
           <MDXProvider components={shortcodes}>
@@ -75,6 +86,7 @@ export const pageQuery = graphql`
         intro
         tags
         seo
+        medium
       }
       body
     }

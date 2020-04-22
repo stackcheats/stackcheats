@@ -55,3 +55,27 @@ body {
     }
   }
 }
+
+.tags-card {
+  border: 0rem !important;
+  border-radius: 0rem !important;
+
+  & .card-body {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.tag-badge.badge {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  text-transform: lowercase !important;
+  font-size: small !important;
+}
+
+.tag-badge.badge:hover {
+  background-color: $blue;
+  color: $white;
+  cursor: pointer;
+}
