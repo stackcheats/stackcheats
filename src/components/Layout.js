@@ -4,7 +4,12 @@ import { Link } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { rhythm } from '../utils/typography'
 
-import { Github, Twitter, Medium, Linkedin } from "@icons-pack/react-simple-icons";
+import {
+  Github,
+  Twitter,
+  Medium,
+  Linkedin,
+} from '@icons-pack/react-simple-icons'
 
 class Layout extends React.Component {
   render() {
@@ -15,7 +20,7 @@ class Layout extends React.Component {
     if (location.pathname === rootPath) {
       header = (
         <h1
-        className="stackcheats-header display-4 font-weight-normal"
+          className="stackcheats-header display-4 font-weight-normal"
           style={{
             marginBottom: rhythm(1.5),
             marginTop: rhythm(1.5),

@@ -1,6 +1,6 @@
 import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import PrismTheme from "prism-react-renderer/themes/vsDark"
+import PrismTheme from 'prism-react-renderer/themes/vsDark'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
 export const Code = ({ codeString, language, ...props }) => {

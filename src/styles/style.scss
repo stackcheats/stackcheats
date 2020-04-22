@@ -4,7 +4,7 @@
 @import 'prism';
 
 @mixin google-font($family) {
-  @import url('http://fonts.googleapis.com/css?family=#{$family}');
+  @import url('https://fonts.googleapis.com/css?family=#{$family}');
 }
 
 @include google-font('Roboto');
@@ -72,6 +72,7 @@ body {
   padding: 0.5rem;
   text-transform: lowercase !important;
   font-size: small !important;
+  font-weight: 400 !important;
 }
 
 .tag-badge.badge:hover {
