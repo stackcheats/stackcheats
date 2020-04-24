@@ -26,7 +26,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.seo}
         />
-        <div className="content-container mt-5">
+        <div className="content-container my-5">
           <h1>{post.frontmatter.title}</h1>
           <h2 className="my-0 font-weight-normal">{post.frontmatter.intro}</h2>
           <p
@@ -61,6 +61,7 @@ class BlogPostTemplate extends React.Component {
           <MDXProvider components={shortcodes}>
             <MDXRenderer>{post.body}</MDXRenderer>
           </MDXProvider>
+          <hr className="mt-5" />
         </div>
       </Layout>
     )

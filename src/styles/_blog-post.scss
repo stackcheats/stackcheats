@@ -142,4 +142,10 @@ $content-p-color: #8b8c8e;
   h6:hover .header-permlink svg {
     visibility: visible;
   }
+
+  hr {
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: white;
+  }
 }
