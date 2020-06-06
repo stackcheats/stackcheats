@@ -143,7 +143,7 @@ class BlogIndex extends React.Component {
             )
           })}
         </div>
-        
+
         {/* card-columns deck for cheats */}
         <div className="card-columns mb-5">
           {cheats.map(({ node }) => {
