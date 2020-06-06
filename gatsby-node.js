@@ -5,6 +5,7 @@ exports.createPages = ({ graphql, actions }) => {
 	const { createPage } = actions
 
 	const blogPost = path.resolve(`./src/templates/blog-post.js`)
+	const cheatPost = path.resolve(`./src/templates/cheat-post.js`)
 	const tagTemplate = path.resolve(`./src/templates/tag.js`)
 
 	return graphql(
@@ -13,6 +14,25 @@ exports.createPages = ({ graphql, actions }) => {
 				blogsGroup: allMdx(
 					sort: { fields: [frontmatter___date], order: DESC }
 					limit: 1000
+					filter: { frontmatter: { cheat: { ne: true }}}
+				) {
+					edges {
+						node {
+							id
+							fields {
+								slug
+							}
+							frontmatter {
+								title
+							}
+							body
+						}
+					}
+				}
+				cheatsGroup: allMdx(
+					sort: { fields: [frontmatter___date], order: DESC }
+					limit: 1000
+					filter: { frontmatter: { cheat: { in: true }}}
 				) {
 					edges {
 						node {
@@ -54,6 +74,18 @@ exports.createPages = ({ graphql, actions }) => {
 					previous,
 					next,
 				},
+			})
+		})
+
+		// create cheat post pages
+		const cheats = result.data.cheatsGroup.edges
+		cheats.forEach((cheat, index) => {
+			createPage({
+				path: cheat.node.fields.slug,
+				component: cheatPost,
+				context: {
+					slug: cheat.node.fields.slug,
+				}
 			})
 		})
 

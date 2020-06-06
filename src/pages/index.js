@@ -13,6 +13,7 @@ class BlogIndex extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMdx.edges
     const tags = data.tagCollection.group
+    const cheats = data.cheatCollection.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -142,6 +143,50 @@ class BlogIndex extends React.Component {
             )
           })}
         </div>
+        
+        {/* card-columns deck for cheats */}
+        <div className="card-columns mb-5">
+          {cheats.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <div
+                className="card p-4 rounded-lg"
+                key={node.fields.slug}
+                style={{
+                  backgroundColor: node.frontmatter.bgcolor,
+                }}
+              >
+                <div className="card-body">
+                  <h5
+                    className="card-title"
+                    style={{
+                      marginBottom: rhythm(1 / 4),
+                    }}
+                  >
+                    <Link
+                      className="text-dark"
+                      style={{
+                        textDecoration: `none`,
+                        boxShadow: `none`,
+                      }}
+                      to={node.fields.slug}
+                    >
+                      {title}
+                    </Link>
+                  </h5>
+                  <small className="text-muted">{node.frontmatter.date}</small>
+                  <p className="card-text mt-3">{node.frontmatter.short}</p>
+                  <Link
+                    className="btn btn-sm btn-light mt-3"
+                    to={node.fields.slug}
+                  >
+                    Read More
+                  </Link>
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </Layout>
     )
   }
@@ -156,7 +201,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { cheat: { ne: true } } }
+    ) {
       edges {
         node {
           fields {
@@ -168,6 +216,23 @@ export const pageQuery = graphql`
             short
             medium
             bgcolor
+          }
+        }
+      }
+    }
+    cheatCollection: allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { cheat: { in: true } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            short
           }
         }
       }

@@ -11,6 +11,7 @@ module.exports = {
 		},
 	},
 	plugins: [
+		'gatsby-plugin-theme-ui',
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -21,16 +22,17 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
+				path: `${__dirname}/stacksheets/content/cheats`,
+				name: `cheat`,
+			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
 				path: `${__dirname}/stacksheets/content/assets`,
 				name: `assets`,
 			},
 		},
-		// {
-		// 	resolve: "gatsby-plugin-page-creator",
-		// 	options: {
-		// 		path: `${__dirname}/stacksheets/content/blog`,
-		// 	},
-		// },
 		{
 			resolve: `gatsby-plugin-mdx`,
 			options: {
@@ -57,6 +59,7 @@ module.exports = {
 						resolve: `gatsby-remark-images`,
 						options: {
 							maxWidth: 590,
+							quality: 100,
 						},
 					},
 					{
@@ -84,7 +87,6 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-sass`,
-		// `gatsby-theme-waves`,
 		{
 			resolve: `gatsby-plugin-google-analytics`,
 			options: {

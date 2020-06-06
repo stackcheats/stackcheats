@@ -2,6 +2,7 @@
 
 @import 'blog-post';
 @import 'prism';
+@import 'code-surfer';
 
 @mixin google-font($family) {
   @import url('https://fonts.googleapis.com/css?family=#{$family}');
@@ -40,6 +41,8 @@ body {
   @extend .card-deck;
   flex-direction: row;
 
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-left: 0;
   margin-right: 0;
 
@@ -79,4 +82,23 @@ body {
   background-color: $blue;
   color: $white;
   cursor: pointer;
+}
+
+.card-deck-scrollable::-webkit-scrollbar {
+  height: 0.2rem;
+}
+
+/* Track */
+.card-deck-scrollable::-webkit-scrollbar-track {
+  background: unset !important;
+}
+
+/* Handle */
+.card-deck-scrollable::-webkit-scrollbar-thumb {
+  background: $blue;
+}
+
+/* Handle on hover */
+.card-deck-scrollable::-webkit-scrollbar-thumb:hover {
+  background: $blue;
 }
