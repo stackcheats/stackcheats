@@ -6,6 +6,7 @@ exports.createPages = ({ graphql, actions }) => {
 
 	const blogPost = path.resolve(`./src/templates/blog-post.js`)
 	const cheatPost = path.resolve(`./src/templates/cheat-post.js`)
+	const infographicPost = path.resolve(`./src/templates/infographic-post.js`)
 	const tagTemplate = path.resolve(`./src/templates/tag.js`)
 
 	return graphql(
@@ -14,7 +15,7 @@ exports.createPages = ({ graphql, actions }) => {
 				blogsGroup: allMdx(
 					sort: { fields: [frontmatter___date], order: DESC }
 					limit: 1000
-					filter: { frontmatter: { cheat: { ne: true }}}
+					filter: { frontmatter: { cheat: { ne: true }, infographic: { ne: true }}}
 				) {
 					edges {
 						node {
@@ -33,6 +34,24 @@ exports.createPages = ({ graphql, actions }) => {
 					sort: { fields: [frontmatter___date], order: DESC }
 					limit: 1000
 					filter: { frontmatter: { cheat: { in: true }}}
+				) {
+					edges {
+						node {
+							id
+							fields {
+								slug
+							}
+							frontmatter {
+								title
+							}
+							body
+						}
+					}
+				}
+				infographicsGroup: allMdx(
+					sort: { fields: [frontmatter___date], order: DESC }
+					limit: 1000
+					filter: { frontmatter: { infographic: { in: true }}}
 				) {
 					edges {
 						node {
@@ -85,6 +104,18 @@ exports.createPages = ({ graphql, actions }) => {
 				component: cheatPost,
 				context: {
 					slug: cheat.node.fields.slug,
+				}
+			})
+		})
+
+		// create infographics pages
+		const infographics = result.data.infographicsGroup.edges
+		infographics.forEach((igraphic, index) => {
+			createPage({
+				path: igraphic.node.fields.slug,
+				component: infographicPost,
+				context: {
+					slug: igraphic.node.fields.slug
 				}
 			})
 		})

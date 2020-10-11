@@ -102,3 +102,17 @@ body {
 .card-deck-scrollable::-webkit-scrollbar-thumb:hover {
   background: $blue;
 }
+
+.graphic-contianer {
+  display: flex;
+
+  @include media-breakpoint-up(lg) {
+    width: 960px;
+    margin-left: calc(50% - 480px);  
+  }
+
+  @include media-breakpoint-only(xl) {
+    width: 1200px;
+    margin-left: calc(50% - 600px);  
+  }
+}

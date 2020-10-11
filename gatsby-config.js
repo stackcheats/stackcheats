@@ -29,6 +29,13 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
+				path: `${__dirname}/stacksheets/content/infographics`,
+				name: `infographic`,
+			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
 				path: `${__dirname}/stacksheets/content/assets`,
 				name: `assets`,
 			},

@@ -14,6 +14,7 @@ class BlogIndex extends React.Component {
     const posts = data.allMdx.edges
     const tags = data.tagCollection.group
     const cheats = data.cheatCollection.edges
+    const infographics = data.infographicCollection.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -187,6 +188,47 @@ class BlogIndex extends React.Component {
             )
           })}
         </div>
+
+        {/* card-columns deck for infographics */}
+        <div className="card-columns mb-5">
+          {infographics.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <div
+                className="card p-4 rounded-lg"
+                key={node.fields.slug}
+              >
+                <div className="card-body">
+                  <h5
+                    className="card-title"
+                    style={{
+                      marginBottom: rhythm(1 / 4),
+                    }}
+                  >
+                    <Link
+                      className="text-dark"
+                      style={{
+                        textDecoration: `none`,
+                        boxShadow: `none`,
+                      }}
+                      to={node.fields.slug}
+                    >
+                      {title}
+                    </Link>
+                  </h5>
+                  <small className="text-muted">{node.frontmatter.date}</small>
+                  <p className="card-text mt-3">{node.frontmatter.intro}</p>
+                  <Link
+                    className="btn btn-sm btn-light mt-3"
+                    to={node.fields.slug}
+                  >
+                    View Graphic
+                  </Link>
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </Layout>
     )
   }
@@ -203,7 +245,7 @@ export const pageQuery = graphql`
     }
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { cheat: { ne: true } } }
+      filter: { frontmatter: { cheat: { ne: true }, infographic: { ne: true }}}
     ) {
       edges {
         node {
@@ -222,7 +264,7 @@ export const pageQuery = graphql`
     }
     cheatCollection: allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { cheat: { in: true } } }
+      filter: { frontmatter: { cheat: { in: true }, infographic: { ne: true }}}
     ) {
       edges {
         node {
@@ -233,6 +275,23 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             short
+          }
+        }
+      }
+    }
+    infographicCollection: allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { infographic: { in: true } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            intro
           }
         }
       }
