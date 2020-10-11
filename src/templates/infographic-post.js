@@ -49,7 +49,6 @@ class InfoGraphicPostTemplate extends React.Component {
 
 export default InfoGraphicPostTemplate
 
-
 export const pageQuery = graphql`
   query($slug: String!) {
     site {

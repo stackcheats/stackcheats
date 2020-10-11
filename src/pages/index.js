@@ -194,10 +194,7 @@ class BlogIndex extends React.Component {
           {infographics.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <div
-                className="card p-4 rounded-lg"
-                key={node.fields.slug}
-              >
+              <div className="card p-4 rounded-lg" key={node.fields.slug}>
                 <div className="card-body">
                   <h5
                     className="card-title"
@@ -245,7 +242,9 @@ export const pageQuery = graphql`
     }
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { cheat: { ne: true }, infographic: { ne: true }}}
+      filter: {
+        frontmatter: { cheat: { ne: true }, infographic: { ne: true } }
+      }
     ) {
       edges {
         node {
@@ -264,7 +263,9 @@ export const pageQuery = graphql`
     }
     cheatCollection: allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { cheat: { in: true }, infographic: { ne: true }}}
+      filter: {
+        frontmatter: { cheat: { in: true }, infographic: { ne: true } }
+      }
     ) {
       edges {
         node {
