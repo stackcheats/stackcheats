@@ -94,7 +94,10 @@ class Layout extends React.Component {
             {/* #12100E */}
             <Medium color="#424242" size={24} />
           </a>
-          <a className="mr-3" href="https://www.linkedin.com/in/athiththan-kathirgamasegaran/">
+          <a
+            className="mr-3"
+            href="https://www.linkedin.com/in/athiththan-kathirgamasegaran/"
+          >
             {/* #0077B5 */}
             <Linkedin color="#424242" size={24} />
           </a>
