@@ -57,6 +57,7 @@ function Wave({
 }) {
   const ref = React.useRef()
   const currentStep = useCurrentStep(ref, variant)
+  const { position } = rest
 
   const [progress] = useSpring(currentStep, {
     decimals: 3,
@@ -79,6 +80,7 @@ function Wave({
             steps={columnSteps}
             progress={progress}
             variant={variant}
+            position = {position}
             currentStep={currentStep}
             {...rest}
           />

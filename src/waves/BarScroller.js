@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import { useSpring } from 'use-spring'
 
-function Scroller({ steps, currentStep, progress, variant }) {
+function Scroller({ steps, currentStep, progress, variant, align }) {
   const [fasterProgress] = useSpring(currentStep, {
     decimals: 3,
     stiffness: 52,
@@ -21,6 +21,14 @@ function Scroller({ steps, currentStep, progress, variant }) {
       return { top: '0%', bottom: '100%' }
     } else {
       const width = 3 / (1 + endBorder - startBorder)
+      if (align === 'right') {
+        return {
+          top: from * 100 + '%',
+          bottom: 100 - to * 100 + '%',
+          width,
+          borderRight: '2px solid orange',
+        }
+      }
       return {
         top: from * 100 + '%',
         bottom: 100 - to * 100 + '%',
@@ -29,9 +37,14 @@ function Scroller({ steps, currentStep, progress, variant }) {
       }
     }
   })
+
   return (
     <div
-      sx={{ variant: `styles.waves.${variant}.ScrollerContainer` }}
+      sx={{
+        variant: `styles.waves.${variant}.${
+          align === 'right' ? 'ScrollerContainerRight' : 'ScrollerContainer'
+        }`,
+      }}
       className="scroller"
     >
       {steps.map((step, i) => (
@@ -42,7 +55,11 @@ function Scroller({ steps, currentStep, progress, variant }) {
           key={i}
         >
           <div
-            sx={{ variant: `styles.waves.${variant}.ScrollerProgress` }}
+            sx={{
+              variant: `styles.waves.${variant}.${
+                align === 'right' ? 'ScrollerProgressRight' : 'ScrollerProgress'
+              }`,
+            }}
             style={progressStyles[i]}
           />
           {step}

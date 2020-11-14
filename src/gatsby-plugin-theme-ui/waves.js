@@ -13,6 +13,11 @@ export default {
       paddingLeft: [0, '50px'],
       paddingTop: ['50px', 0],
     },
+    ScrollerContainerRight: {
+      flex: 1,
+      paddingRight: [0, '50px'],
+      paddingTop: ['50px', 0],
+    },
     ScrollerStep: {
       position: 'relative',
       padding: [0, '0 10px'],
@@ -24,6 +29,11 @@ export default {
     ScrollerProgress: {
       position: 'absolute',
       left: ['-12px', '-3px'],
+      backgroundColor: 'primary',
+    },
+    ScrollerProgressRight: {
+      position: 'absolute',
+      right: ['-12px', '-3px'],
       backgroundColor: 'primary',
     },
     StickerContainer: {
