@@ -6,6 +6,7 @@ module.exports = {
 		author: `Athiththan Kathirgamasegaran`,
 		description: `A Personal Blog Platform of Athiththan Kathirgamasegaran`,
 		siteUrl: `https://stackcheats.github.io/`,
+		basePath: '/',
 		social: {
 			twitter: `athiththan11`,
 		},
@@ -38,6 +39,20 @@ module.exports = {
 			options: {
 				path: `${__dirname}/stacksheets/content/assets`,
 				name: `assets`,
+			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/stacksheets/content/docs`,
+				name: `doc`,
+			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/stacksheets/content/reveal`,
+				name: `reveal`,
 			},
 		},
 		{
@@ -89,6 +104,28 @@ module.exports = {
 						},
 					},
 				],
+			},
+		},
+		{
+			resolve: `gatsby-transformer-remark`,
+			options: {
+				plugins: [
+					{
+						resolve: 'gatsby-remark-slidify',
+						options: {
+							key: 'reveal',
+							revealOptions: {
+								transition: "fade"
+							}
+						}
+					},
+				]
+			}
+		},
+		{
+			resolve: `gatsby-transformer-yaml`,
+			options: {
+				typeName: `SidebarItems`,
 			},
 		},
 		`gatsby-transformer-sharp`,
@@ -184,6 +221,7 @@ module.exports = {
 				icon: `static/stack.png`,
 			},
 		},
+		`gatsby-plugin-emotion`,
 		`gatsby-plugin-offline`,
 		`gatsby-plugin-react-helmet`,
 		{

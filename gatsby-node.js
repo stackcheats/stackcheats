@@ -7,6 +7,8 @@ exports.createPages = ({ graphql, actions }) => {
 	const blogPost = path.resolve(`./src/templates/blog-post.js`)
 	const cheatPost = path.resolve(`./src/templates/cheat-post.js`)
 	const infographicPost = path.resolve(`./src/templates/infographic-post.js`)
+	const docTemplate = path.resolve(`./src/templates/doc-post.js`)
+	const revealTemplate = path.resolve(`./src/templates/reveal-slide.js`)	
 	const tagTemplate = path.resolve(`./src/templates/tag.js`)
 
 	return graphql(
@@ -15,8 +17,12 @@ exports.createPages = ({ graphql, actions }) => {
 				blogsGroup: allMdx(
 					sort: { fields: [frontmatter___date], order: DESC }
 					limit: 1000
-					filter: { frontmatter: { cheat: { ne: true }, infographic: { ne: true }}}
-				) {
+					filter: { frontmatter: { 
+						cheat: { ne: true }, 
+						infographic: { ne: true }, 
+						doc: { ne: true }
+					}
+				}) {
 					edges {
 						node {
 							id
@@ -26,14 +32,18 @@ exports.createPages = ({ graphql, actions }) => {
 							frontmatter {
 								title
 							}
-							body
 						}
 					}
 				}
 				cheatsGroup: allMdx(
 					sort: { fields: [frontmatter___date], order: DESC }
 					limit: 1000
-					filter: { frontmatter: { cheat: { in: true }}}
+					filter: { frontmatter: { 
+							cheat: { in: true },
+							doc: { ne: true },
+							infographic: { ne: true }
+						}
+					}
 				) {
 					edges {
 						node {
@@ -44,14 +54,18 @@ exports.createPages = ({ graphql, actions }) => {
 							frontmatter {
 								title
 							}
-							body
 						}
 					}
 				}
 				infographicsGroup: allMdx(
 					sort: { fields: [frontmatter___date], order: DESC }
 					limit: 1000
-					filter: { frontmatter: { infographic: { in: true }}}
+					filter: { frontmatter: { 
+							infographic: { in: true },
+							cheat: { ne: true },
+							doc: { ne: true }
+						}
+					}
 				) {
 					edges {
 						node {
@@ -62,7 +76,56 @@ exports.createPages = ({ graphql, actions }) => {
 							frontmatter {
 								title
 							}
-							body
+						}
+					}
+				}
+				docsGroup: allMdx(
+					sort: { fields: [frontmatter___date], order: DESC }
+					limit: 1000
+					filter: { frontmatter: { 
+							doc: { in: true },
+							infographic: { ne: true },
+							cheat: { ne: true }
+						}
+					}
+				) {
+					edges {
+						node {
+							id
+							fields {
+								slug
+							}
+							frontmatter {
+								title
+							}
+						}
+					}
+				}
+				sidebar: allSidebarItems {
+					edges {
+						node {
+							label
+							link
+							items {
+								label
+								link
+							}
+							id
+						}
+					}
+				}
+				revealGroup: allMarkdownRemark(
+					filter: { frontmatter: { reveal: { in: true }}}
+				) {
+					edges {
+						node {
+							id
+							fields {
+								slug
+							}
+							frontmatter {
+								reveal
+							}
 						}
 					}
 				}
@@ -120,6 +183,30 @@ exports.createPages = ({ graphql, actions }) => {
 			})
 		})
 
+		// create doc post pages
+		const docs = result.data.docsGroup.edges
+		docs.forEach((d) => {
+			createPage({
+				path: d.node.fields.slug,
+				component: docTemplate,
+				context: {
+					slug: d.node.fields.slug
+				}
+			})
+		})
+
+		// create reveal slide page
+		const slides = result.data.revealGroup.edges
+		slides.forEach((slide) => {
+			createPage({
+				path: slide.node.fields.slug,
+				component: revealTemplate,
+				context: {
+					slug: slide.node.fields.slug
+				}
+			})
+		})
+
 		// create tag pages
 		const tags = result.data.tagsGroup.group
 		tags.forEach(tag => {
@@ -134,10 +221,25 @@ exports.createPages = ({ graphql, actions }) => {
 	})
 }
 
+exports.createSchemaCustomization = ({ actions }) => {
+	actions.createTypes(`
+		type SidebarItems implements Node {
+			label: String!
+			link: String
+			items: [SidebarItemsItems]
+		}
+
+		type SidebarItemsItems {
+			label: String
+			link: String
+		}
+	`)
+}
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
 	const { createNodeField } = actions
 
-	if (node.internal.type === `Mdx`) {
+	if (node.internal.type === `Mdx` || node.internal.type === `MarkdownRemark`) {
 		const value = createFilePath({ node, getNode })
 		createNodeField({
 			name: `slug`,

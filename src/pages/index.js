@@ -15,6 +15,7 @@ class BlogIndex extends React.Component {
     const tags = data.tagCollection.group
     const cheats = data.cheatCollection.edges
     const infographics = data.infographicCollection.edges
+    const reveals = data.revealCollection.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -226,6 +227,39 @@ class BlogIndex extends React.Component {
             )
           })}
         </div>
+
+        {/* card-columns deck for reveal */}
+        <div className="card-columns mb-5">
+          {reveals.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <div className="card p-4 rounded-lg" key={node.fields.slug}>
+                <div className="card-body">
+                  <h5
+                    className="card-title"
+                    style={{
+                      marginBottom: rhythm(1 / 4),
+                    }}
+                  >
+                    <a
+                      className="text-dark"
+                      style={{
+                        textDecoration: `none`,
+                        boxShadow: `none`,
+                      }}
+                      href={node.fields.slug}
+                      target="_blank"
+                    >
+                      {title}
+                    </a>
+                  </h5>
+                  <small className="text-muted">{node.frontmatter.date}</small>
+                  <p className="card-text mt-3">{node.frontmatter.intro}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </Layout>
     )
   }
@@ -243,7 +277,12 @@ export const pageQuery = graphql`
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        frontmatter: { cheat: { ne: true }, infographic: { ne: true } }
+        frontmatter: {
+          cheat: { ne: true }
+          infographic: { ne: true }
+          doc: { ne: true }
+          reveal: { ne: true }
+        }
       }
     ) {
       edges {
@@ -264,7 +303,12 @@ export const pageQuery = graphql`
     cheatCollection: allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        frontmatter: { cheat: { in: true }, infographic: { ne: true } }
+        frontmatter: {
+          cheat: { in: true }
+          infographic: { ne: true }
+          doc: { ne: true }
+          reveal: { ne: true }
+        }
       }
     ) {
       edges {
@@ -282,7 +326,14 @@ export const pageQuery = graphql`
     }
     infographicCollection: allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { infographic: { in: true } } }
+      filter: {
+        frontmatter: {
+          infographic: { in: true }
+          doc: { ne: true }
+          cheat: { ne: true }
+          reveal: { ne: true }
+        }
+      }
     ) {
       edges {
         node {
@@ -293,6 +344,20 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             intro
+          }
+        }
+      }
+    }
+    revealCollection: allMarkdownRemark(
+      filter: { frontmatter: { reveal: { in: true } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
           }
         }
       }
