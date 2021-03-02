@@ -7,11 +7,11 @@ import Wave from './wave'
 
 /**
  * <SVGWave align="left|right">
- * 
+ *
  * ![SVG Image](./path/to/svg)
- * 
+ *
  * paragraph contents
- * 
+ *
  * </SVGWave>
  */
 
@@ -37,10 +37,10 @@ function SVGWave(props) {
 
   return (
     <Wave
-        columnComponents={components}
-        childrenToStepColumns={childrenToColumns}
-        {...props}
-      />
+      columnComponents={components}
+      childrenToStepColumns={childrenToColumns}
+      {...props}
+    />
   )
 }
 

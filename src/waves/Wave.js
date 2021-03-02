@@ -80,7 +80,7 @@ function Wave({
             steps={columnSteps}
             progress={progress}
             variant={variant}
-            position = {position}
+            position={position}
             currentStep={currentStep}
             {...rest}
           />
