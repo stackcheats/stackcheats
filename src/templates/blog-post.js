@@ -29,6 +29,12 @@ class BlogPostTemplate extends React.Component {
       comments.push(this.props.data.stackCheatsComments)
     }
 
+    let comments = []
+    const commentCollection = this.props.data.stackCheatsComments
+    if (commentCollection) {
+      comments.push(this.props.data.stackCheatsComments)
+    }
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
