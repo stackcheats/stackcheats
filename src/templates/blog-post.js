@@ -11,6 +11,7 @@ import Reference from '../components/Reference'
 
 import { Medium } from '@icons-pack/react-simple-icons'
 import { Eye } from 'react-feather'
+import Comments from '../components/comments/Comments'
 
 const shortcodes = {
   Reference,
@@ -21,6 +22,12 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const views = this.props.data.sheetViews.count
+
+    let comments = []
+    const commentCollection = this.props.data.stackCheatsComments
+    if (commentCollection) {
+      comments.push(this.props.data.stackCheatsComments)
+    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -69,6 +76,7 @@ class BlogPostTemplate extends React.Component {
             <MDXRenderer>{post.body}</MDXRenderer>
           </MDXProvider>
           <hr className="mt-5" />
+          <Comments comments={comments} slug={this.props.location.pathname} />
         </div>
       </Layout>
     )
@@ -100,6 +108,12 @@ export const pageQuery = graphql`
     }
     sheetViews(slug: { eq: $slug }) {
       count
+    }
+    stackCheatsComments(slug: { eq: $slug }) {
+      _id
+      author
+      content
+      createdAt
     }
   }
 `
