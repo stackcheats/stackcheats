@@ -9,7 +9,11 @@ function Tag({ tags, ...props }) {
   return (
     <div {...props}>
       {tags.map(tag => (
-        <Link key={tag} className="badge badge-primary font-weight-normal" to={`/tags/${tag}/`}>
+        <Link
+          key={tag}
+          className="badge badge-primary font-weight-normal"
+          to={`/tags/${tag}/`}
+        >
           {tag}
         </Link>
       ))}
