@@ -29,11 +29,7 @@ class BlogPostTemplate extends React.Component {
       comments.push(this.props.data.stackCheatsComments)
     }
 
-    let comments = []
-    const commentCollection = this.props.data.stackCheatsComments
-    if (commentCollection) {
-      comments.push(this.props.data.stackCheatsComments)
-    }
+    const comments = this.props.data.allStackCheatsComments.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -115,11 +111,16 @@ export const pageQuery = graphql`
     sheetViews(slug: { eq: $slug }) {
       count
     }
-    stackCheatsComments(slug: { eq: $slug }) {
-      _id
-      author
-      content
-      createdAt
+    allStackCheatsComments(filter: { slug: { eq: $slug } }) {
+      edges {
+        node {
+          _id
+          _parentId
+          author
+          content
+          createdAt
+        }
+      }
     }
   }
 `
