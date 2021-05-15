@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-import { Terminal } from 'react-feather'
+// import { Terminal } from 'react-feather'
 import { rhythm, scale } from '../../utils/typography'
 import moment from 'moment'
+
+// import CommentForm from './CommentForm'
 
 const SingleComment = ({ comment }) => (
   <div className="comment">
@@ -36,34 +38,64 @@ const SingleComment = ({ comment }) => (
   </div>
 )
 
+const SingleCardComment = ({ comment }) => (
+  <div className="comment card">
+    <div className="card-body">
+      <h5 className="comment-author card-title text-lowercase">
+        @{comment.author}
+      </h5>
+      <p className="comment-content card-text" style={{ fontSize: 'small' }}>
+        {comment.content}
+      </p>
+    </div>
+    <div
+      className="card-footer"
+      style={{ backgroundColor: 'unset', border: 'unset' }}
+    >
+      {comment.createdAt && (
+        <small className="text-muted">
+          {moment(new Date(comment.createdAt)).calendar()}
+        </small>
+      )}
+    </div>
+  </div>
+)
+
 const Comment = ({ comment, child, slug }) => {
   const [showReplyBox, setShowReplyBox] = useState(false)
 
   return (
     <div className="comment-container p-4 mt-2 mb-2">
-      <SingleComment comment={comment} />
-      {child && <SingleComment comment={child} />}
-      {!child && (
-        <div className="comment-reply mt-2">
-          {showReplyBox ? (
-            <div>
-              <button
-                className="btn bare"
-                onClick={() => console.log('Clicked')}
-              >
-                Cancel Reply
-              </button>
-              {/* Comment Form */}
-            </div>
-          ) : (
-            <button
-              className="btn btn-link btn-sm"
-              onClick={() => console.log('Another Clicked')}
-            >
-              <Terminal />
-            </button>
-          )}
+      {child && (
+        <div className="card-deck">
+          <SingleCardComment comment={comment} />
+          {child && <SingleCardComment comment={child} />}
         </div>
+      )}
+      {!child && (
+        <>
+          <SingleCardComment comment={comment} />
+          {/* <div className="comment-reply mt-2">
+            {showReplyBox ? (
+              <div>
+                <button
+                  className="btn bare"
+                  onClick={() => setShowReplyBox(false)}
+                >
+                  Cancel Reply
+                </button>
+                <CommentForm parentId={comment._id} slug={slug} />
+              </div>
+            ) : (
+              <button
+                className="btn btn-link btn-sm"
+                onClick={() => setShowReplyBox(true)}
+              >
+                <Terminal />
+              </button>
+            )}
+          </div> */}
+        </>
       )}
     </div>
   )
