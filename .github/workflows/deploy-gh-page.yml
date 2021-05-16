@@ -47,10 +47,12 @@ jobs:
          echo GA_SERVICE_ACCOUNT_MAIL=${{secrets.GA_SERVICE_ACCOUNT_MAIL}} >> .env
          echo GA_SECRETS=${{secrets.GA_SECRETS}} >> .env
 
-     - name: Install and Build
+     - name: Setup NodeJS
        uses: actions/setup-node@v2
        with:
           node-version: 12.16.2
+       
+     - name: Install & Build
        run: |
          npm ci
          npm run build
