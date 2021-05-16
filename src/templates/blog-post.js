@@ -22,15 +22,6 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const views = this.props.data.sheetViews.count
-
-    let comments = []
-    const commentCollection = this.props.data.stackCheatsComments
-    if (commentCollection) {
-      comments.push(this.props.data.stackCheatsComments)
-    }
-
-    const comments = this.props.data.allStackCheatsComments.edges
-
     const comments = this.props.data.allStackCheatsComments.edges
 
     return (
