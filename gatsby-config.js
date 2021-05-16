@@ -41,6 +41,14 @@ module.exports = {
 			},
 		},
 		{
+			resolve: `sc-ga-views`,
+			options: {
+				email: process.env.GA_SERVICE_ACCOUNT_MAIL,
+				viewId: process.env.GA_VIEW_ID,
+				keyFile: `${__dirname}/googleapis-secrets.json`,
+			}
+		},
+		{
 			resolve: `gatsby-plugin-mdx`,
 			options: {
 				extensions: ['.mdx', '.md'],
