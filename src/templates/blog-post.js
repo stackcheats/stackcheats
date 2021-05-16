@@ -10,6 +10,7 @@ import Tag from '../components/Tag'
 import Reference from '../components/Reference'
 
 import { Medium } from '@icons-pack/react-simple-icons'
+import { Eye } from 'react-feather'
 
 const shortcodes = {
   Reference,
@@ -19,6 +20,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
+    const views = this.props.data.sheetViews.count
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -56,6 +58,11 @@ class BlogPostTemplate extends React.Component {
             >
               <Medium size={28} />
             </a>
+            <span className="px-4">|</span>
+            <span className="btn btn-sm ga-pg-views text-muted">
+              <Eye className="pr-1" />
+              &nbsp;{views} views
+            </span>
           </div>
           <Tag tags={post.frontmatter.tags} />
           <MDXProvider components={shortcodes}>
@@ -90,6 +97,9 @@ export const pageQuery = graphql`
         medium
       }
       body
+    }
+    sheetViews(slug: { eq: $slug }) {
+      count
     }
   }
 `

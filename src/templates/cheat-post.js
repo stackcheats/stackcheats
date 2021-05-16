@@ -8,6 +8,7 @@ import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 import Tag from '../components/Tag'
 import CodeWave from '../waves/CodeWave'
+import { Eye } from 'react-feather'
 
 const shortcodes = {
   CodeWave,
@@ -17,6 +18,7 @@ class CheatPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
+    const views = this.props.data.sheetViews.count
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -45,6 +47,11 @@ class CheatPostTemplate extends React.Component {
                 style={{ width: 32, height: 32, borderRadius: 40 }}
               />
             </a>
+            <span className="px-4">|</span>
+            <span className="btn btn-sm ga-pg-views text-muted">
+              <Eye className="pr-1" />
+              &nbsp;{views} views
+            </span>
           </div>
           <Tag tags={post.frontmatter.tags} />
           <MDXProvider components={shortcodes}>
@@ -77,6 +84,9 @@ export const pageQuery = graphql`
         tags
       }
       body
+    }
+    sheetViews(slug: { eq: $slug }) {
+      count
     }
   }
 `

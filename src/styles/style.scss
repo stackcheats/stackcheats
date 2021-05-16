@@ -117,6 +117,17 @@ body {
   }
 }
 
+// ga page views
+span.ga-pg-views {
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  cursor: default !important;
+}
+
 // SVG Sticker
 
 .svg-sticker {
