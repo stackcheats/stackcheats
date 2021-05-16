@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import React from 'react'
 import BarScroller from './BarScroller'
 import CodeSticker from './CodeSticker'
-import Wave from './wave'
+import Wave from './Wave'
 
 /**
  *
