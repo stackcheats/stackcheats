@@ -45,7 +45,7 @@ module.exports = {
 			options: {
 				email: process.env.GA_SERVICE_ACCOUNT_MAIL,
 				viewId: process.env.GA_VIEW_ID,
-				keyFile: `${__dirname}/secrets/secrets.json`,
+				keyFile: `${__dirname}/googleapis-secrets.json`,
 			}
 		},
 		{
