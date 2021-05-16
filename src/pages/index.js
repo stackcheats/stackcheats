@@ -20,7 +20,14 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title="StackCheats"
-          keywords={[`stackcheats`, `blog`, `gatsby`, `javascript`, `react`]}
+          keywords={[
+            `stackcheats`,
+            `athiththan`,
+            `blog`,
+            `gatsby`,
+            `javascript`,
+            `react`,
+          ]}
         />
 
         {/* horizontal scrollable card deck */}
