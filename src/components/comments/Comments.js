@@ -7,7 +7,7 @@ import CommentForm from './CommentForm'
 const Comments = ({ comments, slug }) => {
   return (
     <div className="comments">
-      <CommentForm slug={slug} />
+      {/* <CommentForm slug={slug} /> */}
       {comments.length > 0 &&
         comments.filter(comment => !comment.node._parentId).map(comment => {
           let child = undefined

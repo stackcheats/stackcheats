@@ -67,4 +67,9 @@ const CommentForm = ({ parentId, slug }) => {
   )
 }
 
+CommentForm.propTypes = {
+  parentId: PropTypes.string,
+  slug: PropTypes.string.isRequired
+}
+
 export default CommentForm
