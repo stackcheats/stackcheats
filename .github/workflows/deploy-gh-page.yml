@@ -1,0 +1,67 @@
+name: Deploy GH Page
+
+on:
+  workflow_dispatch:
+    inputs:
+      comment:
+       description: 'Deploy comment'
+       default: 'Deploy'
+       required: true
+
+jobs:
+  build-and-deploy:
+   runs-on: ubuntu-latest
+
+   env:
+      FIREBASE_API_KEY: ${{secrets.FIREBASE_API_KEY}}
+      FIREBASE_AUTH_DOMAIN: ${{secrets.FIREBASE_AUTH_DOMAIN}}
+      FIREBASE_PROJECT_ID: ${{secrets.FIREBASE_PROJECT_ID}}
+      FIREBASE_STORAGE_BUCKET: ${{secrets.FIREBASE_STORAGE_BUCKET}}
+      FIREBASE_MESSAGING_SENDER_ID: ${{secrets.FIREBASE_MESSAGING_SENDER_ID}}
+      FIREBASE_APP_ID: ${{secrets.FIREBASE_APP_ID}}
+      FIREBASE_MEASUREMENT_ID: ${{secrets.FIREBASE_MEASUREMENT_ID}}
+      GA_VIEW_ID: ${{secrets.GA_VIEW_ID}}
+      GA_SERVICE_ACCOUNT_MAIL: ${{secrets.GA_SERVICE_ACCOUNT_MAIL}}
+      GA_SECRETS: ${{secrets.GA_SECRETS}}
+
+   steps:
+     - name: Checkout
+       uses: actions/checkout@v2.3.1
+       with:
+        ref: revamped-engine
+      
+     - name: Deploy secrets
+       run: |
+         echo $GA_SECRETS | base64 --decode > googleapis-secrets.json
+
+     - name: Deploy environment variables
+       run: |
+         echo FIREBASE_API_KEY=${{secrets.FIREBASE_API_KEY}} >> .env
+         echo FIREBASE_AUTH_DOMAIN=${{secrets.FIREBASE_AUTH_DOMAIN}} >> .env
+         echo FIREBASE_PROJECT_ID=${{secrets.FIREBASE_PROJECT_ID}} >> .env
+         echo FIREBASE_STORAGE_BUCKET=${{secrets.FIREBASE_STORAGE_BUCKET}} >> .env
+         echo FIREBASE_MESSAGING_SENDER_ID=${{secrets.FIREBASE_MESSAGING_SENDER_ID}} >> .env
+         echo FIREBASE_APP_ID=${{secrets.FIREBASE_APP_ID}} >> .env
+         echo FIREBASE_MEASUREMENT_ID=${{secrets.FIREBASE_MEASUREMENT_ID}} >> .env
+         echo GA_VIEW_ID=${{secrets.GA_VIEW_ID}} >> .env
+         echo GA_SERVICE_ACCOUNT_MAIL=${{secrets.GA_SERVICE_ACCOUNT_MAIL}} >> .env
+         echo GA_SECRETS=${{secrets.GA_SECRETS}} >> .env
+
+     - name: Install and Build
+       uses: actions/setup-node@v2
+       with:
+          node-version: 12.16.2
+       run: |
+         npm ci
+         npm run build
+
+     - name: Remove secrets
+       run: |
+         rm googleapis-secrets.json
+         rm .env
+
+     - name: Deploy
+       uses: JamesIves/github-pages-deploy-action@4.1.3
+       with:
+         branch: master
+         folder: public
