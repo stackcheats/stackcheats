@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Helmet from 'react-helmet'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { rhythm } from '../utils/typography'
@@ -70,13 +69,6 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(1.5)}`,
         }}
       >
-        <Helmet>
-          <meta
-            name="google-site-verification"
-            content="1pH0ju08BG2ggjZxg3o53tjVGkIeBVDI3Pi8Gp8SlNA"
-          />
-        </Helmet>
-
         {header}
         {children}
         <footer>

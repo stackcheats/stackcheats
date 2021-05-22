@@ -158,6 +158,10 @@ function SEO({
               },
             ].concat(meta)}
           >
+            <meta
+              name="google-site-verification"
+              content="1pH0ju08BG2ggjZxg3o53tjVGkIeBVDI3Pi8Gp8SlNA"
+            />
             {!post && (
               <script type="application/ld+json">
                 {JSON.stringify(schema)}
