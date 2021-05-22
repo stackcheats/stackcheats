@@ -43,6 +43,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/stacksheets/content/reveals`,
+        name: `reveal`,
+      },
+    },
+    {
       resolve: `sc-ga-views`,
       options: {
         email: process.env.GA_SERVICE_ACCOUNT_MAIL,
@@ -108,6 +115,22 @@ module.exports = {
             options: {
               username: 'athiththan11',
               includeDefaultCss: false,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-slidify',
+            options: {
+              key: 'reveal',
+              revealOptions: {
+                transition: 'fade',
+              },
             },
           },
         ],

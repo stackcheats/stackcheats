@@ -7,6 +7,7 @@ exports.createPages = ({ graphql, actions }) => {
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const cheatPost = path.resolve(`./src/templates/cheat-post.js`)
   const infographicPost = path.resolve(`./src/templates/infographic-post.js`)
+  const revealPost = path.resolve(`./src/templates/reveal-post.js`)
   const tagTemplate = path.resolve(`./src/templates/tag.js`)
 
   return graphql(
@@ -68,6 +69,21 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        revealsGroup: allMarkdownRemark(
+          filter: { frontmatter: { reveal: { in: true } } }
+        ) {
+          edges {
+            node {
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                reveal
+              }
+            }
+          }
+        }
         tagsGroup: allMdx(limit: 2000) {
           group(field: frontmatter___tags) {
             fieldValue
@@ -121,6 +137,18 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
+    // create reveal slide page
+    const reveals = result.data.revealsGroup.edges
+    reveals.forEach(reveal => {
+      createPage({
+        path: reveal.node.fields.slug,
+        component: revealPost,
+        context: {
+          slug: reveal.node.fields.slug,
+        },
+      })
+    })
+
     // create tag pages
     const tags = result.data.tagsGroup.group
     tags.forEach(tag => {
@@ -138,7 +166,7 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `Mdx`) {
+  if (node.internal.type === `Mdx` || node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,
