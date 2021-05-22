@@ -13,9 +13,11 @@ import {
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { location, title, presentFooter = true, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
+
     let header
+    let footer
 
     if (location.pathname === rootPath) {
       header = (
@@ -62,15 +64,9 @@ class Layout extends React.Component {
         </h3>
       )
     }
-    return (
-      <div
-        className="container"
-        style={{
-          padding: `${rhythm(1.5)} ${rhythm(1.5)}`,
-        }}
-      >
-        {header}
-        {children}
+
+    if (presentFooter) {
+      footer = (
         <footer>
           <a className="mr-3">
             <img
@@ -102,6 +98,19 @@ class Layout extends React.Component {
             <Linkedin color="#424242" size={24} />
           </a>
         </footer>
+      )
+    }
+
+    return (
+      <div
+        className="container"
+        style={{
+          padding: `${rhythm(1.5)} ${rhythm(1.5)}`,
+        }}
+      >
+        {header}
+        {children}
+        {footer}
       </div>
     )
   }
