@@ -5,9 +5,11 @@ module.exports = {
     title: `StackCheats`,
     author: `Athiththan Kathirgamasegaran`,
     description: `A Personal Blog Platform of Athiththan Kathirgamasegaran`,
-    siteUrl: `https://stackcheats.github.io/`,
+    keywords: `stackcheats, stacksheets, blog, athiththan11, medium, @athiththan11`,
+    image: `/stack.png`,
+    siteUrl: `https://stackcheats.github.io`,
     social: {
-      twitter: `athiththan11`,
+      twitter: `@athiththan11`,
     },
   },
   plugins: [
@@ -195,12 +197,41 @@ module.exports = {
         icon: `static/stack.png`,
       },
     },
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        runtimeCaching: [
+          {
+            urlPattern: /(\.js$|\.css$|static\/)/,
+            handler: `cacheFirst`,
+          },
+          {
+            urlPattern: /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
+            handler: `staleWhileRevalidate`,
+          },
+          {
+            urlPattern: /^https?:\/\/fonts\.googleapis\.com\/css/,
+            handler: `staleWhileRevalidate`,
+          },
+        ],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+    },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `https://stackcheats.github.io`,
+        sitemap: `https://stackcheats.github.io/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
   ],

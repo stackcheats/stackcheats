@@ -29,6 +29,10 @@ class BlogPostTemplate extends React.Component {
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.seo}
+          keywords={post.frontmatter.tags}
+          pathname={this.props.location.pathname}
+          publishedDate={post.frontmatter.date}
+          post="Blog"
         />
         <div className="content-container my-5">
           <h1>{post.frontmatter.title}</h1>

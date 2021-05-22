@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Helmet from 'react-helmet'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { rhythm } from '../utils/typography'
@@ -69,12 +70,20 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(1.5)}`,
         }}
       >
+        <Helmet>
+          <meta
+            name="google-site-verification"
+            content="1pH0ju08BG2ggjZxg3o53tjVGkIeBVDI3Pi8Gp8SlNA"
+          />
+        </Helmet>
+
         {header}
         {children}
         <footer>
-          <a className="mr-3">
+          <a className="mr-3" href="https://github.com/athiththan11">
             <img
               className="mb-0"
+              alt="Athiththan Kathirgamasegaran"
               src="https://avatars3.githubusercontent.com/u/29927177?s=460&amp;v=4"
               style={{ width: 28, height: 28, borderRadius: 40 }}
             />
@@ -84,22 +93,22 @@ class Layout extends React.Component {
           </a>
           <a className="mr-3" href="https://github.com/athiththan11">
             {/* #181717 */}
-            <Github color="#424242" size={24} />
+            <Github aria-label="Github" color="#424242" size={24} />
           </a>
           <a className="mr-3" href="https://twitter.com/athiththan11">
             {/* #1DA1F2 */}
-            <Twitter color="#424242" size={24} />
+            <Twitter aria-label="Twiiter" color="#424242" size={24} />
           </a>
           <a className="mr-3" href="https://medium.com/@athiththan11">
             {/* #12100E */}
-            <Medium color="#424242" size={24} />
+            <Medium aria-label="Medium" color="#424242" size={24} />
           </a>
           <a
             className="mr-3"
             href="https://www.linkedin.com/in/athiththan-kathirgamasegaran/"
           >
             {/* #0077B5 */}
-            <Linkedin color="#424242" size={24} />
+            <Linkedin aria-label="LinkedIn" color="#424242" size={24} />
           </a>
         </footer>
       </div>

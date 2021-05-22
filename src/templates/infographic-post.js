@@ -25,6 +25,10 @@ class InfoGraphicPostTemplate extends React.Component {
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.seo}
+          keywords={post.frontmatter.tags}
+          pathname={this.props.location.pathname}
+          publishedDate={post.frontmatter.date}
+          post="Infographic"
         />
         <div className="content-container">
           <h2>{post.frontmatter.title}</h2>

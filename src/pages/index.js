@@ -18,17 +18,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="StackCheats"
-          keywords={[
-            `stackcheats`,
-            `athiththan`,
-            `blog`,
-            `gatsby`,
-            `javascript`,
-            `react`,
-          ]}
-        />
+        <SEO title="StackCheats" />
 
         {/* horizontal scrollable card deck */}
         <div className="card-deck-scrollable flex-nowrap overflow-auto  my-5">
@@ -64,7 +54,7 @@ class BlogIndex extends React.Component {
                       }}
                       to={node.fields.slug}
                     >
-                      Read More
+                      View Content
                     </Link>
                     <a
                       className="btn btn-sm ml-2 rounded"
@@ -73,7 +63,7 @@ class BlogIndex extends React.Component {
                       }}
                       href={node.frontmatter.medium}
                     >
-                      <Medium size={24} />
+                      <Medium aria-label="Medium Reference" size={24} />
                     </a>
                   </div>
                 </div>
@@ -138,7 +128,7 @@ class BlogIndex extends React.Component {
                     className="btn btn-sm btn-light mt-3"
                     to={node.fields.slug}
                   >
-                    Read More
+                    View Sheet
                   </Link>
                   <a
                     className="btn btn-sm ml-2 mt-3 rounded"
@@ -188,7 +178,7 @@ class BlogIndex extends React.Component {
                     className="btn btn-sm btn-light mt-3"
                     to={node.fields.slug}
                   >
-                    Read More
+                    View Cheat
                   </Link>
                 </div>
               </div>
