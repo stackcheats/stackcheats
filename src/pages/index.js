@@ -248,7 +248,7 @@ class BlogIndex extends React.Component {
                       marginBottom: rhythm(1 / 4),
                     }}
                   >
-                    <a
+                    <Link
                       className="text-dark"
                       style={{
                         textDecoration: `none`,
@@ -258,10 +258,17 @@ class BlogIndex extends React.Component {
                       target="_blank"
                     >
                       {title}
-                    </a>
+                    </Link>
                   </h5>
                   <small className="text-muted">{node.frontmatter.date}</small>
                   <p className="card-text mt-3">{node.frontmatter.intro}</p>
+                  <Link
+                    className="btn btn-sm btn-light mt-3"
+                    to={node.fields.slug}
+                    target="_blank"
+                  >
+                    View Guide
+                  </Link>
                 </div>
               </div>
             )
@@ -362,6 +369,8 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            date
+            intro
           }
         }
       }

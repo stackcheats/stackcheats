@@ -1,59 +1,34 @@
 import React from 'react'
 import { withPrefix, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-
-import Layout from '../components/Layout'
 import SEO from '../components/seo'
 
-import { rhythm, scale } from '../utils/typography'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function RevealPostTemplate({ data, location }) {
-  const slideMarkdown = data.markdownRemark
+  const reveal = data.markdownRemark
 
   return (
-    <Layout
-      location={location}
-      title={data.site.siteMetadata.title}
-      presentFooter={false}
-    >
+    <div style={{ height: 'inherit' }}>
       <SEO
-        title={slideMarkdown.frontmatter.title}
-        description={slideMarkdown.frontmatter.seo}
+        title={reveal.frontmatter.title}
+        description={reveal.frontmatter.seo}
       />
-      <div className="container">
+      <div style={{ height: 'inherit' }}>
         <Helmet>
           <script src={withPrefix('reveal-activate.js')} />
         </Helmet>
-        <div
-          className="content-container"
-          style={{
-            height: '50vh',
-            marginTop: 'auto',
-            marginBottom: 'auto',
-          }}
-        >
-          <h1>{slideMarkdown.frontmatter.title}</h1>
-          <p
-            className="text-muted"
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
+
+        <div className="reveal my-3" style={{ height: 'inherit' }}>
+          <div
+            className="slides"
+            dangerouslySetInnerHTML={{
+              __html: reveal.html,
             }}
-          >
-            {slideMarkdown.frontmatter.date}
-          </p>
-          <div className="reveal">
-            <div
-              className="slides"
-              dangerouslySetInnerHTML={{
-                __html: slideMarkdown.html,
-              }}
-            ></div>
-          </div>
+          ></div>
         </div>
       </div>
-    </Layout>
+    </div>
   )
 }
 
@@ -69,9 +44,11 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       frontmatter {
-        reveal
         title
-        date
+        date(formatString: "MMMM DD, YYYY")
+        intro
+        tags
+        seo
       }
       internal {
         content
