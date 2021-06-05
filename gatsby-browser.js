@@ -6,9 +6,8 @@ import { wrapRootElement as wrap } from './wrap-root-element'
 
 // styles
 import './src/styles/style.scss'
-import './src/styles/reveal.scss'
 
-import './src/revealjs/dist/reveal.css'
-import './src/revealjs/dist/theme/simple.css'
+import './src/styles/reveal/reveal.css'
+import './src/styles/reveal/theme/simple.scss'
 
 export const wrapRootElement = wrap

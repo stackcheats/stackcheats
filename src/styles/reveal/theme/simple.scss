@@ -1,0 +1,94 @@
+/**
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is darkblue.
+ *
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+// Default mixins and settings -----------------
+@import './mixins';
+@import './settings';
+// ---------------------------------------------
+
+@import 'bootstrap/scss/bootstrap.scss';
+
+// Include theme-specific fonts
+// @import url(https://fonts.googleapis.com/css?family=News+Cycle:400, 700);
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: 'Roboto', $font-family-sans-serif, sans-serif;
+$mainColor: #1b1b1b;
+$mainFontSize: 22px;
+
+$headingFont: 'Roboto', $font-family-sans-serif, sans-serif;
+$headingColor: #343a40;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: #fff;
+
+$linkColor: #00008b;
+$linkColorHover: lighten($linkColor, 20%);
+$selectionBackgroundColor: rgba(0, 0, 0, 0.99);
+
+$codeFont: $font-family-monospace;
+
+// Change text colors against dark slide backgrounds
+@include dark-bg-text-color(#fff);
+
+// Theme template ------------------------------
+@import './theme';
+// ---------------------------------------------
+
+html.deactivate-reveal {
+  overflow: auto !important;
+  height: unset !important;
+}
+
+.reveal-viewport #___gatsby {
+  height: inherit;
+}
+.reveal-viewport #___gatsby #gatsby-focus-wrapper {
+  height: inherit;
+}
+
+.reveal .slides {
+  text-align: unset;
+}
+
+.reveal blockquote {
+  width: unset;
+  margin: 2rem 0;
+  padding: 1rem;
+
+  font-style: unset;
+  background: unset;
+  box-shadow: unset;
+
+  border-left: medium solid #ffc107;
+}
+.reveal blockquote p {
+  margin: 0;
+}
+
+.reveal pre {
+  width: unset;
+  margin: 3rem auto;
+
+  font-size: 0.75em;
+}
+.reveal pre[class*='language-'] {
+  padding: 2em;
+  border-radius: 0.75em;
+}
+
+.reveal code {
+  tab-size: unset;
+}
+
+// .reveal .controls .controls-arrow:after {
+//   width: 1.6em;
+// }
+// .reveal .controls .controls-arrow:before {
+//   width: 1.6em;
+// }
