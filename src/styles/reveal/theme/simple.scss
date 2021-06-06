@@ -92,3 +92,38 @@ html.deactivate-reveal {
 // .reveal .controls .controls-arrow:before {
 //   width: 1.6em;
 // }
+
+.reveal .speaker-notes:before {
+  content: 'Notes';
+  margin-bottom: 20px;
+}
+.reveal .speaker-notes {
+  padding: 25px;
+  background-color: $light;
+}
+.reveal .speaker-notes p {
+  font-size: 18px;
+}
+
+.reveal-viewport .badge {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  text-transform: lowercase;
+}
+
+.reveal-tags {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 2;
+
+  @include media-breakpoint-down(lg) {
+    top: 40px;
+  }
+
+  @include media-breakpoint-down(md) {
+    top: 30px;
+    left: 20px;
+  }
+}

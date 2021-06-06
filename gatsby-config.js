@@ -125,13 +125,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-slidify',
-            options: {
-              key: 'reveal',
-              revealOptions: {
-                transition: 'fade',
-              },
-            },
+            resolve: 'sc-remark-reveal-mutate',
           },
         ],
       },
