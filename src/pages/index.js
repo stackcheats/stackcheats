@@ -264,7 +264,7 @@ class BlogIndex extends React.Component {
                   <p className="card-text mt-3">{node.frontmatter.intro}</p>
                   <Link
                     className="btn btn-sm btn-light mt-3"
-                    to={node.fields.slug}
+                    href={node.fields.slug}
                     target="_blank"
                   >
                     View Guide
