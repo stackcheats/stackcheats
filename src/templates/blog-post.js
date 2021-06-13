@@ -108,16 +108,5 @@ export const pageQuery = graphql`
     sheetViews(slug: { eq: $slug }) {
       count
     }
-    allStackCheatsComments(filter: { slug: { eq: $slug } }) {
-      edges {
-        node {
-          _id
-          _parentId
-          author
-          content
-          createdAt
-        }
-      }
-    }
   }
 `
