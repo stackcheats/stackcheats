@@ -259,6 +259,13 @@ class BlogIndex extends React.Component {
                   >
                     View Guide
                   </Link>
+                  <Link
+                    className="btn btn-sm btn-light mt-3"
+                    href={`${node.fields.slug}?print-pdf`}
+                    target="_blank"
+                  >
+                    PDF View
+                  </Link>
                 </div>
               </div>
             )
