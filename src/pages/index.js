@@ -94,6 +94,7 @@ class BlogIndex extends React.Component {
         </div>
 
         {/* card-columns deck */}
+        <h1 className="display-5 mb-5 font-weight-lighter"># Blogs</h1>
         <div className="card-columns mb-5">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
@@ -144,6 +145,7 @@ class BlogIndex extends React.Component {
         </div>
 
         {/* card-columns deck for cheats */}
+        <h1 className="display-5 mb-5 font-weight-lighter"># Cheats</h1>
         <div className="card-columns mb-5">
           {cheats.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
@@ -188,6 +190,7 @@ class BlogIndex extends React.Component {
         </div>
 
         {/* card-columns deck for infographics */}
+        <h1 className="display-5 mb-5 font-weight-lighter"># Infographics</h1>
         <div className="card-columns mb-5">
           {infographics.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
@@ -226,6 +229,9 @@ class BlogIndex extends React.Component {
         </div>
 
         {/* card-columns deck for reveal */}
+        <h1 className="display-5 mb-5 font-weight-lighter">
+          # Reveal <small className="font-weight-lighter">[Preview]</small>
+        </h1>
         <div className="card-columns mb-5">
           {reveals.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
@@ -260,7 +266,7 @@ class BlogIndex extends React.Component {
                     View Guide
                   </Link>
                   <Link
-                    className="btn btn-sm btn-light mt-3"
+                    className="btn btn-sm btn-light mt-3 ml-3"
                     href={`${node.fields.slug}?print-pdf`}
                     target="_blank"
                   >
