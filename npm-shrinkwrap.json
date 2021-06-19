@@ -5850,6 +5850,7 @@
 			"requires": {
 				"anymatch": "~3.1.1",
 				"braces": "~3.0.2",
+				"fsevents": "~2.3.1",
 				"glob-parent": "~5.1.0",
 				"is-binary-path": "~2.1.0",
 				"is-glob": "~4.0.1",
@@ -9522,6 +9523,12 @@
 			"version": "1.0.0",
 			"resolved": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz",
 			"integrity": "sha1-FQStJSMVjKpA20onh8sBQRmU6k8="
+		},
+		"fsevents": {
+			"version": "2.3.2",
+			"resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz",
+			"integrity": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==",
+			"optional": true
 		},
 		"fstream": {
 			"version": "1.0.12",
@@ -20668,6 +20675,11 @@
 			"requires": {
 				"googleapis": "^39.0.0"
 			}
+		},
+		"sc-remark-reveal-mutate": {
+			"version": "0.1.0",
+			"resolved": "https://registry.npmjs.org/sc-remark-reveal-mutate/-/sc-remark-reveal-mutate-0.1.0.tgz",
+			"integrity": "sha512-o9xsA8dQRIrkDPlGX8xcOJViIjMGBGZwXcsqxmTrLZqOZ6hqXU2HHKRftKiMjxRPBh+2baCkZKRSJJi+yeHhSQ=="
 		},
 		"scheduler": {
 			"version": "0.19.1",
