@@ -84,6 +84,23 @@ html.deactivate-reveal {
 
 .reveal code {
   tab-size: unset;
+
+  &::-webkit-scrollbar{
+    height: 0rem;
+    width: 0rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: unset !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #6c757d24;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #6c757d24;
+  }
 }
 
 // .reveal .controls .controls-arrow:after {

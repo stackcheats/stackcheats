@@ -125,6 +125,16 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              inlineCodeMarker: null,
+              aliases: {
+                log: 'log',
+                sh: 'shell',
+              },
+            },
+          },
+          {
             resolve: 'sc-remark-reveal-mutate',
           },
         ],
