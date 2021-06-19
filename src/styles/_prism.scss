@@ -2,3 +2,17 @@ pre[class*='language-'] {
   padding: 2em;
   border-radius: 0.75em;
 }
+
+// reveal prism
+
+.reveal {
+  :not(pre) > code[class*='language-text'],
+  pre[class*='language-text'] {
+    background: unset !important;
+  }
+
+  code[class*='language-text'],
+  pre[class*='language-text'] {
+    color: #e83e8c !important;
+  }
+}

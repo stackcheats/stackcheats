@@ -43,6 +43,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/stacksheets/content/reveals`,
+        name: `reveal`,
+      },
+    },
+    {
       resolve: `sc-ga-views`,
       options: {
         email: process.env.GA_SERVICE_ACCOUNT_MAIL,
@@ -109,6 +116,26 @@ module.exports = {
               username: 'athiththan11',
               includeDefaultCss: false,
             },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              inlineCodeMarker: null,
+              aliases: {
+                log: 'log',
+                sh: 'shell',
+              },
+            },
+          },
+          {
+            resolve: 'sc-remark-reveal-mutate',
           },
         ],
       },
