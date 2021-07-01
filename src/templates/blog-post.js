@@ -21,10 +21,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
-    const views = 0;
-    if (this.props.data.sheetViews && this.props.data.sheetViews.count) {
-      views = this.props.data.sheetViews.count
-    }
+    const views = (this.props.data.sheetViews && this.props.data.sheetViews.count) ? this.props.data.sheetViews.count : 0;
     // const comments = this.props.data.allStackCheatsComments.edges
 
     return (
