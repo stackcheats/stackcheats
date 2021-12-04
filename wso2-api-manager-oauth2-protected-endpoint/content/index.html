@@ -40,191 +40,195 @@
   <div itemProp="text" class="Box-body p-0 blob-wrapper data type-xml css-0">
 
       
-<table class="highlight tab-size js-file-line-container css-0" data-tab-size="8" data-paste-markdown-skip="">
-      <tbody><tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L1" class="blob-num js-line-number css-0" data-line-number="1"></td>
-        <td id="file-oauth2-sequence-xml-LC1" class="blob-code blob-code-inner js-file-line css-0">&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>1.0<span class="pl-pds">&quot;</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>UTF-8<span class="pl-pds">&quot;</span></span>?&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L2" class="blob-num js-line-number css-0" data-line-number="2"></td>
-        <td id="file-oauth2-sequence-xml-LC2" class="blob-code blob-code-inner js-file-line css-0">&lt;<span class="pl-ent">sequence</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>oauth2-sequence<span class="pl-pds">&quot;</span></span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>http://ws.apache.org/ns/synapse<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L3" class="blob-num js-line-number css-0" data-line-number="3"></td>
-        <td id="file-oauth2-sequence-xml-LC3" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> token generation to the oauth server&#x27;s token endpoint <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L4" class="blob-num js-line-number css-0" data-line-number="4"></td>
-        <td id="file-oauth2-sequence-xml-LC4" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> add the base64 encoded credentials <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L5" class="blob-num js-line-number css-0" data-line-number="5"></td>
-        <td id="file-oauth2-sequence-xml-LC5" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>client-authorization-header<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>MDZsZ3BTMnh0enRhOXBsaXZGUzliMnk4aEZFYTpmdE4yWTdLcnE2SWRsenBmZ1RuTVU1bkxjUFFh<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L6" class="blob-num js-line-number css-0" data-line-number="6"></td>
-        <td id="file-oauth2-sequence-xml-LC6" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>request-body<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>json-eval($)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L7" class="blob-num js-line-number css-0" data-line-number="7"></td>
-        <td id="file-oauth2-sequence-xml-LC7" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>resource<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;axis2&#x27;, &#x27;REST_URL_POSTFIX&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L8" class="blob-num js-line-number css-0" data-line-number="8"></td>
-        <td id="file-oauth2-sequence-xml-LC8" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L9" class="blob-num js-line-number css-0" data-line-number="9"></td>
-        <td id="file-oauth2-sequence-xml-LC9" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> creating a request payload for client_credentials <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L10" class="blob-num js-line-number css-0" data-line-number="10"></td>
-        <td id="file-oauth2-sequence-xml-LC10" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">payloadFactory</span> <span class="pl-e">media-type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>xml<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L11" class="blob-num js-line-number css-0" data-line-number="11"></td>
-        <td id="file-oauth2-sequence-xml-LC11" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">format</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L12" class="blob-num js-line-number css-0" data-line-number="12"></td>
-        <td id="file-oauth2-sequence-xml-LC12" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Envelope</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">soapenv</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>http://schemas.xmlsoap.org/soap/envelope/<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L13" class="blob-num js-line-number css-0" data-line-number="13"></td>
-        <td id="file-oauth2-sequence-xml-LC13" class="blob-code blob-code-inner js-file-line css-0">                &lt;<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Body</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L14" class="blob-num js-line-number css-0" data-line-number="14"></td>
-        <td id="file-oauth2-sequence-xml-LC14" class="blob-code blob-code-inner js-file-line css-0">                    &lt;<span class="pl-ent">root</span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L15" class="blob-num js-line-number css-0" data-line-number="15"></td>
-        <td id="file-oauth2-sequence-xml-LC15" class="blob-code blob-code-inner js-file-line css-0">                        &lt;<span class="pl-ent">grant_type</span>&gt;client_credentials&lt;/<span class="pl-ent">grant_type</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L16" class="blob-num js-line-number css-0" data-line-number="16"></td>
-        <td id="file-oauth2-sequence-xml-LC16" class="blob-code blob-code-inner js-file-line css-0">                    &lt;/<span class="pl-ent">root</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L17" class="blob-num js-line-number css-0" data-line-number="17"></td>
-        <td id="file-oauth2-sequence-xml-LC17" class="blob-code blob-code-inner js-file-line css-0">                &lt;/<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Body</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L18" class="blob-num js-line-number css-0" data-line-number="18"></td>
-        <td id="file-oauth2-sequence-xml-LC18" class="blob-code blob-code-inner js-file-line css-0">            &lt;/<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Envelope</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L19" class="blob-num js-line-number css-0" data-line-number="19"></td>
-        <td id="file-oauth2-sequence-xml-LC19" class="blob-code blob-code-inner js-file-line css-0">        &lt;/<span class="pl-ent">format</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L20" class="blob-num js-line-number css-0" data-line-number="20"></td>
-        <td id="file-oauth2-sequence-xml-LC20" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">args</span>&gt;&lt;/<span class="pl-ent">args</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L21" class="blob-num js-line-number css-0" data-line-number="21"></td>
-        <td id="file-oauth2-sequence-xml-LC21" class="blob-code blob-code-inner js-file-line css-0">    &lt;/<span class="pl-ent">payloadFactory</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L22" class="blob-num js-line-number css-0" data-line-number="22"></td>
-        <td id="file-oauth2-sequence-xml-LC22" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L23" class="blob-num js-line-number css-0" data-line-number="23"></td>
-        <td id="file-oauth2-sequence-xml-LC23" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> set related headers to call the token endpoint <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L24" class="blob-num js-line-number css-0" data-line-number="24"></td>
-        <td id="file-oauth2-sequence-xml-LC24" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">header</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Authorization<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>fn:concat(&#x27;Basic &#x27;, get-property(&#x27;client-authorization-header&#x27;))<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L25" class="blob-num js-line-number css-0" data-line-number="25"></td>
-        <td id="file-oauth2-sequence-xml-LC25" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">header</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Content-Type<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>application/x-www-form-urlencoded<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L26" class="blob-num js-line-number css-0" data-line-number="26"></td>
-        <td id="file-oauth2-sequence-xml-LC26" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>messageType<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>application/x-www-form-urlencoded<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>axis2<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L27" class="blob-num js-line-number css-0" data-line-number="27"></td>
-        <td id="file-oauth2-sequence-xml-LC27" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>REST_URL_POSTFIX<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>axis2<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L28" class="blob-num js-line-number css-0" data-line-number="28"></td>
-        <td id="file-oauth2-sequence-xml-LC28" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L29" class="blob-num js-line-number css-0" data-line-number="29"></td>
-        <td id="file-oauth2-sequence-xml-LC29" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> change the token endpoint <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L30" class="blob-num js-line-number css-0" data-line-number="30"></td>
-        <td id="file-oauth2-sequence-xml-LC30" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">call</span> <span class="pl-e">blocking</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>true<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L31" class="blob-num js-line-number css-0" data-line-number="31"></td>
-        <td id="file-oauth2-sequence-xml-LC31" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">endpoint</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L32" class="blob-num js-line-number css-0" data-line-number="32"></td>
-        <td id="file-oauth2-sequence-xml-LC32" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">http</span> <span class="pl-e">method</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>POST<span class="pl-pds">&quot;</span></span> <span class="pl-e">uri-template</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>https://localhost:9443/oauth2/token<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L33" class="blob-num js-line-number css-0" data-line-number="33"></td>
-        <td id="file-oauth2-sequence-xml-LC33" class="blob-code blob-code-inner js-file-line css-0">        &lt;/<span class="pl-ent">endpoint</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L34" class="blob-num js-line-number css-0" data-line-number="34"></td>
-        <td id="file-oauth2-sequence-xml-LC34" class="blob-code blob-code-inner js-file-line css-0">    &lt;/<span class="pl-ent">call</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L35" class="blob-num js-line-number css-0" data-line-number="35"></td>
-        <td id="file-oauth2-sequence-xml-LC35" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L36" class="blob-num js-line-number css-0" data-line-number="36"></td>
-        <td id="file-oauth2-sequence-xml-LC36" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> append the acquired access token and make the call to the backend service <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L37" class="blob-num js-line-number css-0" data-line-number="37"></td>
-        <td id="file-oauth2-sequence-xml-LC37" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>bearer-token<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>json-eval($.access_token)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L38" class="blob-num js-line-number css-0" data-line-number="38"></td>
-        <td id="file-oauth2-sequence-xml-LC38" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>REST_URL_POSTFIX<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;resource&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>axis2<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L39" class="blob-num js-line-number css-0" data-line-number="39"></td>
-        <td id="file-oauth2-sequence-xml-LC39" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">header</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Authorization<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>fn:concat(&#x27;Bearer &#x27;, get-property(&#x27;bearer-token&#x27;))<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L40" class="blob-num js-line-number css-0" data-line-number="40"></td>
-        <td id="file-oauth2-sequence-xml-LC40" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">payloadFactory</span> <span class="pl-e">media-type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>json<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L41" class="blob-num js-line-number css-0" data-line-number="41"></td>
-        <td id="file-oauth2-sequence-xml-LC41" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">format</span>&gt;$1&lt;/<span class="pl-ent">format</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L42" class="blob-num js-line-number css-0" data-line-number="42"></td>
-        <td id="file-oauth2-sequence-xml-LC42" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">args</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L43" class="blob-num js-line-number css-0" data-line-number="43"></td>
-        <td id="file-oauth2-sequence-xml-LC43" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">arg</span> <span class="pl-e">evaluator</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>xml<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;request-body&#x27;)<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L44" class="blob-num js-line-number css-0" data-line-number="44"></td>
-        <td id="file-oauth2-sequence-xml-LC44" class="blob-code blob-code-inner js-file-line css-0">        &lt;/<span class="pl-ent">args</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L45" class="blob-num js-line-number css-0" data-line-number="45"></td>
-        <td id="file-oauth2-sequence-xml-LC45" class="blob-code blob-code-inner js-file-line css-0">    &lt;/<span class="pl-ent">payloadFactory</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-sequence-xml-L46" class="blob-num js-line-number css-0" data-line-number="46"></td>
-        <td id="file-oauth2-sequence-xml-LC46" class="blob-code blob-code-inner js-file-line css-0">&lt;/<span class="pl-ent">sequence</span>&gt;</td>
-      </tr></tbody></table>
+<div class="js-check-bidi blob-code-content css-0">
+  <template class="js-file-alert-template"></template><template class="js-line-alert-template"></template>
+
+  <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file css-0" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="XML" data-tagsearch-path="oauth2-sequence.xml">
+        <tbody><tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L1" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="1"></td>
+          <td id="file-oauth2-sequence-xml-LC1" class="blob-code blob-code-inner js-file-line css-0">&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>1.0<span class="pl-pds">&quot;</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>UTF-8<span class="pl-pds">&quot;</span></span>?&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L2" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="2"></td>
+          <td id="file-oauth2-sequence-xml-LC2" class="blob-code blob-code-inner js-file-line css-0">&lt;<span class="pl-ent">sequence</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>oauth2-sequence<span class="pl-pds">&quot;</span></span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>http://ws.apache.org/ns/synapse<span class="pl-pds">&quot;</span></span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L3" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="3"></td>
+          <td id="file-oauth2-sequence-xml-LC3" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> token generation to the oauth server&#x27;s token endpoint <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L4" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="4"></td>
+          <td id="file-oauth2-sequence-xml-LC4" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> add the base64 encoded credentials <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L5" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="5"></td>
+          <td id="file-oauth2-sequence-xml-LC5" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>client-authorization-header<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>MDZsZ3BTMnh0enRhOXBsaXZGUzliMnk4aEZFYTpmdE4yWTdLcnE2SWRsenBmZ1RuTVU1bkxjUFFh<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L6" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="6"></td>
+          <td id="file-oauth2-sequence-xml-LC6" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>request-body<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>json-eval($)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L7" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="7"></td>
+          <td id="file-oauth2-sequence-xml-LC7" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>resource<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;axis2&#x27;, &#x27;REST_URL_POSTFIX&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L8" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="8"></td>
+          <td id="file-oauth2-sequence-xml-LC8" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L9" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="9"></td>
+          <td id="file-oauth2-sequence-xml-LC9" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> creating a request payload for client_credentials <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L10" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="10"></td>
+          <td id="file-oauth2-sequence-xml-LC10" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">payloadFactory</span> <span class="pl-e">media-type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>xml<span class="pl-pds">&quot;</span></span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L11" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="11"></td>
+          <td id="file-oauth2-sequence-xml-LC11" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">format</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L12" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="12"></td>
+          <td id="file-oauth2-sequence-xml-LC12" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Envelope</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">soapenv</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>http://schemas.xmlsoap.org/soap/envelope/<span class="pl-pds">&quot;</span></span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L13" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="13"></td>
+          <td id="file-oauth2-sequence-xml-LC13" class="blob-code blob-code-inner js-file-line css-0">                &lt;<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Body</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L14" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="14"></td>
+          <td id="file-oauth2-sequence-xml-LC14" class="blob-code blob-code-inner js-file-line css-0">                    &lt;<span class="pl-ent">root</span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L15" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="15"></td>
+          <td id="file-oauth2-sequence-xml-LC15" class="blob-code blob-code-inner js-file-line css-0">                        &lt;<span class="pl-ent">grant_type</span>&gt;client_credentials&lt;/<span class="pl-ent">grant_type</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L16" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="16"></td>
+          <td id="file-oauth2-sequence-xml-LC16" class="blob-code blob-code-inner js-file-line css-0">                    &lt;/<span class="pl-ent">root</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L17" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="17"></td>
+          <td id="file-oauth2-sequence-xml-LC17" class="blob-code blob-code-inner js-file-line css-0">                &lt;/<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Body</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L18" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="18"></td>
+          <td id="file-oauth2-sequence-xml-LC18" class="blob-code blob-code-inner js-file-line css-0">            &lt;/<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Envelope</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L19" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="19"></td>
+          <td id="file-oauth2-sequence-xml-LC19" class="blob-code blob-code-inner js-file-line css-0">        &lt;/<span class="pl-ent">format</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L20" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="20"></td>
+          <td id="file-oauth2-sequence-xml-LC20" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">args</span>&gt;&lt;/<span class="pl-ent">args</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L21" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="21"></td>
+          <td id="file-oauth2-sequence-xml-LC21" class="blob-code blob-code-inner js-file-line css-0">    &lt;/<span class="pl-ent">payloadFactory</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L22" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="22"></td>
+          <td id="file-oauth2-sequence-xml-LC22" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L23" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="23"></td>
+          <td id="file-oauth2-sequence-xml-LC23" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> set related headers to call the token endpoint <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L24" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="24"></td>
+          <td id="file-oauth2-sequence-xml-LC24" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">header</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Authorization<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>fn:concat(&#x27;Basic &#x27;, get-property(&#x27;client-authorization-header&#x27;))<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L25" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="25"></td>
+          <td id="file-oauth2-sequence-xml-LC25" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">header</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Content-Type<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>application/x-www-form-urlencoded<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L26" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="26"></td>
+          <td id="file-oauth2-sequence-xml-LC26" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>messageType<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>application/x-www-form-urlencoded<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>axis2<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L27" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="27"></td>
+          <td id="file-oauth2-sequence-xml-LC27" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>REST_URL_POSTFIX<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>axis2<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L28" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="28"></td>
+          <td id="file-oauth2-sequence-xml-LC28" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L29" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="29"></td>
+          <td id="file-oauth2-sequence-xml-LC29" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> change the token endpoint <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L30" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="30"></td>
+          <td id="file-oauth2-sequence-xml-LC30" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">call</span> <span class="pl-e">blocking</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>true<span class="pl-pds">&quot;</span></span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L31" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="31"></td>
+          <td id="file-oauth2-sequence-xml-LC31" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">endpoint</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L32" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="32"></td>
+          <td id="file-oauth2-sequence-xml-LC32" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">http</span> <span class="pl-e">method</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>POST<span class="pl-pds">&quot;</span></span> <span class="pl-e">uri-template</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>https://localhost:9443/oauth2/token<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L33" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="33"></td>
+          <td id="file-oauth2-sequence-xml-LC33" class="blob-code blob-code-inner js-file-line css-0">        &lt;/<span class="pl-ent">endpoint</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L34" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="34"></td>
+          <td id="file-oauth2-sequence-xml-LC34" class="blob-code blob-code-inner js-file-line css-0">    &lt;/<span class="pl-ent">call</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L35" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="35"></td>
+          <td id="file-oauth2-sequence-xml-LC35" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L36" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="36"></td>
+          <td id="file-oauth2-sequence-xml-LC36" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> append the acquired access token and make the call to the backend service <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L37" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="37"></td>
+          <td id="file-oauth2-sequence-xml-LC37" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>bearer-token<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>json-eval($.access_token)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L38" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="38"></td>
+          <td id="file-oauth2-sequence-xml-LC38" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>REST_URL_POSTFIX<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;resource&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>axis2<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L39" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="39"></td>
+          <td id="file-oauth2-sequence-xml-LC39" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">header</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Authorization<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>fn:concat(&#x27;Bearer &#x27;, get-property(&#x27;bearer-token&#x27;))<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L40" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="40"></td>
+          <td id="file-oauth2-sequence-xml-LC40" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">payloadFactory</span> <span class="pl-e">media-type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>json<span class="pl-pds">&quot;</span></span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L41" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="41"></td>
+          <td id="file-oauth2-sequence-xml-LC41" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">format</span>&gt;$1&lt;/<span class="pl-ent">format</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L42" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="42"></td>
+          <td id="file-oauth2-sequence-xml-LC42" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">args</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L43" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="43"></td>
+          <td id="file-oauth2-sequence-xml-LC43" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">arg</span> <span class="pl-e">evaluator</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>xml<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;request-body&#x27;)<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L44" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="44"></td>
+          <td id="file-oauth2-sequence-xml-LC44" class="blob-code blob-code-inner js-file-line css-0">        &lt;/<span class="pl-ent">args</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L45" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="45"></td>
+          <td id="file-oauth2-sequence-xml-LC45" class="blob-code blob-code-inner js-file-line css-0">    &lt;/<span class="pl-ent">payloadFactory</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-sequence-xml-L46" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="46"></td>
+          <td id="file-oauth2-sequence-xml-LC46" class="blob-code blob-code-inner js-file-line css-0">&lt;/<span class="pl-ent">sequence</span>&gt;</td>
+        </tr>
+  </tbody></table></div>
 
 
   </div>
@@ -234,7 +238,9 @@
       </div>
       <div class="gist-meta css-0">
         <a href="https://gist.github.com/athiththan11/3173086e7f30110424bf1aafbfdfb4b7/raw/7af3d835d70789ca648f6805afe4c613ed5ec42d/oauth2-sequence.xml" style="css-float:right" class="css-0">view raw</a>
-        <a href="https://gist.github.com/athiththan11/3173086e7f30110424bf1aafbfdfb4b7#file-oauth2-sequence-xml" class="css-0">oauth2-sequence.xml</a>
+        <a href="https://gist.github.com/athiththan11/3173086e7f30110424bf1aafbfdfb4b7#file-oauth2-sequence-xml" class="css-0">
+          oauth2-sequence.xml
+        </a>
         hosted with ❤ by <a href="https://github.com" class="css-0">GitHub</a>
       </div>
     </div></div></p><p class="css-0">Now you have given us a sample mediation sequence to call the token endpoint and then to invoke the actual endpoint. But wait ✋, I noticed that the mediation is going to perform a Token call each and every time, and that is going to be an extra call for the API Manager.</p><p class="css-0">Hmmm … 🙄🤔</p><p class="css-0">Yes true, as per the sample mediation, yes, it will perform Token call each and every time. Well, we can minimize that by storing the acquired access token and the validity period in a temporary location (probably a Registry location) and make use of it.</p><h2 id="Enhanced-Mediation-Sequence-with-Registry-Access" style="position:relative" class="css-0"><a href="#Enhanced-Mediation-Sequence-with-Registry-Access" aria-label="Enhanced Mediation Sequence with Registry Access permalink" class="header-permlink before css-0"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🚧Enhanced Mediation Sequence with Registry Access</h2><p class="css-0">Given-below is an enhanced sample mediation sequence to store and retrieve the access token and the generated time from a custom Registry location and based on the validity to perform the Token call. 👌</p><p class="css-0">If you are willing to continue with the enhanced mediation sequence, then it is required to create the necessary Registry resource in the API Manager server prior to the usage for a flawless experience.</p><p class="css-0">I will be creating the following two Registry resources in a custom Governance Registry location</p><ul class="css-0"><li class="css-0"><code class="css-0">access_token</code> : To store the acquired Access Token</li><li class="css-0"><code class="css-0">generated_time</code> : To store the Generated time of the Access token</li></ul><p class="css-0">You can create the necessary Registry collections and resources by navigating to the <strong class="css-0">Carbon Management Console &gt; Browse &gt; Registry &gt; _system &gt; governance </strong> and add a registry collection named <code class="css-0">oauth_endpoint</code>.</p><p class="css-0">After successfully creating the Registry collection (<code class="css-0">oauth_endpoint</code>), create the above-mentioned two registry resources with the following content</p><ul class="css-0"><li class="css-0"><code class="css-0">access_token</code> : Leave the content as empty</li><li class="css-0"><code class="css-0">generated_time</code> : 0 (this is because we will be referring to this as Long type)</li></ul><p class="css-0"><div id="gist101932239" class="gist css-0">
@@ -246,287 +252,291 @@
   <div itemProp="text" class="Box-body p-0 blob-wrapper data type-xml css-0">
 
       
-<table class="highlight tab-size js-file-line-container css-0" data-tab-size="8" data-paste-markdown-skip="">
-      <tbody><tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L1" class="blob-num js-line-number css-0" data-line-number="1"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC1" class="blob-code blob-code-inner js-file-line css-0">&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>1.0<span class="pl-pds">&quot;</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>UTF-8<span class="pl-pds">&quot;</span></span>?&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L2" class="blob-num js-line-number css-0" data-line-number="2"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC2" class="blob-code blob-code-inner js-file-line css-0">&lt;<span class="pl-ent">sequence</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>oauth2-enhanced-sequence<span class="pl-pds">&quot;</span></span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>http://ws.apache.org/ns/synapse<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L3" class="blob-num js-line-number css-0" data-line-number="3"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC3" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> retreiving the access token and the generated time if exists in the registry location <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L4" class="blob-num js-line-number css-0" data-line-number="4"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC4" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>stored-token<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;registry&#x27;, &#x27;gov:/oauth_endpoint/access_token&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L5" class="blob-num js-line-number css-0" data-line-number="5"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC5" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>generated-time<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;registry&#x27;, &#x27;gov:/oauth_endpoint/generated_time&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>LONG<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L6" class="blob-num js-line-number css-0" data-line-number="6"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC6" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L7" class="blob-num js-line-number css-0" data-line-number="7"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC7" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> token generation to the oauth server&#x27;s token endpoint <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L8" class="blob-num js-line-number css-0" data-line-number="8"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC8" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> add the base64 encoded credentials <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L9" class="blob-num js-line-number css-0" data-line-number="9"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC9" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>client-authorization-header<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>MDZsZ3BTMnh0enRhOXBsaXZGUzliMnk4aEZFYTpmdE4yWTdLcnE2SWRsenBmZ1RuTVU1bkxjUFFh<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L10" class="blob-num js-line-number css-0" data-line-number="10"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC10" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>request-body<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>json-eval($)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L11" class="blob-num js-line-number css-0" data-line-number="11"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC11" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>resource<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;axis2&#x27;, &#x27;REST_URL_POSTFIX&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L12" class="blob-num js-line-number css-0" data-line-number="12"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC12" class="blob-code blob-code-inner js-file-line css-0">    </td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L13" class="blob-num js-line-number css-0" data-line-number="13"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC13" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> enhanced to perform subtract function <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L14" class="blob-num js-line-number css-0" data-line-number="14"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC14" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>CURRENT_SYSTEM_TIME<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;SYSTEM_TIME&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L15" class="blob-num js-line-number css-0" data-line-number="15"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC15" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>token_generated_time<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;generated-time&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L16" class="blob-num js-line-number css-0" data-line-number="16"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC16" class="blob-code blob-code-inner js-file-line css-0">    </td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L17" class="blob-num js-line-number css-0" data-line-number="17"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC17" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> filter and based on the validity condition make the token call <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L18" class="blob-num js-line-number css-0" data-line-number="18"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC18" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">filter</span> <span class="pl-e">xpath</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;CURRENT_SYSTEM_TIME&#x27;) - get-property(&#x27;token_generated_time&#x27;) &gt; 3600000 or get-property(&#x27;stored-token&#x27;) = &#x27;&#x27;<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L19" class="blob-num js-line-number css-0" data-line-number="19"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC19" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">then</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L20" class="blob-num js-line-number css-0" data-line-number="20"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC20" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> creating a request payload for client_credentials <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L21" class="blob-num js-line-number css-0" data-line-number="21"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC21" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">payloadFactory</span> <span class="pl-e">media-type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>xml<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L22" class="blob-num js-line-number css-0" data-line-number="22"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC22" class="blob-code blob-code-inner js-file-line css-0">                &lt;<span class="pl-ent">format</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L23" class="blob-num js-line-number css-0" data-line-number="23"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC23" class="blob-code blob-code-inner js-file-line css-0">                    &lt;<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Envelope</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">soapenv</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>http://schemas.xmlsoap.org/soap/envelope/<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L24" class="blob-num js-line-number css-0" data-line-number="24"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC24" class="blob-code blob-code-inner js-file-line css-0">                        &lt;<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Body</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L25" class="blob-num js-line-number css-0" data-line-number="25"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC25" class="blob-code blob-code-inner js-file-line css-0">                            &lt;<span class="pl-ent">root</span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L26" class="blob-num js-line-number css-0" data-line-number="26"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC26" class="blob-code blob-code-inner js-file-line css-0">                                &lt;<span class="pl-ent">grant_type</span>&gt;client_credentials&lt;/<span class="pl-ent">grant_type</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L27" class="blob-num js-line-number css-0" data-line-number="27"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC27" class="blob-code blob-code-inner js-file-line css-0">                            &lt;/<span class="pl-ent">root</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L28" class="blob-num js-line-number css-0" data-line-number="28"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC28" class="blob-code blob-code-inner js-file-line css-0">                        &lt;/<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Body</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L29" class="blob-num js-line-number css-0" data-line-number="29"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC29" class="blob-code blob-code-inner js-file-line css-0">                    &lt;/<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Envelope</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L30" class="blob-num js-line-number css-0" data-line-number="30"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC30" class="blob-code blob-code-inner js-file-line css-0">                &lt;/<span class="pl-ent">format</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L31" class="blob-num js-line-number css-0" data-line-number="31"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC31" class="blob-code blob-code-inner js-file-line css-0">                &lt;<span class="pl-ent">args</span>&gt;&lt;/<span class="pl-ent">args</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L32" class="blob-num js-line-number css-0" data-line-number="32"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC32" class="blob-code blob-code-inner js-file-line css-0">            &lt;/<span class="pl-ent">payloadFactory</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L33" class="blob-num js-line-number css-0" data-line-number="33"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC33" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L34" class="blob-num js-line-number css-0" data-line-number="34"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC34" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> set related headers to call the token endpoint <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L35" class="blob-num js-line-number css-0" data-line-number="35"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC35" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">header</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Authorization<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>fn:concat(&#x27;Basic &#x27;, get-property(&#x27;client-authorization-header&#x27;))<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L36" class="blob-num js-line-number css-0" data-line-number="36"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC36" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">header</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Content-Type<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>application/x-www-form-urlencoded<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L37" class="blob-num js-line-number css-0" data-line-number="37"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC37" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>messageType<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>application/x-www-form-urlencoded<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>axis2<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L38" class="blob-num js-line-number css-0" data-line-number="38"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC38" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>REST_URL_POSTFIX<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>axis2<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt; </td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L39" class="blob-num js-line-number css-0" data-line-number="39"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC39" class="blob-code blob-code-inner js-file-line css-0">            </td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L40" class="blob-num js-line-number css-0" data-line-number="40"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC40" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> change the token endpoint <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L41" class="blob-num js-line-number css-0" data-line-number="41"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC41" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">call</span> <span class="pl-e">blocking</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>true<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L42" class="blob-num js-line-number css-0" data-line-number="42"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC42" class="blob-code blob-code-inner js-file-line css-0">                &lt;<span class="pl-ent">endpoint</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L43" class="blob-num js-line-number css-0" data-line-number="43"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC43" class="blob-code blob-code-inner js-file-line css-0">                    &lt;<span class="pl-ent">http</span> <span class="pl-e">method</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>POST<span class="pl-pds">&quot;</span></span> <span class="pl-e">uri-template</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>https://localhost:9443/oauth2/token<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L44" class="blob-num js-line-number css-0" data-line-number="44"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC44" class="blob-code blob-code-inner js-file-line css-0">                &lt;/<span class="pl-ent">endpoint</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L45" class="blob-num js-line-number css-0" data-line-number="45"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC45" class="blob-code blob-code-inner js-file-line css-0">            &lt;/<span class="pl-ent">call</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L46" class="blob-num js-line-number css-0" data-line-number="46"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC46" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L47" class="blob-num js-line-number css-0" data-line-number="47"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC47" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> extract the access token from the response <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L48" class="blob-num js-line-number css-0" data-line-number="48"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC48" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>bearer-token<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>json-eval($.access_token)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L49" class="blob-num js-line-number css-0" data-line-number="49"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC49" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L50" class="blob-num js-line-number css-0" data-line-number="50"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC50" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> store the generated token and the time <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L51" class="blob-num js-line-number css-0" data-line-number="51"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC51" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>gov:/oauth_endpoint/access_token<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;bearer-token&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>registry<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L52" class="blob-num js-line-number css-0" data-line-number="52"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC52" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>gov:/oauth_endpoint/generated_time<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;SYSTEM_TIME&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>registry<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>LONG<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L53" class="blob-num js-line-number css-0" data-line-number="53"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC53" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L54" class="blob-num js-line-number css-0" data-line-number="54"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC54" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> append the acquired access token and make the call to the backend service <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L55" class="blob-num js-line-number css-0" data-line-number="55"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC55" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>REST_URL_POSTFIX<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;resource&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>axis2<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L56" class="blob-num js-line-number css-0" data-line-number="56"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC56" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">header</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Authorization<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>fn:concat(&#x27;Bearer &#x27;, get-property(&#x27;bearer-token&#x27;))<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L57" class="blob-num js-line-number css-0" data-line-number="57"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC57" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L58" class="blob-num js-line-number css-0" data-line-number="58"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC58" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">payloadFactory</span> <span class="pl-e">media-type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>json<span class="pl-pds">&quot;</span></span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L59" class="blob-num js-line-number css-0" data-line-number="59"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC59" class="blob-code blob-code-inner js-file-line css-0">                &lt;<span class="pl-ent">format</span>&gt;$1&lt;/<span class="pl-ent">format</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L60" class="blob-num js-line-number css-0" data-line-number="60"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC60" class="blob-code blob-code-inner js-file-line css-0">                &lt;<span class="pl-ent">args</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L61" class="blob-num js-line-number css-0" data-line-number="61"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC61" class="blob-code blob-code-inner js-file-line css-0">                    &lt;<span class="pl-ent">arg</span> <span class="pl-e">evaluator</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>xml<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;request-body&#x27;)<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L62" class="blob-num js-line-number css-0" data-line-number="62"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC62" class="blob-code blob-code-inner js-file-line css-0">                &lt;/<span class="pl-ent">args</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L63" class="blob-num js-line-number css-0" data-line-number="63"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC63" class="blob-code blob-code-inner js-file-line css-0">            &lt;/<span class="pl-ent">payloadFactory</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L64" class="blob-num js-line-number css-0" data-line-number="64"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC64" class="blob-code blob-code-inner js-file-line css-0">        &lt;/<span class="pl-ent">then</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L65" class="blob-num js-line-number css-0" data-line-number="65"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC65" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">else</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L66" class="blob-num js-line-number css-0" data-line-number="66"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC66" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> the stored access token is still active, so we will be using that to invoke the endpoint <span class="pl-c">--&gt;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L67" class="blob-num js-line-number css-0" data-line-number="67"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC67" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">header</span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>fn:concat(&#x27;Bearer &#x27;, get-property(&#x27;stored-token&#x27;))<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Authorization<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L68" class="blob-num js-line-number css-0" data-line-number="68"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC68" class="blob-code blob-code-inner js-file-line css-0">        &lt;/<span class="pl-ent">else</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L69" class="blob-num js-line-number css-0" data-line-number="69"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC69" class="blob-code blob-code-inner js-file-line css-0">    &lt;/<span class="pl-ent">filter</span>&gt;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-oauth2-enhanced-sequence-xml-L70" class="blob-num js-line-number css-0" data-line-number="70"></td>
-        <td id="file-oauth2-enhanced-sequence-xml-LC70" class="blob-code blob-code-inner js-file-line css-0">&lt;/<span class="pl-ent">sequence</span>&gt;</td>
-      </tr></tbody></table>
+<div class="js-check-bidi blob-code-content css-0">
+  <template class="js-file-alert-template"></template><template class="js-line-alert-template"></template>
+
+  <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file css-0" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="XML" data-tagsearch-path="oauth2-enhanced-sequence.xml">
+        <tbody><tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L1" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="1"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC1" class="blob-code blob-code-inner js-file-line css-0">&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>1.0<span class="pl-pds">&quot;</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>UTF-8<span class="pl-pds">&quot;</span></span>?&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L2" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="2"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC2" class="blob-code blob-code-inner js-file-line css-0">&lt;<span class="pl-ent">sequence</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>oauth2-enhanced-sequence<span class="pl-pds">&quot;</span></span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>http://ws.apache.org/ns/synapse<span class="pl-pds">&quot;</span></span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L3" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="3"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC3" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> retreiving the access token and the generated time if exists in the registry location <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L4" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="4"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC4" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>stored-token<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;registry&#x27;, &#x27;gov:/oauth_endpoint/access_token&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L5" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="5"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC5" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>generated-time<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;registry&#x27;, &#x27;gov:/oauth_endpoint/generated_time&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>LONG<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L6" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="6"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC6" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L7" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="7"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC7" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> token generation to the oauth server&#x27;s token endpoint <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L8" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="8"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC8" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> add the base64 encoded credentials <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L9" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="9"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC9" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>client-authorization-header<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>MDZsZ3BTMnh0enRhOXBsaXZGUzliMnk4aEZFYTpmdE4yWTdLcnE2SWRsenBmZ1RuTVU1bkxjUFFh<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L10" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="10"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC10" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>request-body<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>json-eval($)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L11" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="11"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC11" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>resource<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;axis2&#x27;, &#x27;REST_URL_POSTFIX&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L12" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="12"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC12" class="blob-code blob-code-inner js-file-line css-0">    </td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L13" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="13"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC13" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> enhanced to perform subtract function <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L14" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="14"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC14" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>CURRENT_SYSTEM_TIME<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;SYSTEM_TIME&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L15" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="15"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC15" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>token_generated_time<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;generated-time&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L16" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="16"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC16" class="blob-code blob-code-inner js-file-line css-0">    </td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L17" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="17"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC17" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">&lt;!--</span> filter and based on the validity condition make the token call <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L18" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="18"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC18" class="blob-code blob-code-inner js-file-line css-0">    &lt;<span class="pl-ent">filter</span> <span class="pl-e">xpath</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;CURRENT_SYSTEM_TIME&#x27;) - get-property(&#x27;token_generated_time&#x27;) &gt; 3600000 or get-property(&#x27;stored-token&#x27;) = &#x27;&#x27;<span class="pl-pds">&quot;</span></span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L19" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="19"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC19" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">then</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L20" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="20"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC20" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> creating a request payload for client_credentials <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L21" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="21"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC21" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">payloadFactory</span> <span class="pl-e">media-type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>xml<span class="pl-pds">&quot;</span></span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L22" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="22"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC22" class="blob-code blob-code-inner js-file-line css-0">                &lt;<span class="pl-ent">format</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L23" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="23"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC23" class="blob-code blob-code-inner js-file-line css-0">                    &lt;<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Envelope</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">soapenv</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>http://schemas.xmlsoap.org/soap/envelope/<span class="pl-pds">&quot;</span></span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L24" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="24"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC24" class="blob-code blob-code-inner js-file-line css-0">                        &lt;<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Body</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L25" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="25"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC25" class="blob-code blob-code-inner js-file-line css-0">                            &lt;<span class="pl-ent">root</span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L26" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="26"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC26" class="blob-code blob-code-inner js-file-line css-0">                                &lt;<span class="pl-ent">grant_type</span>&gt;client_credentials&lt;/<span class="pl-ent">grant_type</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L27" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="27"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC27" class="blob-code blob-code-inner js-file-line css-0">                            &lt;/<span class="pl-ent">root</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L28" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="28"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC28" class="blob-code blob-code-inner js-file-line css-0">                        &lt;/<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Body</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L29" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="29"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC29" class="blob-code blob-code-inner js-file-line css-0">                    &lt;/<span class="pl-ent">soapenv</span><span class="pl-ent">:</span><span class="pl-ent">Envelope</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L30" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="30"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC30" class="blob-code blob-code-inner js-file-line css-0">                &lt;/<span class="pl-ent">format</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L31" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="31"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC31" class="blob-code blob-code-inner js-file-line css-0">                &lt;<span class="pl-ent">args</span>&gt;&lt;/<span class="pl-ent">args</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L32" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="32"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC32" class="blob-code blob-code-inner js-file-line css-0">            &lt;/<span class="pl-ent">payloadFactory</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L33" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="33"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC33" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L34" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="34"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC34" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> set related headers to call the token endpoint <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L35" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="35"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC35" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">header</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Authorization<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>fn:concat(&#x27;Basic &#x27;, get-property(&#x27;client-authorization-header&#x27;))<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L36" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="36"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC36" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">header</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Content-Type<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>application/x-www-form-urlencoded<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L37" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="37"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC37" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>messageType<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>application/x-www-form-urlencoded<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>axis2<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L38" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="38"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC38" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>REST_URL_POSTFIX<span class="pl-pds">&quot;</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>axis2<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt; </td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L39" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="39"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC39" class="blob-code blob-code-inner js-file-line css-0">            </td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L40" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="40"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC40" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> change the token endpoint <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L41" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="41"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC41" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">call</span> <span class="pl-e">blocking</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>true<span class="pl-pds">&quot;</span></span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L42" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="42"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC42" class="blob-code blob-code-inner js-file-line css-0">                &lt;<span class="pl-ent">endpoint</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L43" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="43"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC43" class="blob-code blob-code-inner js-file-line css-0">                    &lt;<span class="pl-ent">http</span> <span class="pl-e">method</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>POST<span class="pl-pds">&quot;</span></span> <span class="pl-e">uri-template</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>https://localhost:9443/oauth2/token<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L44" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="44"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC44" class="blob-code blob-code-inner js-file-line css-0">                &lt;/<span class="pl-ent">endpoint</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L45" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="45"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC45" class="blob-code blob-code-inner js-file-line css-0">            &lt;/<span class="pl-ent">call</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L46" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="46"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC46" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L47" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="47"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC47" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> extract the access token from the response <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L48" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="48"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC48" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>bearer-token<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>json-eval($.access_token)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>default<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L49" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="49"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC49" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L50" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="50"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC50" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> store the generated token and the time <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L51" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="51"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC51" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>gov:/oauth_endpoint/access_token<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;bearer-token&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>registry<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L52" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="52"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC52" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>gov:/oauth_endpoint/generated_time<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;SYSTEM_TIME&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>registry<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>LONG<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L53" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="53"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC53" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L54" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="54"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC54" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> append the acquired access token and make the call to the backend service <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L55" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="55"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC55" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>REST_URL_POSTFIX<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;resource&#x27;)<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>axis2<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>STRING<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L56" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="56"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC56" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">header</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Authorization<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>fn:concat(&#x27;Bearer &#x27;, get-property(&#x27;bearer-token&#x27;))<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L57" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="57"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC57" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L58" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="58"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC58" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">payloadFactory</span> <span class="pl-e">media-type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>json<span class="pl-pds">&quot;</span></span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L59" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="59"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC59" class="blob-code blob-code-inner js-file-line css-0">                &lt;<span class="pl-ent">format</span>&gt;$1&lt;/<span class="pl-ent">format</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L60" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="60"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC60" class="blob-code blob-code-inner js-file-line css-0">                &lt;<span class="pl-ent">args</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L61" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="61"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC61" class="blob-code blob-code-inner js-file-line css-0">                    &lt;<span class="pl-ent">arg</span> <span class="pl-e">evaluator</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>xml<span class="pl-pds">&quot;</span></span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>get-property(&#x27;request-body&#x27;)<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L62" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="62"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC62" class="blob-code blob-code-inner js-file-line css-0">                &lt;/<span class="pl-ent">args</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L63" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="63"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC63" class="blob-code blob-code-inner js-file-line css-0">            &lt;/<span class="pl-ent">payloadFactory</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L64" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="64"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC64" class="blob-code blob-code-inner js-file-line css-0">        &lt;/<span class="pl-ent">then</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L65" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="65"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC65" class="blob-code blob-code-inner js-file-line css-0">        &lt;<span class="pl-ent">else</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L66" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="66"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC66" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-c"><span class="pl-c">&lt;!--</span> the stored access token is still active, so we will be using that to invoke the endpoint <span class="pl-c">--&gt;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L67" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="67"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC67" class="blob-code blob-code-inner js-file-line css-0">            &lt;<span class="pl-ent">header</span> <span class="pl-e">expression</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>fn:concat(&#x27;Bearer &#x27;, get-property(&#x27;stored-token&#x27;))<span class="pl-pds">&quot;</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>Authorization<span class="pl-pds">&quot;</span></span> <span class="pl-e">scope</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>transport<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L68" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="68"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC68" class="blob-code blob-code-inner js-file-line css-0">        &lt;/<span class="pl-ent">else</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L69" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="69"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC69" class="blob-code blob-code-inner js-file-line css-0">    &lt;/<span class="pl-ent">filter</span>&gt;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-oauth2-enhanced-sequence-xml-L70" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="70"></td>
+          <td id="file-oauth2-enhanced-sequence-xml-LC70" class="blob-code blob-code-inner js-file-line css-0">&lt;/<span class="pl-ent">sequence</span>&gt;</td>
+        </tr>
+  </tbody></table></div>
 
 
   </div>
@@ -536,7 +546,9 @@
       </div>
       <div class="gist-meta css-0">
         <a href="https://gist.github.com/athiththan11/debc349f8dee97d1b550d22bf8b0b438/raw/4b7e5e8f0a3bcac3c313ec5a512bd88f5da52b35/oauth2-enhanced-sequence.xml" style="css-float:right" class="css-0">view raw</a>
-        <a href="https://gist.github.com/athiththan11/debc349f8dee97d1b550d22bf8b0b438#file-oauth2-enhanced-sequence-xml" class="css-0">oauth2-enhanced-sequence.xml</a>
+        <a href="https://gist.github.com/athiththan11/debc349f8dee97d1b550d22bf8b0b438#file-oauth2-enhanced-sequence-xml" class="css-0">
+          oauth2-enhanced-sequence.xml
+        </a>
         hosted with ❤ by <a href="https://github.com" class="css-0">GitHub</a>
       </div>
     </div></div></p><blockquote class="css-0"><p class="css-0">🚩 Note: <br/>

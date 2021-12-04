@@ -41,95 +41,99 @@ We can use the following custom maven archetype to generate boilerplate to exten
   <div itemProp="text" class="Box-body p-0 blob-wrapper data type-java css-0">
 
       
-<table class="highlight tab-size js-file-line-container css-0" data-tab-size="8" data-paste-markdown-skip="">
-      <tbody><tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L1" class="blob-num js-line-number css-0" data-line-number="1"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC1" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">@Override</span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L2" class="blob-num js-line-number css-0" data-line-number="2"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC2" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">public</span> <span class="pl-k">void</span> handleEvent(<span class="pl-smi">Event</span> event) throws <span class="pl-smi">IdentityEventException</span> {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L3" class="blob-num js-line-number css-0" data-line-number="3"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC3" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L4" class="blob-num js-line-number css-0" data-line-number="4"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC4" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">if</span> (log<span class="pl-k">.</span>isDebugEnabled()) {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L5" class="blob-num js-line-number css-0" data-line-number="5"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC5" class="blob-code blob-code-inner js-file-line css-0">        log<span class="pl-k">.</span>debug(<span class="pl-s"><span class="pl-pds">&quot;</span>handleEvent() invoked<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L6" class="blob-num js-line-number css-0" data-line-number="6"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC6" class="blob-code blob-code-inner js-file-line css-0">    }</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L7" class="blob-num js-line-number css-0" data-line-number="7"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC7" class="blob-code blob-code-inner js-file-line css-0">    </td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L8" class="blob-num js-line-number css-0" data-line-number="8"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC8" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">if</span> (<span class="pl-smi">IdentityEventConstants</span><span class="pl-k">.</span><span class="pl-smi">Event</span><span class="pl-c1"><span class="pl-k">.</span>PRE_UPDATE_CREDENTIAL</span><span class="pl-k">.</span>equals(event<span class="pl-k">.</span>getEventName())</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L9" class="blob-num js-line-number css-0" data-line-number="9"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC9" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-k">||</span> <span class="pl-smi">IdentityEventConstants</span><span class="pl-k">.</span><span class="pl-smi">Event</span><span class="pl-c1"><span class="pl-k">.</span>PRE_UPDATE_CREDENTIAL_BY_ADMIN</span><span class="pl-k">.</span>equals(event<span class="pl-k">.</span>getEventName())) {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L10" class="blob-num js-line-number css-0" data-line-number="10"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC10" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L11" class="blob-num js-line-number css-0" data-line-number="11"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC11" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-smi">Object</span> credential <span class="pl-k">=</span> event<span class="pl-k">.</span>getEventProperties()<span class="pl-k">.</span>get(<span class="pl-smi">IdentityEventConstants</span><span class="pl-k">.</span><span class="pl-smi">EventProperty</span><span class="pl-c1"><span class="pl-k">.</span>CREDENTIAL</span>);</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L12" class="blob-num js-line-number css-0" data-line-number="12"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC12" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-k">if</span> (<span class="pl-k">!</span><span class="pl-smi">DefaultDefectivePasswordValidator</span><span class="pl-k">.</span>getInstance()<span class="pl-k">.</span>validate(credential)) {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L13" class="blob-num js-line-number css-0" data-line-number="13"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC13" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L14" class="blob-num js-line-number css-0" data-line-number="14"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC14" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-k">if</span> (log<span class="pl-k">.</span>isDebugEnabled()) {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L15" class="blob-num js-line-number css-0" data-line-number="15"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC15" class="blob-code blob-code-inner js-file-line css-0">                log<span class="pl-k">.</span>debug(<span class="pl-s"><span class="pl-pds">&quot;</span>given password is defective<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L16" class="blob-num js-line-number css-0" data-line-number="16"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC16" class="blob-code blob-code-inner js-file-line css-0">            }</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L17" class="blob-num js-line-number css-0" data-line-number="17"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC17" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L18" class="blob-num js-line-number css-0" data-line-number="18"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC18" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-k">throw</span> <span class="pl-smi">Utils</span><span class="pl-k">.</span>handleEventException(</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L19" class="blob-num js-line-number css-0" data-line-number="19"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC19" class="blob-code blob-code-inner js-file-line css-0">                    <span class="pl-smi">DefectivePasswordValidatorConstants</span><span class="pl-k">.</span><span class="pl-smi">ErrorMessages</span><span class="pl-c1"><span class="pl-k">.</span>ERROR_CODE_CRACKED_PASSWORD_VALIDATION</span>, <span class="pl-c1">null</span>);</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L20" class="blob-num js-line-number css-0" data-line-number="20"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC20" class="blob-code blob-code-inner js-file-line css-0">        }</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L21" class="blob-num js-line-number css-0" data-line-number="21"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC21" class="blob-code blob-code-inner js-file-line css-0">    }</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatoreventhandler-java-L22" class="blob-num js-line-number css-0" data-line-number="22"></td>
-        <td id="file-defectivepasswordvalidatoreventhandler-java-LC22" class="blob-code blob-code-inner js-file-line css-0">}</td>
-      </tr></tbody></table>
+<div class="js-check-bidi blob-code-content css-0">
+  <template class="js-file-alert-template"></template><template class="js-line-alert-template"></template>
+
+  <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file css-0" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="Java" data-tagsearch-path="DefectivePasswordValidatorEventHandler.java">
+        <tbody><tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L1" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="1"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC1" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">@Override</span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L2" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="2"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC2" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">public</span> <span class="pl-k">void</span> handleEvent(<span class="pl-smi">Event</span> event) throws <span class="pl-smi">IdentityEventException</span> {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L3" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="3"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC3" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L4" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="4"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC4" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">if</span> (log<span class="pl-k">.</span>isDebugEnabled()) {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L5" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="5"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC5" class="blob-code blob-code-inner js-file-line css-0">        log<span class="pl-k">.</span>debug(<span class="pl-s"><span class="pl-pds">&quot;</span>handleEvent() invoked<span class="pl-pds">&quot;</span></span>);</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L6" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="6"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC6" class="blob-code blob-code-inner js-file-line css-0">    }</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L7" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="7"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC7" class="blob-code blob-code-inner js-file-line css-0">    </td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L8" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="8"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC8" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">if</span> (<span class="pl-smi">IdentityEventConstants</span><span class="pl-k">.</span><span class="pl-smi">Event</span><span class="pl-c1"><span class="pl-k">.</span>PRE_UPDATE_CREDENTIAL</span><span class="pl-k">.</span>equals(event<span class="pl-k">.</span>getEventName())</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L9" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="9"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC9" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-k">||</span> <span class="pl-smi">IdentityEventConstants</span><span class="pl-k">.</span><span class="pl-smi">Event</span><span class="pl-c1"><span class="pl-k">.</span>PRE_UPDATE_CREDENTIAL_BY_ADMIN</span><span class="pl-k">.</span>equals(event<span class="pl-k">.</span>getEventName())) {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L10" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="10"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC10" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L11" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="11"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC11" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-smi">Object</span> credential <span class="pl-k">=</span> event<span class="pl-k">.</span>getEventProperties()<span class="pl-k">.</span>get(<span class="pl-smi">IdentityEventConstants</span><span class="pl-k">.</span><span class="pl-smi">EventProperty</span><span class="pl-c1"><span class="pl-k">.</span>CREDENTIAL</span>);</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L12" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="12"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC12" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-k">if</span> (<span class="pl-k">!</span><span class="pl-smi">DefaultDefectivePasswordValidator</span><span class="pl-k">.</span>getInstance()<span class="pl-k">.</span>validate(credential)) {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L13" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="13"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC13" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L14" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="14"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC14" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-k">if</span> (log<span class="pl-k">.</span>isDebugEnabled()) {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L15" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="15"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC15" class="blob-code blob-code-inner js-file-line css-0">                log<span class="pl-k">.</span>debug(<span class="pl-s"><span class="pl-pds">&quot;</span>given password is defective<span class="pl-pds">&quot;</span></span>);</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L16" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="16"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC16" class="blob-code blob-code-inner js-file-line css-0">            }</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L17" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="17"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC17" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L18" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="18"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC18" class="blob-code blob-code-inner js-file-line css-0">            <span class="pl-k">throw</span> <span class="pl-smi">Utils</span><span class="pl-k">.</span>handleEventException(</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L19" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="19"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC19" class="blob-code blob-code-inner js-file-line css-0">                    <span class="pl-smi">DefectivePasswordValidatorConstants</span><span class="pl-k">.</span><span class="pl-smi">ErrorMessages</span><span class="pl-c1"><span class="pl-k">.</span>ERROR_CODE_CRACKED_PASSWORD_VALIDATION</span>, <span class="pl-c1">null</span>);</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L20" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="20"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC20" class="blob-code blob-code-inner js-file-line css-0">        }</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L21" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="21"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC21" class="blob-code blob-code-inner js-file-line css-0">    }</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatoreventhandler-java-L22" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="22"></td>
+          <td id="file-defectivepasswordvalidatoreventhandler-java-LC22" class="blob-code blob-code-inner js-file-line css-0">}</td>
+        </tr>
+  </tbody></table></div>
 
 
   </div>
@@ -139,7 +143,9 @@ We can use the following custom maven archetype to generate boilerplate to exten
       </div>
       <div class="gist-meta css-0">
         <a href="https://gist.github.com/athiththan11/2b8b5690bf65b7d16eb2973bbaa22442/raw/d6a5eff4da283d5eb0f008f363644be07057bd0c/DefectivePasswordValidatorEventHandler.java" style="css-float:right" class="css-0">view raw</a>
-        <a href="https://gist.github.com/athiththan11/2b8b5690bf65b7d16eb2973bbaa22442#file-defectivepasswordvalidatoreventhandler-java" class="css-0">DefectivePasswordValidatorEventHandler.java</a>
+        <a href="https://gist.github.com/athiththan11/2b8b5690bf65b7d16eb2973bbaa22442#file-defectivepasswordvalidatoreventhandler-java" class="css-0">
+          DefectivePasswordValidatorEventHandler.java
+        </a>
         hosted with ❤ by <a href="https://github.com" class="css-0">GitHub</a>
       </div>
     </div></div></p><h3 id="Password-Validator" style="position:relative" class="css-0"><a href="#Password-Validator" aria-label="Password Validator permalink" class="header-permlink before css-0"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Password Validator</h3><p class="css-0">Given below is the implementation to validate the given password against a list of defective passwords. The given implementation reads all the defective passwords from a text file named passwords.txt which is placed inside the <code class="css-0">/&lt;IS_HOME&gt;/deployments/server/defective</code> folder.</p><blockquote class="css-0"><p class="css-0">For testing purposes, the given implementation can be modified to work with pre-defined list of defective passwords using ArrayList.</p></blockquote><p class="css-0"><div id="gist97082108" class="gist css-0">
@@ -151,155 +157,159 @@ We can use the following custom maven archetype to generate boilerplate to exten
   <div itemProp="text" class="Box-body p-0 blob-wrapper data type-java css-0">
 
       
-<table class="highlight tab-size js-file-line-container css-0" data-tab-size="8" data-paste-markdown-skip="">
-      <tbody><tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L1" class="blob-num js-line-number css-0" data-line-number="1"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC1" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">DefaultDefectivePasswordValidator</span> <span class="pl-k">implements</span> <span class="pl-e">DefectivePasswordValidator</span> {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L2" class="blob-num js-line-number css-0" data-line-number="2"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC2" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L3" class="blob-num js-line-number css-0" data-line-number="3"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC3" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-k">List&lt;<span class="pl-smi">String</span>&gt;</span> crackedPasswords <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-k">ArrayList&lt;&gt;</span>();</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L4" class="blob-num js-line-number css-0" data-line-number="4"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC4" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-smi">DefaultDefectivePasswordValidator</span> dPasswordValidator <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">DefaultDefectivePasswordValidator</span>();</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L5" class="blob-num js-line-number css-0" data-line-number="5"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC5" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L6" class="blob-num js-line-number css-0" data-line-number="6"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC6" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-k">final</span> <span class="pl-smi">Logger</span> log <span class="pl-k">=</span> <span class="pl-smi">LoggerFactory</span><span class="pl-k">.</span>getLogger(<span class="pl-smi">DefaultDefectivePasswordValidator</span><span class="pl-k">.</span>class);</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L7" class="blob-num js-line-number css-0" data-line-number="7"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC7" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L8" class="blob-num js-line-number css-0" data-line-number="8"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC8" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">private</span> <span class="pl-en">DefaultDefectivePasswordValidator</span>() {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L9" class="blob-num js-line-number css-0" data-line-number="9"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC9" class="blob-code blob-code-inner js-file-line css-0">    }</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L10" class="blob-num js-line-number css-0" data-line-number="10"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC10" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L11" class="blob-num js-line-number css-0" data-line-number="11"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC11" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-smi">DefaultDefectivePasswordValidator</span> <span class="pl-en">getInstance</span>() {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L12" class="blob-num js-line-number css-0" data-line-number="12"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC12" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-k">return</span> dPasswordValidator;</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L13" class="blob-num js-line-number css-0" data-line-number="13"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC13" class="blob-code blob-code-inner js-file-line css-0">    }</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L14" class="blob-num js-line-number css-0" data-line-number="14"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC14" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L15" class="blob-num js-line-number css-0" data-line-number="15"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC15" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">/**</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L16" class="blob-num js-line-number css-0" data-line-number="16"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC16" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-c">     * initialize defective password values from the given text file</span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L17" class="blob-num js-line-number css-0" data-line-number="17"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC17" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-c">     <span class="pl-c">*/</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L18" class="blob-num js-line-number css-0" data-line-number="18"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC18" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">@Override</span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L19" class="blob-num js-line-number css-0" data-line-number="19"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC19" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">initValues</span>() {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L20" class="blob-num js-line-number css-0" data-line-number="20"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC20" class="blob-code blob-code-inner js-file-line css-0">        crackedPasswords <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-k">ArrayList&lt;&gt;</span>();</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L21" class="blob-num js-line-number css-0" data-line-number="21"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC21" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-k">try</span> {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L22" class="blob-num js-line-number css-0" data-line-number="22"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC22" class="blob-code blob-code-inner js-file-line css-0">            crackedPasswords <span class="pl-k">=</span> <span class="pl-smi">Files</span><span class="pl-k">.</span>readAllLines(<span class="pl-smi">Paths</span><span class="pl-k">.</span>get(<span class="pl-smi">DefectivePasswordValidatorConstants</span><span class="pl-c1"><span class="pl-k">.</span>PASSWORD_FILE_PATH</span>),</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L23" class="blob-num js-line-number css-0" data-line-number="23"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC23" class="blob-code blob-code-inner js-file-line css-0">                    <span class="pl-smi">StandardCharsets</span><span class="pl-c1"><span class="pl-k">.</span>UTF_8</span>);</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L24" class="blob-num js-line-number css-0" data-line-number="24"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC24" class="blob-code blob-code-inner js-file-line css-0">        } <span class="pl-k">catch</span> (<span class="pl-smi">IOException</span> e) {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L25" class="blob-num js-line-number css-0" data-line-number="25"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC25" class="blob-code blob-code-inner js-file-line css-0">            log<span class="pl-k">.</span>error(<span class="pl-s"><span class="pl-pds">&quot;</span>Exception occured while reading and initializing values from <span class="pl-pds">&quot;</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L26" class="blob-num js-line-number css-0" data-line-number="26"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC26" class="blob-code blob-code-inner js-file-line css-0">                    <span class="pl-k">+</span> <span class="pl-smi">DefectivePasswordValidatorConstants</span><span class="pl-c1"><span class="pl-k">.</span>PASSWORD_FILE_NAME</span>, e);</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L27" class="blob-num js-line-number css-0" data-line-number="27"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC27" class="blob-code blob-code-inner js-file-line css-0">        }</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L28" class="blob-num js-line-number css-0" data-line-number="28"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC28" class="blob-code blob-code-inner js-file-line css-0">    }</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L29" class="blob-num js-line-number css-0" data-line-number="29"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC29" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L30" class="blob-num js-line-number css-0" data-line-number="30"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC30" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">/**</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L31" class="blob-num js-line-number css-0" data-line-number="31"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC31" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-c">     * validate method</span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L32" class="blob-num js-line-number css-0" data-line-number="32"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC32" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-c">     <span class="pl-c">*/</span></span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L33" class="blob-num js-line-number css-0" data-line-number="33"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC33" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">@Override</span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L34" class="blob-num js-line-number css-0" data-line-number="34"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC34" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">public</span> <span class="pl-k">boolean</span> <span class="pl-en">validate</span>(<span class="pl-smi">Object</span> <span class="pl-v">credential</span>) {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L35" class="blob-num js-line-number css-0" data-line-number="35"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC35" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-k">return</span> <span class="pl-k">!</span>crackedPasswords<span class="pl-k">.</span>contains((<span class="pl-smi">String</span>) credential);</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L36" class="blob-num js-line-number css-0" data-line-number="36"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC36" class="blob-code blob-code-inner js-file-line css-0">    }</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defaultdefectivepasswordvalidator-java-L37" class="blob-num js-line-number css-0" data-line-number="37"></td>
-        <td id="file-defaultdefectivepasswordvalidator-java-LC37" class="blob-code blob-code-inner js-file-line css-0">}</td>
-      </tr></tbody></table>
+<div class="js-check-bidi blob-code-content css-0">
+  <template class="js-file-alert-template"></template><template class="js-line-alert-template"></template>
+
+  <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file css-0" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="Java" data-tagsearch-path="DefaultDefectivePasswordValidator.java">
+        <tbody><tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L1" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="1"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC1" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">DefaultDefectivePasswordValidator</span> <span class="pl-k">implements</span> <span class="pl-e">DefectivePasswordValidator</span> {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L2" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="2"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC2" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L3" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="3"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC3" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-k">List&lt;<span class="pl-smi">String</span>&gt;</span> crackedPasswords <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-k">ArrayList&lt;&gt;</span>();</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L4" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="4"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC4" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-smi">DefaultDefectivePasswordValidator</span> dPasswordValidator <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">DefaultDefectivePasswordValidator</span>();</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L5" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="5"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC5" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L6" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="6"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC6" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-k">final</span> <span class="pl-smi">Logger</span> log <span class="pl-k">=</span> <span class="pl-smi">LoggerFactory</span><span class="pl-k">.</span>getLogger(<span class="pl-smi">DefaultDefectivePasswordValidator</span><span class="pl-k">.</span>class);</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L7" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="7"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC7" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L8" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="8"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC8" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">private</span> <span class="pl-en">DefaultDefectivePasswordValidator</span>() {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L9" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="9"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC9" class="blob-code blob-code-inner js-file-line css-0">    }</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L10" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="10"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC10" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L11" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="11"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC11" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-smi">DefaultDefectivePasswordValidator</span> <span class="pl-en">getInstance</span>() {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L12" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="12"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC12" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-k">return</span> dPasswordValidator;</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L13" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="13"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC13" class="blob-code blob-code-inner js-file-line css-0">    }</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L14" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="14"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC14" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L15" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="15"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC15" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">/**</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L16" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="16"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC16" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-c">     * initialize defective password values from the given text file</span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L17" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="17"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC17" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-c">     <span class="pl-c">*/</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L18" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="18"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC18" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">@Override</span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L19" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="19"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC19" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">initValues</span>() {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L20" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="20"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC20" class="blob-code blob-code-inner js-file-line css-0">        crackedPasswords <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-k">ArrayList&lt;&gt;</span>();</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L21" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="21"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC21" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-k">try</span> {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L22" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="22"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC22" class="blob-code blob-code-inner js-file-line css-0">            crackedPasswords <span class="pl-k">=</span> <span class="pl-smi">Files</span><span class="pl-k">.</span>readAllLines(<span class="pl-smi">Paths</span><span class="pl-k">.</span>get(<span class="pl-smi">DefectivePasswordValidatorConstants</span><span class="pl-c1"><span class="pl-k">.</span>PASSWORD_FILE_PATH</span>),</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L23" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="23"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC23" class="blob-code blob-code-inner js-file-line css-0">                    <span class="pl-smi">StandardCharsets</span><span class="pl-c1"><span class="pl-k">.</span>UTF_8</span>);</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L24" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="24"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC24" class="blob-code blob-code-inner js-file-line css-0">        } <span class="pl-k">catch</span> (<span class="pl-smi">IOException</span> e) {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L25" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="25"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC25" class="blob-code blob-code-inner js-file-line css-0">            log<span class="pl-k">.</span>error(<span class="pl-s"><span class="pl-pds">&quot;</span>Exception occured while reading and initializing values from <span class="pl-pds">&quot;</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L26" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="26"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC26" class="blob-code blob-code-inner js-file-line css-0">                    <span class="pl-k">+</span> <span class="pl-smi">DefectivePasswordValidatorConstants</span><span class="pl-c1"><span class="pl-k">.</span>PASSWORD_FILE_NAME</span>, e);</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L27" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="27"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC27" class="blob-code blob-code-inner js-file-line css-0">        }</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L28" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="28"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC28" class="blob-code blob-code-inner js-file-line css-0">    }</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L29" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="29"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC29" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L30" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="30"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC30" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-c"><span class="pl-c">/**</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L31" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="31"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC31" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-c">     * validate method</span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L32" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="32"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC32" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-c">     <span class="pl-c">*/</span></span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L33" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="33"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC33" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">@Override</span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L34" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="34"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC34" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">public</span> <span class="pl-k">boolean</span> <span class="pl-en">validate</span>(<span class="pl-smi">Object</span> <span class="pl-v">credential</span>) {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L35" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="35"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC35" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-k">return</span> <span class="pl-k">!</span>crackedPasswords<span class="pl-k">.</span>contains((<span class="pl-smi">String</span>) credential);</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L36" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="36"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC36" class="blob-code blob-code-inner js-file-line css-0">    }</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defaultdefectivepasswordvalidator-java-L37" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="37"></td>
+          <td id="file-defaultdefectivepasswordvalidator-java-LC37" class="blob-code blob-code-inner js-file-line css-0">}</td>
+        </tr>
+  </tbody></table></div>
 
 
   </div>
@@ -309,7 +319,9 @@ We can use the following custom maven archetype to generate boilerplate to exten
       </div>
       <div class="gist-meta css-0">
         <a href="https://gist.github.com/athiththan11/91f041fb6285235d2708580e914ce13c/raw/8c1e4b9f69e2eb0454002e789f96dde4f8032fde/DefaultDefectivePasswordValidator.java" style="css-float:right" class="css-0">view raw</a>
-        <a href="https://gist.github.com/athiththan11/91f041fb6285235d2708580e914ce13c#file-defaultdefectivepasswordvalidator-java" class="css-0">DefaultDefectivePasswordValidator.java</a>
+        <a href="https://gist.github.com/athiththan11/91f041fb6285235d2708580e914ce13c#file-defaultdefectivepasswordvalidator-java" class="css-0">
+          DefaultDefectivePasswordValidator.java
+        </a>
         hosted with ❤ by <a href="https://github.com" class="css-0">GitHub</a>
       </div>
     </div></div></p><h3 id="OSGi-Component" style="position:relative" class="css-0"><a href="#OSGi-Component" aria-label="OSGi Component permalink" class="header-permlink before css-0"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OSGi Component</h3><p class="css-0">The custom event-handler has to be registered as a service component (OSGi) with the Identity Server components to work flawlessly. In order to register the custom implementation as a service component, he wrote a ServiceComponent class containing both activate and deactivate methods to register it with the Bundle Context.</p><p class="css-0"><div id="gist97068467" class="gist css-0">
@@ -321,91 +333,95 @@ We can use the following custom maven archetype to generate boilerplate to exten
   <div itemProp="text" class="Box-body p-0 blob-wrapper data type-java css-0">
 
       
-<table class="highlight tab-size js-file-line-container css-0" data-tab-size="8" data-paste-markdown-skip="">
-      <tbody><tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L1" class="blob-num js-line-number css-0" data-line-number="1"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC1" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">@Activate</span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L2" class="blob-num js-line-number css-0" data-line-number="2"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC2" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">protected</span> <span class="pl-k">void</span> activate(<span class="pl-smi">ComponentContext</span> context) {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L3" class="blob-num js-line-number css-0" data-line-number="3"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC3" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L4" class="blob-num js-line-number css-0" data-line-number="4"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC4" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">try</span> {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L5" class="blob-num js-line-number css-0" data-line-number="5"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC5" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L6" class="blob-num js-line-number css-0" data-line-number="6"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC6" class="blob-code blob-code-inner js-file-line css-0">        context<span class="pl-k">.</span>getBundleContext()<span class="pl-k">.</span>registerService(<span class="pl-smi">AbstractEventHandler</span><span class="pl-k">.</span>class<span class="pl-k">.</span>getName(),</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L7" class="blob-num js-line-number css-0" data-line-number="7"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC7" class="blob-code blob-code-inner js-file-line css-0">                <span class="pl-k">new</span> <span class="pl-smi">DefectivePasswordValidatorEventHandler</span>(), <span class="pl-c1">null</span>);</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L8" class="blob-num js-line-number css-0" data-line-number="8"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC8" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L9" class="blob-num js-line-number css-0" data-line-number="9"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC9" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-c"><span class="pl-c">//</span> initialize all defective passwords from the text file</span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L10" class="blob-num js-line-number css-0" data-line-number="10"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC10" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-smi">DefaultDefectivePasswordValidator</span><span class="pl-k">.</span>getInstance()<span class="pl-k">.</span>initValues();</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L11" class="blob-num js-line-number css-0" data-line-number="11"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC11" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L12" class="blob-num js-line-number css-0" data-line-number="12"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC12" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-c"><span class="pl-c">//</span> initialize watchservice on /defective directory</span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L13" class="blob-num js-line-number css-0" data-line-number="13"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC13" class="blob-code blob-code-inner js-file-line css-0">        initializeWatchService();</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L14" class="blob-num js-line-number css-0" data-line-number="14"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC14" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L15" class="blob-num js-line-number css-0" data-line-number="15"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC15" class="blob-code blob-code-inner js-file-line css-0">    } <span class="pl-k">catch</span> (<span class="pl-smi">Throwable</span> e) {</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L16" class="blob-num js-line-number css-0" data-line-number="16"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC16" class="blob-code blob-code-inner js-file-line css-0">        log<span class="pl-k">.</span>error(<span class="pl-s"><span class="pl-pds">&quot;</span>Error occured while initializing service component<span class="pl-pds">&quot;</span></span>, e);</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L17" class="blob-num js-line-number css-0" data-line-number="17"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC17" class="blob-code blob-code-inner js-file-line css-0">    }</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L18" class="blob-num js-line-number css-0" data-line-number="18"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC18" class="blob-code blob-code-inner js-file-line css-0">}</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L19" class="blob-num js-line-number css-0" data-line-number="19"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC19" class="blob-code blob-code-inner js-file-line css-0"></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L20" class="blob-num js-line-number css-0" data-line-number="20"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC20" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">@Deactivate</span></td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-L21" class="blob-num js-line-number css-0" data-line-number="21"></td>
-        <td id="file-defectivepasswordvalidatorservicecomponent-java-LC21" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">protected</span> <span class="pl-k">void</span> deactivate(<span class="pl-smi">ComponentContext</span> context) { }</td>
-      </tr></tbody></table>
+<div class="js-check-bidi blob-code-content css-0">
+  <template class="js-file-alert-template"></template><template class="js-line-alert-template"></template>
+
+  <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file css-0" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="Java" data-tagsearch-path="DefectivePasswordValidatorServiceComponent.java">
+        <tbody><tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L1" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="1"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC1" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">@Activate</span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L2" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="2"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC2" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">protected</span> <span class="pl-k">void</span> activate(<span class="pl-smi">ComponentContext</span> context) {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L3" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="3"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC3" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L4" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="4"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC4" class="blob-code blob-code-inner js-file-line css-0">    <span class="pl-k">try</span> {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L5" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="5"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC5" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L6" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="6"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC6" class="blob-code blob-code-inner js-file-line css-0">        context<span class="pl-k">.</span>getBundleContext()<span class="pl-k">.</span>registerService(<span class="pl-smi">AbstractEventHandler</span><span class="pl-k">.</span>class<span class="pl-k">.</span>getName(),</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L7" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="7"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC7" class="blob-code blob-code-inner js-file-line css-0">                <span class="pl-k">new</span> <span class="pl-smi">DefectivePasswordValidatorEventHandler</span>(), <span class="pl-c1">null</span>);</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L8" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="8"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC8" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L9" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="9"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC9" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-c"><span class="pl-c">//</span> initialize all defective passwords from the text file</span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L10" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="10"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC10" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-smi">DefaultDefectivePasswordValidator</span><span class="pl-k">.</span>getInstance()<span class="pl-k">.</span>initValues();</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L11" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="11"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC11" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L12" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="12"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC12" class="blob-code blob-code-inner js-file-line css-0">        <span class="pl-c"><span class="pl-c">//</span> initialize watchservice on /defective directory</span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L13" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="13"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC13" class="blob-code blob-code-inner js-file-line css-0">        initializeWatchService();</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L14" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="14"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC14" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L15" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="15"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC15" class="blob-code blob-code-inner js-file-line css-0">    } <span class="pl-k">catch</span> (<span class="pl-smi">Throwable</span> e) {</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L16" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="16"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC16" class="blob-code blob-code-inner js-file-line css-0">        log<span class="pl-k">.</span>error(<span class="pl-s"><span class="pl-pds">&quot;</span>Error occured while initializing service component<span class="pl-pds">&quot;</span></span>, e);</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L17" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="17"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC17" class="blob-code blob-code-inner js-file-line css-0">    }</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L18" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="18"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC18" class="blob-code blob-code-inner js-file-line css-0">}</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L19" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="19"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC19" class="blob-code blob-code-inner js-file-line css-0"></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L20" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="20"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC20" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">@Deactivate</span></td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-L21" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="21"></td>
+          <td id="file-defectivepasswordvalidatorservicecomponent-java-LC21" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">protected</span> <span class="pl-k">void</span> deactivate(<span class="pl-smi">ComponentContext</span> context) { }</td>
+        </tr>
+  </tbody></table></div>
 
 
   </div>
@@ -415,7 +431,9 @@ We can use the following custom maven archetype to generate boilerplate to exten
       </div>
       <div class="gist-meta css-0">
         <a href="https://gist.github.com/athiththan11/b1156885c454c5613fbb953c21fb7ca4/raw/939883d0968b52d80aff4e0b686f6f2d8793dbb4/DefectivePasswordValidatorServiceComponent.java" style="css-float:right" class="css-0">view raw</a>
-        <a href="https://gist.github.com/athiththan11/b1156885c454c5613fbb953c21fb7ca4#file-defectivepasswordvalidatorservicecomponent-java" class="css-0">DefectivePasswordValidatorServiceComponent.java</a>
+        <a href="https://gist.github.com/athiththan11/b1156885c454c5613fbb953c21fb7ca4#file-defectivepasswordvalidatorservicecomponent-java" class="css-0">
+          DefectivePasswordValidatorServiceComponent.java
+        </a>
         hosted with ❤ by <a href="https://github.com" class="css-0">GitHub</a>
       </div>
     </div></div></p><h2 id="Prepare" style="position:relative" class="css-0"><a href="#Prepare" aria-label="Prepare permalink" class="header-permlink before css-0"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prepare</h2><h3 id="Defective-Passwords-Text-File" style="position:relative" class="css-0"><a href="#Defective-Passwords-Text-File" aria-label="Defective Passwords Text File permalink" class="header-permlink before css-0"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Defective Passwords Text File</h3><p class="css-0">Create a file called passwords.txt and add all defective-passwords (cracked passwords) at each line. These defined cracked passwords are the values, will be used to validate the entered password.</p><p class="css-0">Create a folder named defective inside the &lt;IS_HOME&gt;/repository/deployment/server directory and place the above created passwords.txt file in it.</p><h3 id="WSO2-Identity-Server" style="position:relative" class="css-0"><a href="#WSO2-Identity-Server" aria-label="WSO2 Identity Server permalink" class="header-permlink before css-0"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WSO2 Identity Server</h3><p class="css-0">Navigate to &lt;IS_HOME&gt;/repository/conf/identity directory and open the identity-event.properties file and add the following lines at the bottom to subscribe to the published events.</p><blockquote class="css-0"><p class="css-0">Please update the digit value according to your <code class="css-0">identity-event.properties</code> file (last used value + 1)</p><p class="css-0">The given <code class="css-0">module.name</code> value is the same value which configured in the <code class="css-0">getName()</code> method in <code class="css-0">DefectivePasswordValidatorEventHandler</code> class</p></blockquote><p class="css-0"><div id="gist97082148" class="gist css-0">
@@ -427,19 +445,23 @@ We can use the following custom maven archetype to generate boilerplate to exten
   <div itemProp="text" class="Box-body p-0 blob-wrapper data type-ini css-0">
 
       
-<table class="highlight tab-size js-file-line-container css-0" data-tab-size="8" data-paste-markdown-skip="">
-      <tbody><tr class="css-0">
-        <td id="file-identity-event-properties-L1" class="blob-num js-line-number css-0" data-line-number="1"></td>
-        <td id="file-identity-event-properties-LC1" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">module.name.13</span>=defectivePasswordValidator</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-identity-event-properties-L2" class="blob-num js-line-number css-0" data-line-number="2"></td>
-        <td id="file-identity-event-properties-LC2" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">defectivePasswordValidator.subscription.1</span>=PRE_UPDATE_CREDENTIAL</td>
-      </tr>
-      <tr class="css-0">
-        <td id="file-identity-event-properties-L3" class="blob-num js-line-number css-0" data-line-number="3"></td>
-        <td id="file-identity-event-properties-LC3" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">defectivePasswordValidator.subscription.2</span>=PRE_UPDATE_CREDENTIAL_BY_ADMIN</td>
-      </tr></tbody></table>
+<div class="js-check-bidi blob-code-content css-0">
+  <template class="js-file-alert-template"></template><template class="js-line-alert-template"></template>
+
+  <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file css-0" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="INI" data-tagsearch-path="identity-event.properties">
+        <tbody><tr class="css-0">
+          <td id="file-identity-event-properties-L1" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="1"></td>
+          <td id="file-identity-event-properties-LC1" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">module.name.13</span>=defectivePasswordValidator</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-identity-event-properties-L2" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="2"></td>
+          <td id="file-identity-event-properties-LC2" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">defectivePasswordValidator.subscription.1</span>=PRE_UPDATE_CREDENTIAL</td>
+        </tr>
+        <tr class="css-0">
+          <td id="file-identity-event-properties-L3" class="blob-num js-line-number js-code-nav-line-number css-0" data-line-number="3"></td>
+          <td id="file-identity-event-properties-LC3" class="blob-code blob-code-inner js-file-line css-0"><span class="pl-k">defectivePasswordValidator.subscription.2</span>=PRE_UPDATE_CREDENTIAL_BY_ADMIN</td>
+        </tr>
+  </tbody></table></div>
 
 
   </div>
@@ -449,7 +471,9 @@ We can use the following custom maven archetype to generate boilerplate to exten
       </div>
       <div class="gist-meta css-0">
         <a href="https://gist.github.com/athiththan11/fc5bc7e1b8e46124ed0fa993a4324580/raw/841ceca5796578427010849a8f37bf01ce3c6475/identity-event.properties" style="css-float:right" class="css-0">view raw</a>
-        <a href="https://gist.github.com/athiththan11/fc5bc7e1b8e46124ed0fa993a4324580#file-identity-event-properties" class="css-0">identity-event.properties</a>
+        <a href="https://gist.github.com/athiththan11/fc5bc7e1b8e46124ed0fa993a4324580#file-identity-event-properties" class="css-0">
+          identity-event.properties
+        </a>
         hosted with ❤ by <a href="https://github.com" class="css-0">GitHub</a>
       </div>
     </div></div></p><h2 id="Build-Run--Test" style="position:relative" class="css-0"><a href="#Build-Run--Test" aria-label="Build Run  Test permalink" class="header-permlink before css-0"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build, Run &amp; Test</h2><h3 id="Build" style="position:relative" class="css-0"><a href="#Build" aria-label="Build permalink" class="header-permlink before css-0"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build</h3><p class="css-0">You can clone or download the custom event-handler implementation project done by Athiththan from GitHub and build it using the following command …</p><pre class="prism-code language-bash" style="color:#9CDCFE;background-color:#1E1E1E"><div class="token-line" style="color:#9CDCFE"><span class="token plain">mvn clean package</span></div></pre><h3 id="Run" style="position:relative" class="css-0"><a href="#Run" aria-label="Run permalink" class="header-permlink before css-0"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Run</h3><p class="css-0">After a successful build, copy the <code class="css-0">defective-password-validator-1.0.0.jar</code> artifact and place it inside the <code class="css-0">&lt;IS_HOME&gt;/repository/components/dropins</code> folder.</p><p class="css-0">Start your WSO2 Identity Server by navigating to the <code class="css-0">&lt;IS_HOME&gt;/bin</code> folder and executing the following command …</p><pre class="prism-code language-bash" style="color:#9CDCFE;background-color:#1E1E1E"><div class="token-line" style="color:#9CDCFE"><span class="token plain">sh wso2server.sh</span></div></pre><h3 id="Test" style="position:relative" class="css-0"><a href="#Test" aria-label="Test permalink" class="header-permlink before css-0"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test</h3><p class="css-0">After server startup, navigate to <code class="css-0">https://&lt;ipaddress&gt;:9443/dashboard</code> and log in using <code class="css-0">admin</code> as both username and password. Click on the <em class="css-0">“View Details”</em> button on the <em class="css-0">“Change Password”</em> section and type your current password and enter the new password as one of the defective passwords and try on.</p><h3 id="GitHub" style="position:relative" class="css-0"><a href="#GitHub" aria-label="GitHub permalink" class="header-permlink before css-0"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GitHub</h3><a class="reference-card ul-disabled" href="https://github.com/athiththan11/Defective-Password-Validator"><div class="card"><div class="card-horizontal"><div class="card-body py-4 px-5"><h4 class="card-title mt-4">Defective Password Validator</h4><p>Defective password validation using WSO2 Event Handlers extension</p></div></div></div></a><hr class="mt-5"/></div><footer><a class="mr-3" href="https://github.com/athiththan11"><img class="mb-0" alt="Athiththan Kathirgamasegaran" src="https://avatars3.githubusercontent.com/u/29927177?s=460&amp;v=4" style="width:28px;height:28px;border-radius:40px"/></a><a class="mr-3" href="https://github.com/athiththan11"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#424242" viewBox="0 0 24 24" aria-label="Github"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a><a class="mr-3" href="https://twitter.com/athiththan11"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#424242" viewBox="0 0 24 24" aria-label="Twiiter"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"></path></svg></a><a class="mr-3" href="https://medium.com/@athiththan11"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#424242" viewBox="0 0 24 24" aria-label="Medium"><path d="M0 0v24h24V0H0zm19.938 5.686L18.651 6.92a.376.376 0 0 0-.143.362v9.067a.376.376 0 0 0 .143.361l1.257 1.234v.271h-6.322v-.27l1.302-1.265c.128-.128.128-.165.128-.36V8.99l-3.62 9.195h-.49L6.69 8.99v6.163a.85.85 0 0 0 .233.707l1.694 2.054v.271H3.815v-.27L5.51 15.86a.82.82 0 0 0 .218-.707V8.027a.624.624 0 0 0-.203-.527L4.019 5.686v-.27h4.674l3.613 7.923 3.176-7.924h4.456v.271z"></path></svg></a><a class="mr-3" href="https://www.linkedin.com/in/athiththan-kathirgamasegaran/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#424242" viewBox="0 0 24 24" aria-label="LinkedIn"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script src="/reveal.js"></script><script src="/reveal.esm.js"></script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/custom-event-handlers-for-password-validation/content/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-2297ee5be43fd5eb1286.js"],"app":["/app-5c6f4b15fb19ab404aa3.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-1019110dddd354e6e07c.js"],"component---src-pages-404-js":["/component---src-pages-404-js-9552281d493b4dce836a.js"],"component---src-pages-index-js":["/component---src-pages-index-js-42bd12c9a092990e9bf4.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-d2cfb480af87cc15d74a.js"],"component---src-templates-cheat-post-js":["/component---src-templates-cheat-post-js-5025c4de655c7944fcba.js"],"component---src-templates-infographic-post-js":["/component---src-templates-infographic-post-js-4721c44232679ddc2d6f.js"],"component---src-templates-reveal-post-js":["/component---src-templates-reveal-post-js-66cbe2db75651a56885b.js"],"component---src-templates-tag-js":["/component---src-templates-tag-js-3fc9cc984917b23fe514.js"]};/*]]>*/</script><script src="/polyfill-2297ee5be43fd5eb1286.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-d2cfb480af87cc15d74a.js" async=""></script><script src="/d902fa23717ee6982e53a8e1c26edcdde3d9a34d-5e7f18f8aa3f3e5d6822.js" async=""></script><script src="/4e03145d5c9aa41dff5ab4c859bef28959ca9cba-8ef78372a98ba3885681.js" async=""></script><script src="/styles-407fe62976dc5310c43e.js" async=""></script><script src="/app-5c6f4b15fb19ab404aa3.js" async=""></script><script src="/f0e45107-dc9f298a6924df7ea59f.js" async=""></script><script src="/framework-acd7498685eeb36e39da.js" async=""></script><script src="/webpack-runtime-1cea06e51778f35f1366.js" async=""></script></body></html>
