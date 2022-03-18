@@ -64,11 +64,11 @@ class BlogPostTemplate extends React.Component {
             >
               <Medium size={28} />
             </a>
-            <span className="px-4">|</span>
-            <span className="btn btn-sm ga-pg-views text-muted">
+            {/* <span className="px-4">|</span> */}
+            {/* <span className="btn btn-sm ga-pg-views text-muted">
               <Eye className="pr-1" />
               &nbsp;{views} views
-            </span>
+            </span> */}
           </div>
           <Tag tags={post.frontmatter.tags} />
           <MDXProvider components={shortcodes}>

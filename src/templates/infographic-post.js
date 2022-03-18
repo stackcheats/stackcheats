@@ -18,7 +18,7 @@ class InfoGraphicPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
-    const views = this.props.data.sheetViews.count
+    const views = (this.props.data.sheetViews && this.props.data.sheetViews.count) ? this.props.data.sheetViews.count : 0;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -51,11 +51,11 @@ class InfoGraphicPostTemplate extends React.Component {
                 style={{ width: 32, height: 32, borderRadius: 40 }}
               />
             </a>
-            <span className="px-4">|</span>
-            <span className="btn btn-sm ga-pg-views text-muted">
+            {/* <span className="px-4">|</span> */}
+            {/* <span className="btn btn-sm ga-pg-views text-muted">
               <Eye className="pr-1" />
               &nbsp;{views} views
-            </span>
+            </span> */}
           </div>
           <Tag tags={post.frontmatter.tags} />
           <MDXProvider components={shortcodes}>
